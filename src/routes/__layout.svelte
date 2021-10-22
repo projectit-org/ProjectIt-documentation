@@ -2,6 +2,7 @@
 
 	import TreeView from '../lib/tree/TreeView.svelte';
 	import SplitPane from '../lib/splitpane/SplitPane.svelte';
+	import Footer from '../lib/footer/Footer.svelte';
 </script>
 
 <main class="main-window">
@@ -20,11 +21,8 @@
 			</section>
 		</SplitPane>
 	</div>
+	<Footer/>
 </main>
-
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
 
 <style>
 	/*main {*/
