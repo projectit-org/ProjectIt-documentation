@@ -9,12 +9,14 @@
 		<IconButton class="material-icons" on:click={() => {$leftPanelVisible = true;}}>menu</IconButton>
 		<div class="title">PI Documentation</div>
 	{:else}
-		<div class="title">ProjectIt Documentation</div>
+		<div class="title">ProjectIt Documentation (version {versionNumber})</div>
 	{/if}
 
+	<!-- TODO change images for dark mode -->
 	<a target="_blank" href="https://github.com/projectit-org/ProjectIt">
-		<img src="/github-seeklogo.com.svg"  color="red" alt="ProjectIt on GitHub" width='24' height='24'/>
+		<img src="/github-logo-inverse-colors.svg"  color="red" alt="ProjectIt on GitHub" width='24' height='24'/>
 	</a>
+
 	{#if !$miniWindow}
 		<!-- normally, the brand icon is shown-->
 		<a target="_blank" href="http://www.projectit.org">
@@ -25,15 +27,8 @@
 </div>
 
 <script lang="ts">
-	// import { Button, Icon } from "";
-	//
-	// import projectit_logo from "../assets/icons/svg/projectit-logo.svg";
-	// import question_mark from "../assets/icons/svg/help_24px.svg";
-	// import menu from "../assets/icons/svg/menu_black_24dp.svg";
-	//
-	import { miniWindow, leftPanelVisible, rightPanelVisible } from "../Store";
-	// import { languageName } from "../webapp-ts-utils/WebappStore";
-	// import MenuGroup from "../menu/MenuGroup.svelte";
+	import { miniWindow, leftPanelVisible, versionNumber } from "../Store";
+
 	// import ThemeToggle from "../theming/ThemeToggle.svelte";
 	import IconButton from "@smui/button";
 </script>

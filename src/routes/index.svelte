@@ -1,11 +1,10 @@
-
 <svelte:head>
-	<title>TODOS</title>
+	<title>ProjectIt Documentation</title>
 </svelte:head>
 
 <section>
 	<h1>
-		A Subpage TODOS
+		Welcome to the ProjectIt Documentation Site
 	</h1>
 
 	<p>The content is to follow later ...</p>

@@ -13,6 +13,8 @@
   "devDependencies": {
     "@smui/list": "^5.0.0-beta.7",
     "@smui/button": "^5.0.0-beta.7",
+    "@smui/drawer": "^5.0.0-beta.7",
+    "@smui/tooltip": "^5.0.0-beta.7",
     "@sveltejs/kit": "next",
     "@types/cookie": "^0.4.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",

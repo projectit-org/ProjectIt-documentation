@@ -1,26 +1,60 @@
-<script lang="ts">
+<svelte:window on:resize={onResize} />
 
+<main class="main-window">
+	<AppBar/>
+	{#if ($miniWindow)}
+		{#if ($leftPanelVisible)}
+			<Drawer>
+				<slot slot='content'/>
+			</Drawer>
+		{:else }
+			<slot/>
+		{/if}
+	{:else }
+		<div class="splitpane-container" >
+			<SplitPane type='horizontal' pos={20}>
+				<section class="splitpane-section" slot=a>
+					<TreeView />
+				</section>
+
+				<section class="splitpane-section" slot=b>
+					<slot />
+				</section>
+			</SplitPane>
+		</div>
+	{/if}
+	<Footer/>
+</main>
+
+<script lang="ts">
+	import { onMount } from 'svelte';
 	import TreeView from '../lib/tree/TreeView.svelte';
 	import SplitPane from '../lib/splitpane/SplitPane.svelte';
 	import Footer from '../lib/footer/Footer.svelte';
 	import AppBar from '../lib/appbar/AppBar.svelte';
+	import { miniWindow, leftPanelVisible } from '../lib/Store';
+	import Drawer from '../lib/drawer/Drawer.svelte';
+
+	const MAX_WIDTH_SMALL_VIEWPORT = 600;
+
+	onMount(async () => {
+		// correct layout for the size of the window
+		onResize();
+	});
+
+	async function onResize() {
+		let width =
+			window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+		if (width > MAX_WIDTH_SMALL_VIEWPORT) {
+			console.log(`setting miniWindow to false: ${width}`);
+			miniWindow.set(false);
+		} else {
+			console.log(`setting miniWindow to true: ${width}`);
+			miniWindow.set(true);
+		}
+	}
 </script>
-
-<main class="main-window">
-	<AppBar/>
-	<div class="splitpane-container" >
-		<SplitPane type='horizontal' pos={20}>
-			<section class="splitpane-section" slot=a>
-				<TreeView />
-			</section>
-
-			<section class="splitpane-section" slot=b>
-				<slot />
-			</section>
-		</SplitPane>
-	</div>
-	<Footer/>
-</main>
 
 <style>
   .main-window {

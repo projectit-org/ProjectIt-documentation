@@ -1,8 +1,7 @@
 <!-- see https://svelte.dev/tutorial/svelte-self -->
 <script lang="ts">
 	import Leaf from './Leaf.svelte';
-	import { Icon } from '@smui/common';
-	// import { page } from '$app/stores';
+	import { leftPanelVisible } from '../Store';
 
 	export let name: string;
 	export let path: string;
@@ -11,36 +10,42 @@
 
 	function toggle() {
 		expanded = !expanded;
-		// $page.path === path;
+		$leftPanelVisible = false;
 	}
 	// TODO add functionality to make arrow keys run through the tree
 </script>
 
-<nav>
+<div class='navTree'>
+	<nav>
 	<span>
 		{#if expanded}
-			<Icon class="material-icons" on:click={toggle}>arrow_drop_up</Icon> <a href={path}>{name}</a>
+			<i class="material-icons" on:click={toggle}>arrow_drop_up</i> <a href={path}>{name}</a>
 		{:else}
-			<Icon class="material-icons" on:click={toggle}>arrow_drop_down</Icon> <a href={path}>{name}</a>
+			<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path}>{name}</a>
 		{/if}
 	</span>
 
-	{#if expanded}
-		<ul>
-			{#each content as part}
-				<li>
-					{#if part.content}
-						<svelte:self {...part}/>
-					{:else}
-						<Leaf {...part}/>
-					{/if}
-				</li>
-			{/each}
-		</ul>
-	{/if}
-</nav>
+		{#if expanded}
+			<ul>
+				{#each content as part}
+					<li>
+						{#if part.content}
+							<svelte:self {...part}/>
+						{:else}
+							<Leaf {...part}/>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		{/if}
+	</nav>
+</div>
 
 <style>
+		navTree {
+				width: 30em; /* 30 times the font size */
+				min-width: 30em;
+		}
     span {
         /*padding: 0 0 0 1.5em;*/
         font-weight: bold;
@@ -68,8 +73,13 @@
         text-decoration: none;
         transition: color 0.2s linear;
     }
-
     a:hover {
         color: var(--pi-selected-color);
     }
+		i {
+        position: relative;
+        /* Adjust these values to get the icons on the same baseline as the text */
+        top: 8px;
+        left: 5px;
+		}
 </style>

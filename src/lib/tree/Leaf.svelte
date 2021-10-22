@@ -1,11 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Icon } from '@smui/common';
+	import { leftPanelVisible } from '../Store';
 	export let name: string;
 	export let path: string;
+
+	const setActive = () => {
+		console.log(`calling setActive: ${name}`)
+		if ($page.path === path) {
+			console.log(`setting active: ${name}`)
+			$leftPanelVisible = false;
+		}
+	}
 </script>
 
-<span class:active={$page.path === {path}}><Icon class="material-icons">arrow_right</Icon> <a href={path}>{name}</a></span>
+<span class:active={$page.path === {path}} on:mousedown={setActive()}><i class="material-icons">arrow_right</i> <a href={path}>{name}</a></span>
 
 <style>
     span {
@@ -13,12 +21,15 @@
         background: 0 0.1em no-repeat;
         background-size: 1em 1em;
     }
+		span.active {
+				background: var(--theme-colors-accent);
+		}
     a {
         /*display: flex;*/
         height: 100%;
         align-items: center;
-        padding: 0 1em;
-        color: var(--heading-color);
+        /*padding: 0 1em;*/
+        color: var(--theme-colors-color);
         font-weight: 700;
         font-size: 0.8rem;
         text-transform: uppercase;
@@ -27,6 +38,12 @@
         transition: color 0.2s linear;
     }
     a:hover {
-        color: var(--accent-color);
+        color: var(--pi-selected-color);
+    }
+    i {
+        position: relative;
+        /* Adjust these values to get the icons on the same baseline as the text */
+        top: 8px;
+        left: 5px;
     }
 </style>
