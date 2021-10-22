@@ -3,21 +3,19 @@
 	import TreeView from '../lib/tree/TreeView.svelte';
 	import SplitPane from '../lib/splitpane/SplitPane.svelte';
 	import Footer from '../lib/footer/Footer.svelte';
+	import AppBar from '../lib/appbar/AppBar.svelte';
 </script>
 
 <main class="main-window">
+	<AppBar/>
 	<div class="splitpane-container" >
 		<SplitPane type='horizontal' pos={20}>
 			<section class="splitpane-section" slot=a>
-				<div class='extra'>
-					<TreeView />
-				</div>
+				<TreeView />
 			</section>
 
 			<section class="splitpane-section" slot=b>
-				<div class='extra'>
-					<slot />
-				</div>
+				<slot />
 			</section>
 		</SplitPane>
 	</div>
@@ -25,41 +23,6 @@
 </main>
 
 <style>
-	/*main {*/
-	/*	flex: 1;*/
-	/*	display: flex;*/
-	/*	flex-direction: column;*/
-	/*	padding: 1rem;*/
-	/*	width: 100%;*/
-	/*	max-width: 1024px;*/
-	/*	margin: 0 auto;*/
-	/*	box-sizing: border-box;*/
-	/*}*/
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	/*@media (min-width: 480px) {*/
-	/*	footer {*/
-	/*		padding: 40px 0;*/
-	/*	}*/
-	/*}*/
-	.extra {
-      position: relative;
-      width: 90%;
-			height: 100%;
-      border: var(--theme-colors-list_divider) 1px solid;
-      padding: 6px;
-	}
   .main-window {
       flex: 1;
       margin-top: var(--pi-header-height);
@@ -68,7 +31,7 @@
       width: 100%;
       height: calc(100% - var(--pi-header-height) - var(--pi-footer-height) - 8px);
       box-sizing: border-box;
-      /*border: var(--theme-colors-list_divider) 1px solid;*/
+      border: var(--theme-colors-list_divider) 1px solid;
   }
   .splitpane-container {
       position: relative;
@@ -79,5 +42,6 @@
       position: relative;
       height: 100%;
       box-sizing: border-box;
+      border: var(--theme-colors-list_divider) 1px solid;
   }
 </style>

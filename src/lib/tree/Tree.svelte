@@ -42,18 +42,16 @@
 
 <style>
     span {
-        padding: 0 0 0 1.5em;
+        /*padding: 0 0 0 1.5em;*/
         font-weight: bold;
         cursor: pointer;
     }
-
     ul {
         padding: 0.2em 0 0 0.5em;
         margin: 0 0 0 0.5em;
         list-style: none;
-        border-left: 1px solid #eee;
+        border-left: 1px solid var(--theme-colors-bg_app_bar);
     }
-
     li {
         padding: 0.2em 0;
     }
@@ -61,8 +59,8 @@
         /*display: flex;*/
         height: 100%;
         align-items: center;
-        padding: 0 1em;
-        color: var(--heading-color);
+        /*padding: 0 1em;*/
+        color: var(--theme-colors-color);
         font-weight: 700;
         font-size: 0.8rem;
         text-transform: uppercase;
@@ -72,6 +70,6 @@
     }
 
     a:hover {
-        color: var(--accent-color);
+        color: var(--pi-selected-color);
     }
 </style>
