@@ -55,27 +55,25 @@
         cursor: pointer;
         white-space: nowrap;
     }
+    .textInTree:hover {
+        color: var(--pi-selected-color);
+    }
     ul {
-        padding: 0.2em 0 0 0.5em;
+        padding: 0 0 0 0.5em;
         margin: 0 0 0 0.5em;
         list-style: none;
         border-left: 1px solid var(--theme-colors-bg_app_bar);
     }
     li {
-        padding: 0.2em 0;
+        padding: 0.1em 0;
     }
     nav a {
-        /*display: flex;*/
         height: 100%;
         align-items: center;
-        /*padding: 0 1em;*/
         color: var(--theme-colors-color);
-        font-weight: 700;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        text-decoration: none;
+        font-size: 0.9rem;
         transition: color 0.2s linear;
+        text-decoration: none;
     }
     a:hover {
         color: var(--pi-selected-color);
