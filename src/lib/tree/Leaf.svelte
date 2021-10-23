@@ -17,7 +17,7 @@
 
 <style>
     span {
-        padding: 0 0 0 0.8em;
+        padding: 0 0 0 0.5em;
         background: 0 0.1em no-repeat;
         background-size: 1em 1em;
         white-space: nowrap;

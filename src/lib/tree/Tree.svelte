@@ -17,6 +17,7 @@
 
 <div class='navTree'>
 	<nav>
+		{#if name?.length > 0}
 		<span class='textInTree'>
 			{#if expanded}
 				<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path}>{name}</a>
@@ -24,9 +25,10 @@
 				<i class="material-icons" on:click={toggle}>arrow_right</i> <a href={path}>{name}</a>
 			{/if}
 		</span>
+		{/if}
 
 		{#if expanded}
-			<ul>
+			<ul class:hasName={name?.length > 0}>
 				{#each content as part}
 					<li>
 						{#if part.content}
@@ -43,11 +45,8 @@
 </div>
 
 <style>
-		navTree {
-				width: 30em; /* 30 times the font size */
-				min-width: 30em;
-				height: 100vh;
-				position: relative;
+		.navTree {
+				margin-left: -0.1em;
 		}
     .textInTree {
         /*padding: 0 0 0 1.5em;*/
@@ -59,7 +58,13 @@
         color: var(--pi-selected-color);
     }
     ul {
-        padding: 0 0 0 0.5em;
+        padding: 0 0 0 0em;
+        margin: 0 0 0 0.5em;
+				list-style: none;
+        border-left: none;
+    }
+    ul.hasName {
+        padding: 0 0 0 0.8em;
         margin: 0 0 0 0.5em;
         list-style: none;
         border-left: 1px solid var(--theme-colors-bg_app_bar);

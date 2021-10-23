@@ -35,7 +35,7 @@
 </script>
 
 <div class='navigator'>
-	<Tree name="Home" path='/' content={root} expanded/>
+	<Tree content={root} expanded/>
 </div>
 
 <style>
