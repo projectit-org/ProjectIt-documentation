@@ -1,12 +1,15 @@
 <!-- see https://svelte.dev/tutorial/svelte-self -->
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Leaf from './Leaf.svelte';
 	import { leftPanelVisible } from '../Store';
 
-	export let name: string;
-	export let path: string;
+	export let name: string = '';
+	export let path: string = '';
 	export let expanded = true;
 	export let content;
+	let active: boolean = false;
+	$: active = ($page.path === path);
 
 	function toggle() {
 		expanded = !expanded;
@@ -18,7 +21,7 @@
 <div class='navTree'>
 	<nav>
 		{#if name?.length > 0}
-		<span class='textInTree'>
+		<span class='textInTree' class:active={active} >
 			{#if expanded}
 				<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path}>{name}</a>
 			{:else}
@@ -27,7 +30,7 @@
 		</span>
 		{/if}
 
-		{#if expanded}
+		{#if (expanded || active) }
 			<ul class:hasName={name?.length > 0}>
 				{#each content as part}
 					<li>
@@ -56,6 +59,13 @@
     }
     .textInTree:hover {
         color: var(--pi-selected-color);
+    }
+    .textInTree.active a {
+        background: white;
+        /*color: lavender;*/
+        /*font-style: italic;*/
+        padding: 0.1em 0.3em 0.1em 0.3em;
+        margin-left: -0.3em;
     }
     ul {
         padding: 0 0 0 0em;
