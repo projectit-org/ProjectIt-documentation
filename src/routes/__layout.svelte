@@ -58,7 +58,7 @@
 
 <style>
   .main-window {
-      flex: 1;
+      /*flex: 1;*/
       margin-top: var(--pi-header-height);
       margin-bottom: var(--pi-footer-height);
       position: relative;

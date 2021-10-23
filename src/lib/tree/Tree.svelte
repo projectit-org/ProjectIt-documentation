@@ -17,13 +17,13 @@
 
 <div class='navTree'>
 	<nav>
-	<span>
-		{#if expanded}
-			<i class="material-icons" on:click={toggle}>arrow_drop_up</i> <a href={path}>{name}</a>
-		{:else}
-			<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path}>{name}</a>
-		{/if}
-	</span>
+		<span class='textInTree'>
+			{#if expanded}
+				<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path}>{name}</a>
+			{:else}
+				<i class="material-icons" on:click={toggle}>arrow_right</i> <a href={path}>{name}</a>
+			{/if}
+		</span>
 
 		{#if expanded}
 			<ul>
@@ -38,6 +38,7 @@
 				{/each}
 			</ul>
 		{/if}
+
 	</nav>
 </div>
 
@@ -45,11 +46,14 @@
 		navTree {
 				width: 30em; /* 30 times the font size */
 				min-width: 30em;
+				height: 100vh;
+				position: relative;
 		}
-    span {
+    .textInTree {
         /*padding: 0 0 0 1.5em;*/
         font-weight: bold;
         cursor: pointer;
+        white-space: nowrap;
     }
     ul {
         padding: 0.2em 0 0 0.5em;
@@ -80,6 +84,6 @@
         position: relative;
         /* Adjust these values to get the icons on the same baseline as the text */
         top: 8px;
-        left: 5px;
+        left: -3px;
 		}
 </style>

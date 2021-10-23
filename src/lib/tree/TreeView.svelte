@@ -5,7 +5,7 @@
 		{
 			name: 'Important work stuff', path: '/',
 			content: [
-				{ name: 'quarterly-results.xlsx', path: '/about' }
+				{ name: 'content', path: '/content' }
 			]
 		},
 		{
@@ -34,4 +34,15 @@
 	];
 </script>
 
-<Tree name="Home" path='/' content={root} expanded/>
+<div class='navigator'>
+	<Tree name="Home" path='/' content={root} expanded/>
+</div>
+
+<style>
+	.navigator {
+			position: relative;
+			width: 100%;
+			heigth: 100%;
+			background: var(--theme-colors-bg_color);
+	}
+</style>

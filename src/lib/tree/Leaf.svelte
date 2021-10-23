@@ -13,13 +13,14 @@
 	}
 </script>
 
-<span class:active={$page.path === {path}} on:mousedown={setActive()}><i class="material-icons">arrow_right</i> <a href={path}>{name}</a></span>
+<span class:active={$page.path === {path}} on:mousedown={setActive()}><a href={path}>{name}</a></span>
 
 <style>
     span {
-        padding: 0 0 0 1.5em;
+        padding: 0 0 0 0.8em;
         background: 0 0.1em no-repeat;
         background-size: 1em 1em;
+        white-space: nowrap;
     }
 		span.active {
 				background: var(--theme-colors-accent);
@@ -43,7 +44,7 @@
     i {
         position: relative;
         /* Adjust these values to get the icons on the same baseline as the text */
-        top: 8px;
-        left: 5px;
+        top: 5px;
+        /*left: 5px;*/
     }
 </style>
