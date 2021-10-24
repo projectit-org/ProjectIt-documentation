@@ -10,6 +10,7 @@
 	export let content;
 	let active: boolean = false;
 	$: active = ($page.path === path);
+	$: if (active) expanded = true;
 
 	function toggle() {
 		expanded = !expanded;
@@ -30,6 +31,12 @@
 		</span>
 		{/if}
 
+		{#if ( active) }
+			<span> JA ik ben actief!!!</span>
+			{/if}
+		{#if ( expanded) }
+			<span> JA ik ben expanded!!!</span>
+		{/if}
 		{#if (expanded || active) }
 			<ul class:hasName={name?.length > 0}>
 				{#each content as part}

@@ -4,11 +4,11 @@
 	<AppBar/>
 	{#if ($miniWindow)}
 		{#if ($leftPanelVisible)}
-			<Drawer>
-				<slot slot='content'/>
-			</Drawer>
+			<TreeView/>
 		{:else }
-			<slot/>
+			<div class='content-box'>
+				<slot />
+			</div>
 		{/if}
 	{:else }
 		<div class="splitpane-container" >
@@ -18,7 +18,9 @@
 				</section>
 
 				<section class="splitpane-section" slot=b>
-					<slot />
+					<div class='content-box'>
+						<slot />
+					</div>
 				</section>
 			</SplitPane>
 		</div>
@@ -33,7 +35,6 @@
 	import Footer from '../lib/footer/Footer.svelte';
 	import AppBar from '../lib/appbar/AppBar.svelte';
 	import { miniWindow, leftPanelVisible } from '../lib/Store';
-	import Drawer from '../lib/drawer/Drawer.svelte';
 
 	const MAX_WIDTH_SMALL_VIEWPORT = 600;
 
@@ -47,10 +48,10 @@
 			window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 		if (width > MAX_WIDTH_SMALL_VIEWPORT) {
-			console.log(`setting miniWindow to false: ${width}`);
+			// console.log(`setting miniWindow to false: ${width}`);
 			miniWindow.set(false);
 		} else {
-			console.log(`setting miniWindow to true: ${width}`);
+			// console.log(`setting miniWindow to true: ${width}`);
 			miniWindow.set(true);
 		}
 	}
@@ -77,5 +78,13 @@
       height: 100%;
       box-sizing: border-box;
       border: var(--theme-colors-list_divider) 1px solid;
+  }
+  .content-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0.5em 1em 0.5em 1em;
+			color: var(--theme-colors-color);
+			background: var(--theme-colors-bg_color);
   }
 </style>
