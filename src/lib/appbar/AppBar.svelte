@@ -22,7 +22,7 @@
 
 	{#if !$miniWindow}
 		<!-- normally, the brand icon is shown-->
-		<a target="_blank" href="http://www.projectit.org">
+		<a target="_blank" href="https://www.projectit.org">
 			<img src="/projectit-logo-inverse-colors.png"  style="color:red" alt="ProjectIt Logo" height='24'>
 		</a>
 	{/if}
