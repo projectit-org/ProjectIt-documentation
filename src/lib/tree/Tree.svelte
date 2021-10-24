@@ -1,5 +1,6 @@
 <!-- see https://svelte.dev/tutorial/svelte-self -->
 <script lang="ts">
+	import { get } from 'svelte/store';
 	import { page } from '$app/stores';
 	import Leaf from './Leaf.svelte';
 	import { leftPanelVisible } from '../Store';
@@ -8,13 +9,16 @@
 	export let path: string = '';
 	export let expanded = true;
 	export let content;
-	let active: boolean = false;
+	let active: boolean;
 	$: active = ($page.path === path);
-	$: if (active) expanded = true;
+	$: if (active) {
+		console.log(`${path} becoming active, expanded: ${expanded} ${get(leftPanelVisible)}`)
+		expanded = true;
+		$leftPanelVisible = false;
+	}
 
 	function toggle() {
 		expanded = !expanded;
-		$leftPanelVisible = false;
 	}
 	// TODO add functionality to make arrow keys run through the tree
 </script>
@@ -22,7 +26,7 @@
 <div class='navTree'>
 	<nav>
 		{#if name?.length > 0}
-		<span class='textInTree' class:active={active} >
+		<span class='textInTree' class:active={active}>
 			{#if expanded}
 				<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path}>{name}</a>
 			{:else}
@@ -32,12 +36,9 @@
 		{/if}
 
 		{#if ( active) }
-			<span> JA ik ben actief!!!</span>
+			<span> ik ben actief!!!</span>
 			{/if}
-		{#if ( expanded) }
-			<span> JA ik ben expanded!!!</span>
-		{/if}
-		{#if (expanded || active) }
+		{#if (expanded) }
 			<ul class:hasName={name?.length > 0}>
 				{#each content as part}
 					<li>

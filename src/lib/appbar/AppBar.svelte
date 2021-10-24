@@ -6,10 +6,10 @@
 		<!-- this button is shown only when the viewport is small -->
 		<!-- it is used to open the left panel which shows the navigator -->
 		<!-- the title is also smaller in a small viewport		-->
-		<div class='tooltip'>
-			<i class="material-icons" style="width:24px; height:24px; color:var(--theme-colors-inverse_color);" on:click={() => {$leftPanelVisible = !$leftPanelVisible;}}>menu</i>
-			<span class="tooltiptext">Show/Hide contents</span>
-		</div>
+<!--		<div class='tooltip'>-->
+		<IconButton class="material-icons" on:click={() => {$leftPanelVisible = !$leftPanelVisible;}}>menu</IconButton>
+<!--			<span class="tooltiptext">Show/Hide contents</span>-->
+<!--		</div>-->
 		<div class="title">PI Documentation</div>
 	{:else}
 		<div class="title">ProjectIt Documentation (version {versionNumber})</div>
@@ -31,6 +31,7 @@
 
 <script lang="ts">
 	import { miniWindow, leftPanelVisible, versionNumber } from "../Store";
+	import IconButton from "@smui/button";
 
 	// import ThemeToggle from "../theming/ThemeToggle.svelte";
 </script>
