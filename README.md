@@ -1,38 +1,26 @@
-# create-svelte
+# ProjectIt Documentation
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+This project contains the sources for all documentation on [ProjectIt](https://github.com/projectit-org/ProjectIt). It is powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Creating a project
+## Creating a documentation website
 
-If you're seeing this, you've probably already done this step. Congrats!
+Create the website using (either npm or yarn will work) and browse through it.
 
 ```bash
-# create a new project in the current directory
-npm init svelte@next
+# create a new website in the directory 'build
+npm run build
 
-# create a new project in my-app
-npm init svelte@next my-app
+# preview the website
+npm run preview
 ```
-
-> Note: the `@next` is temporary
-
+ Note: preview should _not_ be used to serve your website in production.
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+During development, you can use the following commands.
 ```bash
+# create the website and serve it on localhost:3000
 npm run dev
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.

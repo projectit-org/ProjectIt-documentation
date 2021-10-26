@@ -1,6 +1,5 @@
 <!-- see https://svelte.dev/tutorial/svelte-self -->
 <script lang="ts">
-	import { get } from 'svelte/store';
 	import { page } from '$app/stores';
 	import Leaf from './Leaf.svelte';
 	import { leftPanelVisible } from '../Store';
