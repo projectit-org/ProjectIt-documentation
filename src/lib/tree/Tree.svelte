@@ -11,15 +11,16 @@
 	export let content;
 	let active: boolean;
 	$: active = ($page.path === path);
-	$: if (active) {
-		console.log(`${path} becoming active, expanded: ${expanded} ${get(leftPanelVisible)}`)
-		expanded = true;
-		$leftPanelVisible = false;
-	}
 
 	function toggle() {
 		expanded = !expanded;
 	}
+
+	function becomingActive() {
+		expanded = true;
+		$leftPanelVisible = false;
+	}
+
 	// TODO add functionality to make arrow keys run through the tree
 </script>
 
@@ -28,9 +29,9 @@
 		{#if name?.length > 0}
 		<span class='textInTree' class:active={active}>
 			{#if expanded}
-				<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path}>{name}</a>
+				<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path} on:click={becomingActive}>{name}</a>
 			{:else}
-				<i class="material-icons" on:click={toggle}>arrow_right</i> <a href={path}>{name}</a>
+				<i class="material-icons" on:click={toggle}>arrow_right</i> <a href={path} on:click={becomingActive}>{name}</a>
 			{/if}
 		</span>
 		{/if}

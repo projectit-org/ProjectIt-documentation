@@ -1,19 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { leftPanelVisible } from '../Store';
+	import { get } from 'svelte/store';
 	export let name: string;
 	export let path: string;
 
-	const setActive = () => {
-		console.log(`calling setActive: ${name}`)
-		if ($page.path === path) {
-			console.log(`setting active: ${name}`)
-			// $leftPanelVisible = false;
-		}
+	function becomingActive() {
+		$leftPanelVisible = false;
 	}
 </script>
 
-<span class:active={$page.path === path} on:mousedown={setActive}><a class="myText" class:active={$page.path === path} href={path}>{name}</a></span>
+<span class:active={$page.path === path} ><a class="myText" class:active={$page.path === path} href={path} on:click={becomingActive}>{name}</a></span>
 
 <style>
     span {
