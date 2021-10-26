@@ -16,7 +16,7 @@ npm run build
 # preview the website
 npm run preview
 ```
- Note: preview should _not_ be used to serve your website in production.
+> Note: preview should _not_ be used to serve your website in production.
 ## Developing
 
 During development, you can use the following commands.

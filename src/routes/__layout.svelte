@@ -1,32 +1,34 @@
 <svelte:window on:resize={onResize} />
 
-<main class="main-window">
-	<AppBar/>
-	{#if ($miniWindow)}
-		{#if ($leftPanelVisible)}
-			<TreeView/>
+<ThemeContext>
+	<main class="main-window">
+		<AppBar/>
+		{#if ($miniWindow)}
+			{#if ($leftPanelVisible)}
+				<TreeView/>
+			{:else }
+				<div class='content-box'>
+					<slot />
+				</div>
+			{/if}
 		{:else }
-			<div class='content-box'>
-				<slot />
+			<div class="splitpane-container" >
+				<SplitPane type='horizontal' pos={20}>
+					<section class="splitpane-section" slot=a>
+						<TreeView />
+					</section>
+
+					<section class="splitpane-section" slot=b>
+						<div class='content-box'>
+							<slot />
+						</div>
+					</section>
+				</SplitPane>
 			</div>
 		{/if}
-	{:else }
-		<div class="splitpane-container" >
-			<SplitPane type='horizontal' pos={20}>
-				<section class="splitpane-section" slot=a>
-					<TreeView />
-				</section>
-
-				<section class="splitpane-section" slot=b>
-					<div class='content-box'>
-						<slot />
-					</div>
-				</section>
-			</SplitPane>
-		</div>
-	{/if}
-	<Footer/>
-</main>
+		<Footer/>
+	</main>
+</ThemeContext>
 
 <script lang="ts">
 	import { onMount } from 'svelte';
@@ -34,6 +36,7 @@
 	import SplitPane from '../lib/splitpane/SplitPane.svelte';
 	import Footer from '../lib/footer/Footer.svelte';
 	import AppBar from '../lib/appbar/AppBar.svelte';
+	import ThemeContext from "../lib/theming/ThemeContext.svelte";
 	import { miniWindow, leftPanelVisible } from '../lib/Store';
 
 	const MAX_WIDTH_SMALL_VIEWPORT = 600;

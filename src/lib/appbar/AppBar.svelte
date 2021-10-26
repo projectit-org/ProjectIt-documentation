@@ -15,6 +15,9 @@
 		<div class="title">ProjectIt Documentation (version {versionNumber})</div>
 	{/if}
 
+<!--	<ThemeToggle /> does not work, there direct inclusion of button -->
+	<IconButton class="material-icons" on:click={toggle}>invert_colors</IconButton>
+
 	<!-- TODO change images for dark mode -->
 	<a target="_blank" href="https://github.com/projectit-org/ProjectIt">
 		<img src="/github-logo-inverse-colors.svg"  color="red" alt="ProjectIt on GitHub" width='24' height='24'/>
@@ -32,8 +35,8 @@
 <script lang="ts">
 	import { miniWindow, leftPanelVisible, versionNumber } from "../Store";
 	import IconButton from "@smui/button";
-
-	// import ThemeToggle from "../theming/ThemeToggle.svelte";
+	import { getContext } from "svelte";
+	const { toggle } = getContext("theme");
 </script>
 
 <style>
