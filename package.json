@@ -1,13 +1,18 @@
 {
-  "name": "sveltekitexample",
+  "name": "projectItDocumentation",
   "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joswarmer/ProjectItDocumentation.git"
+  },
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "run_nav_script": "tsc ./src/scripts/_NavTreeFiller.ts && mv ./src/scripts/_NavTreeFiller.js ./src/scripts/_NavTreeFiller.cjs && node ./src/scripts/_NavTreeFiller"
+    "navScript": "cd scripts && yarn navTree && cd .."
   },
   "devDependencies": {
     "@smui/button": "^5.0.0-beta.7",

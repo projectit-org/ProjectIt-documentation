@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "navTree",
+  "bin": {
+    "navTree": "dist/_NavTreeFiller.js"
+  },
+  "scripts": {
+    "navTree": "tsc && node dist/_NavTreeFiller.js"
+  }
+}

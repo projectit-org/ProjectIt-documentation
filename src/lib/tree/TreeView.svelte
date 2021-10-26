@@ -3,32 +3,32 @@
 	import { NavTree } from './NavTree';
 	
 	let root: NavTree[] = [
-      { name: 'About', path: '/about'},
-      { name: 'Animals', path: '/Animals',
+      { name: 'Important', path: '/010_Important',
         content: [
-         { name: 'Cat On Roomba', path: '/Animals/Cat_On_Roomba'},
-         { name: 'Dogs', path: '/Animals/Dogs',
+         { name: 'Content', path: '/010_Important/content'},
+               ]},
+      { name: 'Extra', path: '/013_Extra',
+        content: [
+         { name: 'MoreExtras', path: '/013_Extra/MoreExtras'},
+               ]},
+      { name: 'Animals', path: '/020_Animals',
+        content: [
+         { name: 'Cat On Roomba', path: '/020_Animals/Cat_On_Roomba'},
+         { name: 'Dogs', path: '/020_Animals/Dogs',
            content: [
-            { name: 'Rope jumping', path: '/Animals/Dogs/rope-jumping'},
-            { name: 'Treadmill', path: '/Animals/Dogs/treadmill'},
+            { name: 'Rope jumping', path: '/020_Animals/Dogs/rope-jumping'},
+            { name: 'Treadmill', path: '/020_Animals/Dogs/treadmill'},
                   ]},
-         { name: 'Duck', path: '/Animals/Duck'},
-         { name: 'Goats', path: '/Animals/Goats',
+         { name: 'Duck', path: '/020_Animals/Duck'},
+         { name: 'Goats', path: '/020_Animals/Goats',
            content: [
-            { name: 'Parkour', path: '/Animals/Goats/Parkour'},
-            { name: 'Rampage', path: '/Animals/Goats/Rampage'},
+            { name: 'Parkour', path: '/020_Animals/Goats/Parkour'},
+            { name: 'Rampage', path: '/020_Animals/Goats/Rampage'},
                   ]},
-         { name: 'Monkey', path: '/Animals/Monkey'},
+         { name: 'Monkey', path: '/020_Animals/Monkey'},
                ]},
-      { name: 'Extrra', path: '/Extrra',
-        content: [
-         { name: 'MoreExtras', path: '/Extrra/MoreExtras'},
-               ]},
-      { name: 'Important', path: '/Important',
-        content: [
-         { name: 'Content', path: '/Important/content'},
-               ]},
-      { name: 'Todos', path: '/todos'},];
+      { name: 'Todos', path: '/040_todos'},
+      { name: 'About', path: '/050_about'},];
 	</script>
 	
 	<div class='navigator'>
