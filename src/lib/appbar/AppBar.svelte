@@ -15,7 +15,7 @@
 		<div class="title">ProjectIt Documentation (version {versionNumber})</div>
 	{/if}
 
-<!--	<ThemeToggle /> does not work, there direct inclusion of button -->
+<!--	<ThemeToggle /> does not work, therefore direct inclusion of button -->
 	<IconButton class="material-icons" on:click={toggle}>invert_colors</IconButton>
 
 	<!-- TODO change images for dark mode -->

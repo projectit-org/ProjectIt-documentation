@@ -89,5 +89,6 @@
       padding: 0.5em 1em 0.5em 1em;
 			color: var(--theme-colors-color);
 			background: var(--theme-colors-bg_color);
+      box-sizing: border-box;
   }
 </style>
