@@ -133,8 +133,8 @@
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
     button.iconStyle {
-        height: 40px;
-        width: 40px;
+        height: 24px;
+        width: 24px;
         color: var(--theme-colors-button-color);
         background-color: var(--theme-colors-button-bg-color);
         border-radius: 2rem;

@@ -5,7 +5,7 @@
 <script>
 	import Button from '../lib/buttons/Button.svelte'
 	import Icon from '../lib/buttons/Icon.svelte'
-	import GithubLogo from '../lib/buttons/GithubLogo.svelte'
+	import GithubLogo from '../lib/icons/GithubLogo.svelte'
 </script>
 
 <div style='background-color: var(--theme-colors-bg_color); width: 100%; height: 100%; position: relative; box-sizing: border-box;'>

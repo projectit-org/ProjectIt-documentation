@@ -1,8 +1,12 @@
 <script>
-    import { getContext } from "svelte";
-    const { toggle } = getContext("theme");
-    import { IconButton } from "@smui/button";
+	import { getContext } from 'svelte';
+	import Button from '../buttons/Button.svelte';
+	import InvertColors from '../icons/InvertColors.svelte';
+
+	const { toggle } = getContext('theme');
 </script>
 
-<IconButton class="material-icons" on:click={toggle}>invert_colors</IconButton>
+<Button on:click={toggle} icon={true}>
+	<InvertColors />
+</Button>
 

@@ -7,7 +7,9 @@
 		<!-- it is used to open the left panel which shows the navigator -->
 		<!-- the title is also smaller in a small viewport		-->
 <!--		<div class='tooltip'>-->
-		<IconButton class="material-icons" on:click={() => {$leftPanelVisible = !$leftPanelVisible;}}>menu</IconButton>
+		<Button on:click={() => {$leftPanelVisible = !$leftPanelVisible;}} icon={true}>
+			<MenuIcon />
+		</Button>
 <!--			<span class="tooltiptext">Show/Hide contents</span>-->
 <!--		</div>-->
 		<div class="title">PI Documentation</div>
@@ -15,12 +17,11 @@
 		<div class="title">ProjectIt Documentation (version {versionNumber})</div>
 	{/if}
 
-<!--	<ThemeToggle /> does not work, therefore direct inclusion of button -->
-	<IconButton class="material-icons" on:click={toggle}>invert_colors</IconButton>
+	<ThemeToggle />
 
 	<!-- TODO change images for dark mode -->
-	<a target="_blank" href="https://github.com/projectit-org/ProjectIt">
-		<img src="/github-logo-inverse-colors.svg"  color="red" alt="ProjectIt on GitHub" width='24' height='24'/>
+	<a target="_blank" href="https://github.com/projectit-org/ProjectIt" alt="ProjectIt on GitHub">
+		<GithubLogo />
 	</a>
 
 	{#if !$miniWindow}
@@ -33,10 +34,12 @@
 </div>
 
 <script lang="ts">
-	import { miniWindow, leftPanelVisible, versionNumber } from "../Store";
-	import IconButton from "@smui/button";
-	import { getContext } from "svelte";
-	const { toggle } = getContext("theme");
+	import { miniWindow, leftPanelVisible, versionNumber } from '../Store';
+	import ThemeToggle from '../theming/ThemeToggle.svelte';
+	import MenuIcon from '../icons/MenuIcon.svelte';
+	import Button from '../buttons/Button.svelte';
+	import GithubLogo from '../icons/GithubLogo.svelte';
+
 </script>
 
 <style>
