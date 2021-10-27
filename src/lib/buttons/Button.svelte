@@ -1,37 +1,28 @@
 <!-- copied and adjusted from https://www.reddit.com/r/sveltejs/comments/fkfpd8/svg_ripple_button_component/-->
-<script>
-	import { onMount } from 'svelte'
-	import Ripple from './Ripple.svelte'
-	import { writable } from 'svelte/store'
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import Ripple from './Ripple.svelte';
+	import { writable } from 'svelte/store';
 
-	export let rippleBlur = 2,
+	export let icon: boolean = false;
+	export let height: number = 24;
+	export let width: number = 24;
+
+	let myStyle = "materialStyle"; // default style
+
+	// set the defaults for the ripple
+	let rippleBlur = 0;
+	let speed = 900;
+	let sizeIn = 20;
+
+	if (icon === true) {
+		// override the defaults for the ripple settings
+		rippleBlur = 9,
 		speed = 500,
-		color = '#fff',
-		fontSize = '1rem',
-		bgColor = '93, 120, 255',
-		bgHover = bgColor,
-		bgActive = bgColor,
-		rippleColor = '#264169',
-		round = '0.5rem',
-		height = 60,
-		width = 250,
-		sizeIn = 20,
-		opacityIn = 0.2,
-		shadow = 'none',
-		shadowHover = 'none',
-		shadowActive = 'none';
-
-	let shadows = {
-		none: 'none',
-		1: '0 0 0 1px rgba(0, 0, 0, 0.05)',
-		2: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-		3: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-		4: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-		5: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-		6: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-		7: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
-	}, mouseX, mouseY
-
+		sizeIn = 20;
+		// and set the style to a different value
+		myStyle = "iconStyle";
+	}
 
 	function handleRipple() {
 		const ripples = writable([]);
@@ -52,10 +43,9 @@
 		}
 	}
 
-	export const ripples = handleRipple();
+	const ripples = handleRipple();
 
-	let rect, rippleBtn, w, h, x, y, offsetX, offsetY, deltaX, deltaY, locationY, locationX, scale_ratio, timer
-
+	let rect, rippleBtn, w, h, x, y, offsetX, offsetY, deltaX, deltaY, locationY, locationX, scale_ratio, timer;
 	let coords = { x: 50, y: 50 }
 
 	$: offsetX = Math.abs( (w / 2) - coords.x ),
@@ -67,88 +57,98 @@
 	const debounce = () => {
 		clearTimeout(timer);
 		timer = setTimeout(() => {
-			ripples.clear()
+			ripples.clear();
 		}, speed + (speed * 2));
 	}
 
-	let touch
+	let touch: boolean;
 
 	function handleClick(e, type) {
 		if (type == 'touch') {
-			touch = true
-			ripples.add({ x: e.pageX - locationX, y: e.pageY - locationY, size: scale_ratio })
+			touch = true;
+			ripples.add({ x: e.pageX - locationX, y: e.pageY - locationY, size: scale_ratio });
 		} else {
 			if (!touch) {
-				ripples.add({ x: e.clientX - locationX, y: e.clientY - locationY, size: scale_ratio })
+				ripples.add({ x: e.clientX - locationX, y: e.clientY - locationY, size: scale_ratio });
 			}
-			touch = false
+			touch = false;
 		}
-		debounce()
+		debounce();
 	}
 
 	onMount(()=> {
-		w = rippleBtn.offsetWidth
-		h = rippleBtn.offsetHeight
-		rect = rippleBtn.getBoundingClientRect()
-		locationY = rect.y
-		locationX = rect.x
+		w = rippleBtn.offsetWidth;
+		h = rippleBtn.offsetHeight;
+		rect = rippleBtn.getBoundingClientRect();
+		locationY = rect.y;
+		locationX = rect.x;
 	})
 </script>
 
-<button on:click style="--color: {color};--font-size: {fontSize};--bg-color: {bgColor};--bg-hover: {bgHover};--bg-active: {bgActive};--radius: {round};--ripple: {rippleColor};--height: {height}px;--width: {width}px;--shadow: {shadows[shadow]};--shadow-h: {shadows[shadowHover]};--shadow-a: {shadows[shadowActive]}" bind:this={rippleBtn} on:touchstart={e => handleClick(e.touches[0], 'touch')}  on:mousedown={e => handleClick(e, 'click')}>
+<button on:click class={myStyle}
+				bind:this={rippleBtn}
+				on:touchstart={e => handleClick(e.touches[0], 'touch')}
+				on:mousedown={e => handleClick(e, 'click')}>
 	<span>
 		<slot></slot>
 	</span>
 	<svg>
 		{#each $ripples as ripple, index}
-			<Ripple x="{ripple.x}" y="{ripple.y}" size={ripple.size} {speed} {sizeIn} {opacityIn} {rippleBlur}/>
+			<Ripple x="{ripple.x}" y="{ripple.y}" size={ripple.size} {speed} {sizeIn} {rippleBlur}/>
 		{/each}
 
 	</svg>
 </button>
 
 <style>
-    button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+		button {
         border: none;
         font-weight: 500;
-        color: var(--color);
-        font-size: var(--font-size);
-        height: var(--height);
-        width: var(--width);
         max-width: 100%;
         margin: 0;
         padding: 0;
         position: relative;
-        border-radius: var(--radius);
         cursor: pointer;
-        -webkit-transition: 200ms all ease-out;
         transition: 200ms all ease-out;
-        background-color: rgba(var(--bg-color), 1);
         overflow: hidden;
-        font-family: Roboto, sans-serif;
-        box-shadow: var(--shadow);
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+		}
+    button.materialStyle {
+        height: 36px;
+        width: 115px;
+        fontSize: .875rem;
+        color: var(--theme-colors-button-color);
+        background-color: var(--theme-colors-button-bg-color);
+        border-radius: .2rem;
     }
-
-    button:hover,
-    button:focus {
+    button.materialStyle:hover,
+    button.materialStyle:focus {
         outline: none;
-        background-color: rgba(var(--bg-hover), .8);
-        box-shadow: var(--shadow-h)
+        background-color: var(--theme-colors-button-hover);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
-    button:active {
+    button.materialStyle:active {
         outline: none;
-        background-color: rgba(var(--bg-active), .7);
-        box-shadow: var(--shadow-a)
+        background-color: var(--theme-colors-button-active);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    button.iconStyle {
+        height: 40px;
+        width: 40px;
+        color: var(--theme-colors-button-color);
+        background-color: var(--theme-colors-button-bg-color);
+        border-radius: 2rem;
+    }
+    button.iconStyle:hover,
+    button.iconStyle:focus {
+        outline: none;
+        background-color: var(--theme-colors-button-hover);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    button.iconStyle:active {
+        outline: none;
+        background-color: var(--theme-colors-button-active);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
     span {
         position: relative;

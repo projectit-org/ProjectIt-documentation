@@ -87,6 +87,13 @@
 	--heading-font-family: var(--font-family);
 	--button-font-family: var(--font-family);
 	--code-font-family: 'Roboto Mono', Menlo, Consolas, monospace;
+
+	/* added */
+	--theme-colors-button-color: white;
+	--theme-colors-button-bg-color: rgba(0,0,139, 1); /* darkblue with opacity 1 */
+	--theme-colors-button-active: rgba(0,0,139, .7); /* darkblue with opacity .7 */
+	--theme-colors-button-hover: rgba(0,0,139, .8); /* darkblue with opacity .8 */
+	--theme-colors-ripple-color: #c199f9;
 }
 
 html, body {

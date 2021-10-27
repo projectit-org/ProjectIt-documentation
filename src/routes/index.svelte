@@ -5,9 +5,10 @@
 <script>
 	import Button from '../lib/buttons/Button.svelte'
 	import Icon from '../lib/buttons/Icon.svelte'
-	import { materialBtn, iconBtn, strangeBtn } from '../lib/buttons/buttons.js'
+	import GithubLogo from '../lib/buttons/GithubLogo.svelte'
 </script>
 
+<div style='background-color: var(--theme-colors-bg_color); width: 100%; height: 100%; position: relative; box-sizing: border-box;'>
 <div>
 	<h3>
 		Default Button
@@ -19,25 +20,27 @@
 	<h3>
 		Material Style Button
 	</h3>
-	<Button {...materialBtn}>Button</Button>
+	<Button icon={false}>Button</Button>
 </div>
 
 <div>
 	<h3>
 		Icon Button
 	</h3>
-	<Button {...iconBtn}>
-		<Icon />
+	<Button icon={true}>
+		<GithubLogo  width='40px' height='40px'/>
 	</Button>
 </div>
 
 <div>
 	<h3>
-		Strange Button
+		Icon Button
 	</h3>
-	<Button {...strangeBtn}>
-		Button
+	<Button icon={true}>
+		<Icon  />
 	</Button>
+</div>
+
 </div>
 
 <style>
