@@ -5,8 +5,6 @@
 	import { writable } from 'svelte/store';
 
 	export let icon: boolean = false;
-	export let height: number = 24;
-	export let width: number = 24;
 
 	let myStyle = "materialStyle"; // default style
 
@@ -105,7 +103,6 @@
         border: none;
         font-weight: 500;
         max-width: 100%;
-        margin: 0;
         padding: 0;
         position: relative;
         cursor: pointer;
@@ -117,37 +114,38 @@
         height: 36px;
         width: 115px;
         fontSize: .875rem;
-        color: var(--theme-colors-button-color);
-        background-color: var(--theme-colors-button-bg-color);
+        color: var(--theme-colors-button_color);
+        background-color: var(--theme-colors-button_bg_color);
         border-radius: .2rem;
     }
     button.materialStyle:hover,
     button.materialStyle:focus {
         outline: none;
-        background-color: var(--theme-colors-button-hover);
+        background-color: var(--theme-colors-button_hover);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
     button.materialStyle:active {
         outline: none;
-        background-color: var(--theme-colors-button-active);
+        background-color: var(--theme-colors-button_active);
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
     button.iconStyle {
         height: 24px;
         width: 24px;
-        color: var(--theme-colors-button-color);
-        background-color: var(--theme-colors-button-bg-color);
+        color: var(--theme-colors-button_color);
+        background-color: var(--theme-colors-button_bg_color);
         border-radius: 2rem;
     }
-    button.iconStyle:hover,
-    button.iconStyle:focus {
+    button.iconStyle:hover
+    button.iconStyle:focus
+		{
         outline: none;
-        background-color: var(--theme-colors-button-hover);
+        background-color: var(--theme-colors-button_hover);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
     button.iconStyle:active {
         outline: none;
-        background-color: var(--theme-colors-button-active);
+        background-color: var(--theme-colors-button_active);
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
     span {
@@ -157,7 +155,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0;
         padding: 0;
         z-index: 1;
     }

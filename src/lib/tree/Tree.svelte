@@ -58,6 +58,9 @@
 <style>
 		.navTree {
 				margin-left: -0.1em;
+        position: relative;
+        width: 100%;
+        height: 100%;
 		}
     .textInTree {
         /*padding: 0 0 0 1.5em;*/

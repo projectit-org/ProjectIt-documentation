@@ -39,7 +39,7 @@
 		.navigator {
 			position: relative;
 			width: 100%;
-			heigth: 100%;
+			height: 100%;
 			background: var(--theme-colors-bg_color);
 		}
 	</style>

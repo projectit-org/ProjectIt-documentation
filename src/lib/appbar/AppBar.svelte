@@ -1,34 +1,40 @@
 <!-- The AppBar is always shown at the top of the viewport -->
-<!-- It contains the menus, the name of the language, and ... -->
 
 <div class="app-bar">
 	{#if $miniWindow}
 		<!-- this button is shown only when the viewport is small -->
 		<!-- it is used to open the left panel which shows the navigator -->
 		<!-- the title is also smaller in a small viewport		-->
-<!--		<div class='tooltip'>-->
 		<Button on:click={() => {$leftPanelVisible = !$leftPanelVisible;}} icon={true}>
 			<MenuIcon />
 		</Button>
-<!--			<span class="tooltiptext">Show/Hide contents</span>-->
-<!--		</div>-->
+
 		<div class="title">PI Documentation</div>
 	{:else}
 		<div class="title">ProjectIt Documentation (version {versionNumber})</div>
 	{/if}
 
-	<ThemeToggle />
+	<span class='linkLogo'>
+		<ThemeToggle />
+	</span>
 
-	<!-- TODO change images for dark mode -->
-	<a target="_blank" href="https://github.com/projectit-org/ProjectIt" alt="ProjectIt on GitHub">
+	<a target="_blank" href="https://github.com/projectit-org/ProjectIt" alt="ProjectIt on GitHub" class='linkLogo'>
 		<GithubLogo />
 	</a>
 
 	{#if !$miniWindow}
+		<!-- TODO change images for dark mode -->
 		<!-- normally, the brand icon is shown-->
-		<a target="_blank" href="https://www.projectit.org">
-			<img src="/projectit-logo-inverse-colors.png"  style="color:red" alt="ProjectIt Logo" height='24'>
+
+		<a target="_blank" href="https://www.projectit.org" class='linkLogo'>
+<!--			// use global var ==> hack instead of using svg for projectit logo-->
+			{#if $darkMode}
+				<img src="/projectit-logo-inverse-colors.png"  style="color:red" alt="ProjectIt Logo" height='24'>
+			{:else}
+				<img src="/projectit-logo.png"  style="color:red" alt="ProjectIt Logo" height='24'>
+			{/if}
 		</a>
+
 	{/if}
 
 </div>
@@ -39,10 +45,15 @@
 	import MenuIcon from '../icons/MenuIcon.svelte';
 	import Button from '../buttons/Button.svelte';
 	import GithubLogo from '../icons/GithubLogo.svelte';
+	import { darkMode } from '../Store';
 
 </script>
 
 <style>
+		.linkLogo {
+        margin-right: 8px;
+        margin-left: 8px;
+		}
 	.app-bar {
 		display: flex;
 		align-items: center;

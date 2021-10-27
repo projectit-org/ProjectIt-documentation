@@ -47,6 +47,12 @@ export const themePresets = [
             bg_dropdown_component: "#f4f4f4",
             border_dropdown_component: PI_DARKBLUE,
             color_dropdownitem_component: PI_DARKBLUE,
+            /* Buttons */
+            button_color: "white",
+            button_bg_color: "rgba(0,0,139, 1)", /* darkblue with opacity 1 */
+            button_active: "rgba(0,0,139, .7)", /* darkblue with opacity .7 */
+            button_hover: "rgba(0,0,139, .8)", /* darkblue with opacity .8 */
+            ripple_color: "#c199f9",
         },
         fonts: {
             size_editor: "14px",
@@ -99,6 +105,12 @@ export const themePresets = [
             bg_dropdown_component: PI_DARKBLUE,
             border_dropdown_component: PI_LIGHTBLUE,
             color_dropdownitem_component: PI_LIGHTBLUE,
+            /* Buttons */
+            button_color: "black",
+            button_bg_color: "rgba(211, 227, 253, 1)", /* lightblue with opacity 1 */
+            button_active: "rgba(211, 227, 253, .7)", /* lightblue with opacity .7 */
+            button_hover: "rgba(211, 227, 253, .8)", /* lightblue with opacity .8 */
+            ripple_color: "#c6b1e4",
         },
         fonts: {
             size_editor: "14px",
