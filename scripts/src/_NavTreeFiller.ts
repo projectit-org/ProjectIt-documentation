@@ -67,7 +67,7 @@ export class _NavTreeFiller {
 	 */
 	private readFileStructure(startPath: string): NavTree {
 		// read the routes folder, indicated by 'startPath'
-		return this.findFiles(startPath, startPath);
+		return this.readFiles(startPath, startPath);
 	}
 
 	/**
@@ -76,7 +76,7 @@ export class _NavTreeFiller {
 	 * @param ignore: the path up till the the folder where the files are located
 	 * @private
 	 */
-	private findFiles(folder: string, ignore: string): NavTree {
+	private readFiles(folder: string, ignore: string): NavTree {
 		if (!fs.existsSync(folder)) {
 			console.error(this, "cannot find folder '" + folder + "'");
 			return null;
@@ -103,7 +103,7 @@ export class _NavTreeFiller {
 					}
 				} else {
 					// add all subfolders to the result
-					content.push(this.findFiles(filepath, ignore));
+					content.push(this.readFiles(filepath, ignore));
 				}
 			}
 		}

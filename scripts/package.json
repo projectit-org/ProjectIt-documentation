@@ -5,6 +5,7 @@
     "navTree": "dist/_NavTreeFiller.js"
   },
   "scripts": {
-    "navTree": "tsc && node dist/_NavTreeFiller.js"
+    "navTree": "tsc && node dist/_NavTreeFiller.js",
+    "adocToMd": "tsc && node dist/AdocToMd.js"
   }
 }
