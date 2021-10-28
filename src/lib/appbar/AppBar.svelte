@@ -5,9 +5,11 @@
 		<!-- this button is shown only when the viewport is small -->
 		<!-- it is used to open the left panel which shows the navigator -->
 		<!-- the title is also smaller in a small viewport		-->
+		<Tooltip tip="Hide/show content tree" right>
 		<Button on:click={() => {$leftPanelVisible = !$leftPanelVisible;}} icon={true}>
 			<MenuIcon />
 		</Button>
+		</Tooltip>
 
 		<div class="title">PI Documentation</div>
 	{:else}
@@ -15,11 +17,15 @@
 	{/if}
 
 	<span class='linkLogo'>
-		<ThemeToggle />
+		<Tooltip tip="dark mode" bottom>
+			<ThemeToggle />
+		</Tooltip>
 	</span>
 
 	<a target="_blank" href="https://github.com/projectit-org/ProjectIt" alt="ProjectIt on GitHub" class='linkLogo'>
-		<GithubLogo />
+		<Tooltip tip="github source" bottom>
+			<GithubLogo />
+		</Tooltip>
 	</a>
 
 	{#if !$miniWindow}
@@ -28,11 +34,13 @@
 
 		<a target="_blank" href="https://www.projectit.org" class='linkLogo'>
 <!--			// use global var ==> hack instead of using svg for projectit logo-->
+			<Tooltip tip="home" bottom>
 			{#if $darkMode}
 				<img src="/projectit-logo-inverse-colors.png"  style="color:red" alt="ProjectIt Logo" height='24'>
 			{:else}
 				<img src="/projectit-logo.png"  style="color:red" alt="ProjectIt Logo" height='24'>
 			{/if}
+			</Tooltip>
 		</a>
 
 	{/if}
@@ -46,6 +54,7 @@
 	import Button from '../buttons/Button.svelte';
 	import GithubLogo from '../icons/GithubLogo.svelte';
 	import { darkMode } from '../Store';
+	import Tooltip from '../buttons/Tooltip.svelte';
 
 </script>
 
@@ -86,58 +95,4 @@
 		margin-left: auto;
 		margin-right: 10px;
 	}
-
-  /* Tooltip container */
-  .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
-
-  /* Tooltip text */
-  .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 100px;
-      background-color: var(--theme-colors-bg_color);
-      color: var(--theme-colors-color);
-      text-align: center;
-      padding: 5px 0;
-      border-radius: 6px;
-
-      /* Position the tooltip text */
-      position: absolute;
-      z-index: 1;
-
-      /* show at the bottom */
-      top: 100%;
-      left: 50%;
-      margin-left: -50px; /* Use half of the width (100/2 = 50), to center the tooltip */
-
-      /* Fade in tooltip */
-      opacity: 0;
-      transition: opacity 0.3s;
-  }
-
-  /* Tooltip arrow */
-  .tooltip .tooltiptext::after {
-      content: " ";
-      position: absolute;
-      bottom: 100%;  /* At the top of the tooltip */
-      left: 50%;
-			/* The border-width property specifies the size of the arrow.
-			If you change this, also change the margin-left value to the same.
-			This will keep the arrow centered. */
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-			/* The border-color is used to transform the content into an arrow. We set one side to color, and the rest to transparent.
-			If all sides were color, you would end up with a colored square box. We set the bottom border color. */
-      border-color: transparent transparent var(--theme-colors-inverse_color) transparent;
-  }
-
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-  }
 </style>

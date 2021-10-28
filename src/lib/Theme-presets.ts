@@ -53,6 +53,9 @@ export const themePresets = [
             button_active: "rgba(0,0,139, .7)", /* darkblue with opacity .7 */
             button_hover: "rgba(0,0,139, .8)", /* darkblue with opacity .8 */
             ripple_color: "#c199f9",
+            /* Tooltips */
+            tooltip_color: "white",
+            tooltip_background: "red",
         },
         fonts: {
             size_editor: "14px",
@@ -111,6 +114,9 @@ export const themePresets = [
             button_active: "rgba(211, 227, 253, .7)", /* lightblue with opacity .7 */
             button_hover: "rgba(211, 227, 253, .8)", /* lightblue with opacity .8 */
             ripple_color: "#c6b1e4",
+            /* Tooltips */
+            tooltip_color: "black",
+            tooltip_background: "red",
         },
         fonts: {
             size_editor: "14px",

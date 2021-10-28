@@ -94,6 +94,8 @@
 	--theme-colors-button_active: rgba(0,0,139, .7); /* darkblue with opacity .7 */
 	--theme-colors-button_hover: rgba(0,0,139, .8); /* darkblue with opacity .8 */
 	--theme-colors-ripple_color: #c199f9;
+	--theme-colors-tooltip_color: white;
+	--theme-colors-tooltip_background: red;
 }
 
 html, body {
