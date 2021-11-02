@@ -4,7 +4,6 @@
 
 <script>
 	import Button from '../lib/buttons/Button.svelte'
-	import Icon from '../lib/buttons/Icon.svelte'
 	import GithubLogo from '../lib/icons/GithubLogo.svelte'
 </script>
 
@@ -25,19 +24,10 @@
 
 <div>
 	<h3>
-		Icon Button
+		Github Logo Icon Button
 	</h3>
 	<Button icon={true}>
 		<GithubLogo  width='40px' height='40px'/>
-	</Button>
-</div>
-
-<div>
-	<h3>
-		Icon Button
-	</h3>
-	<Button icon={true}>
-		<Icon  />
 	</Button>
 </div>
 

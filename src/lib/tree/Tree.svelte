@@ -3,6 +3,8 @@
 	import { page } from '$app/stores';
 	import Leaf from './Leaf.svelte';
 	import { leftPanelVisible } from '../Store';
+	import ArrowDropDown from '../icons/ArrowDropDown.svelte';
+	import ArrowRight from '../icons/ArrowRight.svelte';
 
 	export let name: string = '';
 	export let path: string = '';
@@ -12,6 +14,7 @@
 	$: active = ($page.path === path);
 
 	function toggle() {
+		console.log(`arrow drop down clicked`);
 		expanded = !expanded;
 	}
 
@@ -28,9 +31,11 @@
 		{#if name?.length > 0}
 		<span class='textInTree' class:active={active}>
 			{#if expanded}
-				<i class="material-icons" on:click={toggle}>arrow_drop_down</i> <a href={path} on:click={becomingActive}>{name}</a>
+				<span class='xxx' on:click={toggle}><ArrowDropDown />	</span>
+				<a href={path} on:click={becomingActive}>{name}</a>
 			{:else}
-				<i class="material-icons" on:click={toggle}>arrow_right</i> <a href={path} on:click={becomingActive}>{name}</a>
+				<span class='xxx' on:click={toggle}><ArrowRight />	</span>
+				<a href={path} on:click={becomingActive}>{name}</a>
 			{/if}
 		</span>
 		{/if}
@@ -104,7 +109,7 @@
     a:hover {
         color: var(--pi-selected-color);
     }
-		i {
+		.xxx {
         position: relative;
         /* Adjust these values to get the icons on the same baseline as the text */
         top: 8px;
