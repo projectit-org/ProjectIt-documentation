@@ -40,9 +40,6 @@
 		</span>
 		{/if}
 
-		{#if ( active) }
-			<span> ik ben actief!!!</span>
-			{/if}
 		{#if (expanded) }
 			<ul class:hasName={name?.length > 0}>
 				{#each content as part}

@@ -36,9 +36,9 @@
 <!--			// use global var ==> hack instead of using svg for projectit logo-->
 			<Tooltip tip="home" bottom>
 			{#if $darkMode}
-				<img src="/projectit-logo-inverse-colors.png"  style="color:red" alt="ProjectIt Logo" height='24'>
-			{:else}
 				<img src="/projectit-logo.png"  style="color:red" alt="ProjectIt Logo" height='24'>
+			{:else}
+				<img src="/projectit-logo-inverse-colors.png"  style="color:red" alt="ProjectIt Logo" height='24'>
 			{/if}
 			</Tooltip>
 		</a>

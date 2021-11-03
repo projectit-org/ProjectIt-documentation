@@ -3,25 +3,18 @@
 </svelte:head>
 
 <div class="content">
-	<h1>About this app</h1>
+	<h1>About this site</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<!-- TODO lose the @next! -->
-	<pre>npm init svelte@next</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
+		This site is created with <a href="https://kit.svelte.dev">SvelteKit</a>.
 	</p>
 
 	<p>
-		The <a href="/040_todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
+		Some of the icons are made by <a href="" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+	</p>
+
+	<p>
+		All the rest, including any errors, can be contributed to the creators of ProjectIt: Jos Warmer and Anneke Kleppe (<a href="https://www.openmodeling.nl/" title="Openmodeling">www.openmodeling.nl</a>).
 	</p>
 </div>
 

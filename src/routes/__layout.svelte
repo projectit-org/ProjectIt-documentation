@@ -69,7 +69,7 @@
       width: 100%;
       height: calc(100% - var(--pi-header-height) - var(--pi-footer-height) - 8px);
       box-sizing: border-box;
-      border: var(--theme-colors-list_divider) 1px solid;
+      /*border: var(--theme-colors-list_divider) 1px solid;*/
       overflow: hidden; /* no scroll bar on main window, instead it should be placed on the children */
   }
   .splitpane-container {
@@ -81,7 +81,7 @@
       position: relative;
       height: 100%;
       box-sizing: border-box;
-      border: var(--theme-colors-list_divider) 1px solid;
+      /*border: var(--theme-colors-list_divider) 1px solid;*/
   }
   .content-box {
       position: relative;
@@ -89,7 +89,9 @@
       height: 100%;
       padding: 0.5em 1em 0.5em 1em;
 			color: var(--theme-colors-color);
-			background: var(--theme-colors-bg_color);
+			background: var(--theme-colors-bg_text_box);
       box-sizing: border-box;
+      max-width: var(--column-width);
+      margin: var(--column-margin-top) auto 0 0;
   }
 </style>

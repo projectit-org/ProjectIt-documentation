@@ -12,8 +12,8 @@
 	/*--heading-color: rgba(0, 0, 0, 0.7);*/
 	/*--text-color: #444444;*/
 	/*--background-without-opacity: rgba(255, 255, 255, 0.7);*/
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
+	--column-width: 62rem;
+	--column-margin-top: 1rem;
 	/* the following css properties are present in order for the text completion during development to function */
 	/* they are overwritten by the THEME values in 'themePresets.ts' */
 	--theme-colors-color: darkblue;           /* Primary text color */
@@ -110,6 +110,24 @@ body {
 	padding: 8px;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+blockquote {
+	margin: 0;
+	padding: 2px 8px;
+	background: cornsilk;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+note {
+	font-size: 16px;
+	font-family: var(--font-mono);
+	background-color: black;
+	border-radius: 3px;
+	/*box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);*/
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--theme-colors-color);
 }
 
 /*body::before {*/

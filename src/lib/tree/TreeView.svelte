@@ -3,9 +3,12 @@
 	import { NavTree } from './NavTree';
 	
 	let root: NavTree[] = [
-      { name: 'Important', path: '/010_Important',
+      { name: 'Intro', path: '/010_Intro',
         content: [
-         { name: 'Content', path: '/010_Important/content'},
+         { name: 'Projectional editing', path: '/010_Intro/010_Projectional-editing'},
+         { name: 'Our philosophy', path: '/010_Intro/020_Our_philosophy'},
+         { name: 'Models and Model Units', path: '/010_Intro/030_Models_and_Model-Units'},
+         { name: 'Three levels', path: '/010_Intro/040_three-levels'},
                ]},
       { name: 'Extra', path: '/013_Extra',
         content: [
@@ -39,7 +42,7 @@
 		.navigator {
 			position: relative;
 			width: 100%;
-			height: 100%;
+			heigth: 100%;
 			background: var(--theme-colors-bg_color);
 		}
 	</style>

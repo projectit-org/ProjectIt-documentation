@@ -7,10 +7,13 @@ const previousSiteFolder: string = './version-0.1.0/pages';
 const nextSiteFolder: string = './version-0.2.0/pages';
 
 export class AdocToMd {
+	numberOfFiles: number = 0;
+
 	generateAll() {
 		this.createDirIfNotExisting(nextSiteFolder);
 		// read the files and transform them one by one
 		this.transformFolder(previousSiteFolder);
+		console.log(`Transformed ${this.numberOfFiles} files.`);
 	}
 
 	private transformFolder(folder: string) {
@@ -46,7 +49,7 @@ export class AdocToMd {
 		}
 	}
 
-	transformFile(filepath: string) {
+	private transformFile(filepath: string) {
 		// console.log(`transforming file ${filepath}`);
 		// read the old file and create new content
 		let oldContents: string = fs.readFileSync(path.join(previousSiteFolder, filepath), { encoding: "utf8" });
@@ -57,13 +60,16 @@ export class AdocToMd {
 		contents = contents.replace(/:page-parent: [_a-zA-Z0-9 -]*/g, "");
 		contents = contents.replace(/:imagesdir: [_a-zA-Z0-9 -\.\/]*/g, "");
 		contents = contents.replace(/:src-dir: [_a-zA-Z0-9 -\.\/]*/g, "");
+		contents = contents.replace(/:projectitdir: [_a-zA-Z0-9 -\.\/]*/g, "");
 		contents = contents.replace(/:source-language: [_a-zA-Z0-9 ]*/g, "");
 		contents = contents.replace(/:listing-caption: [_a-zA-Z0-9 -]*/g, "");
+		contents = contents.replace(/:icons: [_a-zA-Z0-9 -\.\/]*/g, "");
 
 		// remove inline-anchors
 		contents = contents.replace(/\[\[[_a-zA-Z0-9 -]*\]\]/g, "");
 
 		// replace the heading tags
+		contents = contents.replace(/==== /g, "#### ");
 		contents = contents.replace(/=== /g, "### ");
 		contents = contents.replace(/== /g, "## ");
 		contents = contents.replace(/= /g, "# ");
@@ -87,6 +93,22 @@ export class AdocToMd {
 		// remove {src-dir} - embedme takes this as parameter
 		contents = contents.replace(/{src-dir}\//g, "");
 
+		// replace the local links
+		contents = contents.replace(/xref:version-0.1.0\/pages\/intro/g, "(010_Intro");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/starting/g, "(020_Starting");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/second-level/g, "(030_Second_level");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/third-level/g, "(040_Third_level");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/meta-documentation/g, "(040_Meta_documentation");
+		contents = contents.replace(/\.adoc/g, "");
+
+		// replace the anchor of figure by a figcaption
+		contents = contents.replace(/\[\#/g, '<figcaption id=\'');
+		contents = contents.replace(/image::/, '(/images/');
+
+		// replace links to external pages
+		contents = contents.replace(/xref:https:/g, '\<a href="https:');
+		contents = contents.replace(/window=\*blank]/g, 'target="_blank">');
+
 		// create the new file-name by taking the old folder path
 		// (e.g. '/foo/bar/baz/asdf' from '/foo/bar/baz/asdf/quux.adoc'),
 		// joined the with the file name without extension (e.g. 'quux')
@@ -94,12 +116,8 @@ export class AdocToMd {
 		let newFilepath = path.join(path.dirname(filepath), path.basename(filepath, '.adoc').concat('.md'));
 		// write the content to a new file within the next site
 		let pathName: string = path.join(nextSiteFolder, newFilepath);
-		// if (!fs.existsSync(pathName)) {
-			console.log(`writing file '${pathName}'`)
-			fs.writeFileSync(pathName, contents);
-		// } else {
-		// 	console.log(`AdocToMd: user file '${pathName}' already exists, skipping it.`);
-		// }
+		fs.writeFileSync(pathName, contents);
+		this.numberOfFiles++;
 	}
 
 	private createDirIfNotExisting(dir: string) {
@@ -115,5 +133,4 @@ export class AdocToMd {
 	}
 }
 
-// new AdocToMd().generateAll();
-new AdocToMd().transformFile("intro/modelunits.adoc");
+new AdocToMd().generateAll();
