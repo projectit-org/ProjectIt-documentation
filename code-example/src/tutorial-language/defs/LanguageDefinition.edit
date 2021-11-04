@@ -1,26 +1,21 @@
 editor StartEditor for language Entity
 
-// tag::literal[]
 Text {
     @projection
         [This is
                 literal text
-         that is projected in the
+          that is projected in the
 
                 editor
         for every concept of type Text.]
 }
-// end::literal[]
-// tag::projection[]
 NumberLiteralExpression {
     @projection normal
         [${self.value}]
 }
-// end::projection[]
-// tag::indentation[]
 StringLiteralExpression {
 // in this projection the indentation is not taken into account
-    @projection StringLiteralExpression
+    @projection normal
         [
         '${self.value}'
         ]
@@ -28,15 +23,13 @@ StringLiteralExpression {
 }
 AttributeWithLimitedType {
 // in this projection the indentation is taken into account
-    @projection attribuut
+    @projection showAll
         [
     ${self.name} : ${self.declaredType}
  ]
 }
-// end::indentation[]
-// tag::subprojection[]
 IfExpression {
-    @projection IfExpression
+    @projection normal
         [
         if (${self.condition}) then
                   ${self.whenTrue}
@@ -48,10 +41,9 @@ IfExpression {
     @trigger "if"
     @symbol "if"
 }
-// end::subprojection[]
 /*
 IfExpression {
-    @projection IfExpression
+    @projection normal
         [
         (${ self.condition } ? ${ self.whenTrue } : ${self.whenFalse} )
         ]
@@ -79,12 +71,19 @@ OrExpression {
 }
 
 Entity {
+    @projection normal [
+        [?${self.isCompany @keyword[COMPANY]}]
+        entity ${self.name} [? base ${self.baseEntity}] {
+            ${self.attributes @vertical }
+            ${self.functions @vertical }
+        }
+    ]
     @trigger "entity"
 }
 
 /*
 FunctionCallExpression {
-    @projection gewoon
+    @projection normal
         [
         ${self.name} (  )
         ]
@@ -92,28 +91,24 @@ FunctionCallExpression {
 }
 */
 
-// tag::newlines[]
 FunctionCallExpression {
-    @projection FunctionCallExpression
+    @projection showAll
         [+
         CALL ${self.functionDefinition} (  )
         ]
     @trigger "function"
 }
-// end::newlines[]
-// tag::lists[]
 EntityModelUnit {
-    @projection EntityModelUnit
+    @projection showAll
         [
         model ${self.name} {
         entities:
             ${self.entities
                 @vertical
-                @terminator [\n\n]
+                @terminator [ && ]
             }
         model wide functions:
             ${self.functions @horizontal @separator [; ] }
         }
         ]
 }
-// end::lists[]

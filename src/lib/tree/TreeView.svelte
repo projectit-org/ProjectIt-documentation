@@ -18,9 +18,19 @@
          { name: 'Project Structure', path: '/020_Getting_Started/020_Project_Structure'},
          { name: 'Calling the Generator', path: '/020_Getting_Started/030_Calling_the_Generator'},
                ]},
-      { name: 'First Level Tutorial', path: '/030_First_Level_Tutorial'},
-      { name: 'Second Level Tutorial', path: '/040_Second_Level_Tutorial'},
-      { name: 'Third Level Tutorial', path: '/050_Third_Level_Tutorial'},
+      { name: 'First Level Tutorial', path: '/030_First_Level_Tutorial',
+        content: [
+         { name: 'Defining the Language Structure', path: '/030_First_Level_Tutorial/010_Defining_the_Language_Structure'},
+               ]},
+      { name: 'Second Level Tutorial', path: '/040_Second_Level_Tutorial',
+        content: [
+         { name: 'Editor Definition', path: '/040_Second_Level_Tutorial/010_Editor_Definition'},
+         { name: 'Scoper Definition', path: '/040_Second_Level_Tutorial/020_Scoper_Definition'},
+               ]},
+      { name: 'Third Level Tutorial', path: '/050_Third_Level_Tutorial',
+        content: [
+         { name: 'The Editor at the Third Level', path: '/050_Third_Level_Tutorial/010_The_Editor_at_the_Third_Level'},
+               ]},
       { name: 'About', path: '/099_about'},];
 	</script>
 	

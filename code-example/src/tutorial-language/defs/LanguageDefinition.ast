@@ -1,40 +1,36 @@
 language Entity
 
-// tag::model[]
 model EntityModel {
     name: identifier;
     units: EntityModelUnit[];
     extraUnit: SomeOtherModelUnit;
 }
-//end::model[]
 
 modelunit SomeOtherModelUnit {
     public name: identifier;
     public somePart: Entity;
 }
-//tag::optionalprop[]
+
 interface BaseType {
     name: identifier;
     baseInterface_attr?: number;
 }
-//end::optionalprop[]
-// tag::interface[]
+
 interface Type base BaseType {
     simpleprop: string;
     int_attrs: AttributeWithLimitedType[];
     int_functions: EntityFunction[];
     reference baseInterface: Entity;
 }
-// end::interface[]
-// tag::concept[]
+
 concept Entity implements Type {
+    isCompany: boolean;
     attributes: AttributeWithLimitedType[];
     entAttributes: AttributeWithEntityType[];
     functions: EntityFunction[];
-    reference baseEntity: Entity;
+    reference baseEntity?: Entity;
 }
-// end::concept[]
-// tag::limited[]
+
 limited AttributeType implements BaseType {
     // if the 'name' property was not provided, it would have been generated
     name: identifier;
@@ -48,47 +44,34 @@ limited AttributeType implements BaseType {
 }
 
 limited MockEnumeration { EnumValue1; EnumValue2; EnumValue3; }
-// end::limited[]
+
 expression AbsExpression base EntityExpression {
     expr: EntityExpression;
 }
-// tag::expression[]
+
 binary expression MultiplyExpression base BinaryExpression {
     priority = 8;
 }
-// end::expression[]
 
-// tag::rootconcept[]
-// tag::partprop[]
 modelunit EntityModelUnit {
-// end::partprop[]
     public name: identifier;
-// tag::partprop[]
+
     functions: EntityFunction[];
     entities: Entity[];
 }
-// end::partprop[]
-// end::rootconcept[]
-// tag::simpleprop[]
+
 concept EntityFunction {
     name: identifier;
     aliases: string[];
-// end::simpleprop[]
-    reference declaredType : Type;
     expression: EntityExpression;
     parameters: Variable[];
-// tag::simpleprop[]
+    reference declaredType : Type;
 }
-// end::simpleprop[]
-// tag::referenceprop[]
+
 concept AttributeWithLimitedType {
     reference declaredType: AttributeType;
-// end::referenceprop[]
     name: identifier;
-// tag::referenceprop[]
 }
-// end::referenceprop[]
-
 
 concept Text {} // only defined to show that literal text can be part of a projection
 

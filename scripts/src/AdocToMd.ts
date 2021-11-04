@@ -77,7 +77,7 @@ export class AdocToMd {
 		contents = contents.replace(/= /g, "# ");
 
 		// replace the code block tags
-		contents = contents.replace(/----/g, "```");
+		contents = contents.replace(/----/g, "```ts");
 
 		// replace the bold tag
 		contents = contents.replace( /\*/g, "**");
@@ -95,17 +95,20 @@ export class AdocToMd {
 		// remove {src-dir} - embedme takes this as parameter
 		contents = contents.replace(/{src-dir}\//g, "");
 
+		// remove [source] - it is no longer needed
+		contents = contents.replace(/\[source\]/g, "");
+
 		// replace the local links
-		contents = contents.replace(/xref:version-0.1.0\/pages\/intro/g, "(010_Intro");
-		contents = contents.replace(/xref:..\/intro/g, "(010_Intro");
-		contents = contents.replace(/xref:version-0.1.0\/pages\/starting/g, "(020_Getting_Started");
-		contents = contents.replace(/xref:..\/starting/g, "(020_Getting_Started");
-		contents = contents.replace(/xref:version-0.1.0\/pages\/second-level/g, "(030_Second_level");
-		contents = contents.replace(/xref:..\/second-level/g, "(030_Second_level");
-		contents = contents.replace(/xref:version-0.1.0\/pages\/third-level/g, "(040_Third_level");
-		contents = contents.replace(/xref:..\/third-level/g, "(040_Third_level");
-		contents = contents.replace(/xref:version-0.1.0\/pages\/meta-documentation/g, "(050_Under_the_Hood");
-		contents = contents.replace(/xref:..\/meta-documentation/g, "(050_Under_the_Hood");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/intro/g, "(/010_Intro");
+		contents = contents.replace(/xref:..\/intro/g, "(/010_Intro");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/starting/g, "(/020_Getting_Started");
+		contents = contents.replace(/xref:..\/starting/g, "(/020_Getting_Started");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/second-level/g, "(/040_Second_level");
+		contents = contents.replace(/xref:..\/second-level/g, "(/040_Second_level");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/third-level/g, "(/050_Third_level");
+		contents = contents.replace(/xref:..\/third-level/g, "(/050_Third_level");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/meta-documentation/g, "(/060_Under_the_Hood");
+		contents = contents.replace(/xref:..\/meta-documentation/g, "(/060_Under_the_Hood");
 		contents = contents.replace(/\.adoc/g, "");
 
 		// replace the anchor of figure by a figcaption
@@ -116,6 +119,9 @@ export class AdocToMd {
 		contents = contents.replace(/xref:https:/g, '\<a href="https:');
 		contents = contents.replace(/link:http/g, '\<a href="http');
 		contents = contents.replace(/window=\*blank]/g, 'target="_blank">');
+		contents = contents.replace(/\/three-levels/g, '/050_Three_Levels_of_Customization');
+		contents = contents.replace(/\/expressions/g, '/010_Projectional_Editing#expressions');
+
 
 		// create the new file-name by taking the old folder path
 		// (e.g. '/foo/bar/baz/asdf' from '/foo/bar/baz/asdf/quux.adoc'),

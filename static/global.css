@@ -97,7 +97,8 @@
 	--theme-colors-ripple_color: #c199f9;
 	--theme-colors-tooltip_color: white;
 	--theme-colors-tooltip_background: red;
-	--theme-colors-note-background: #C199F93C
+	--theme-colors-note_background: #C199F93C;
+	--theme-colors-figure_background: cornsilk;
 }
 
 html, body {

@@ -1,15 +1,14 @@
 <script lang="ts">
-	export let text: string;
+	import NoteIcon from "../icons/NoteIcon.svelte";
 </script>
 
 <div class='note'>
-	<img src="/images/announcement_black_24dp.svg" alt="NOTE" width="20" height="20">
-	<slot></slot>
+	<NoteIcon /><slot></slot>
 </div>
 
 <style>
     .note {
-        background: var(--theme-colors-note-background);
+        background: var(--theme-colors-note_background);
         margin: 20px 20px 20px 20px;
         border-radius: 3px;
         box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
