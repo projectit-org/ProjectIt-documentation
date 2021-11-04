@@ -64,6 +64,8 @@ export class AdocToMd {
 		contents = contents.replace(/:source-language: [_a-zA-Z0-9 ]*/g, "");
 		contents = contents.replace(/:listing-caption: [_a-zA-Z0-9 -]*/g, "");
 		contents = contents.replace(/:icons: [_a-zA-Z0-9 -\.\/]*/g, "");
+		contents = contents.replace(/:page-has\*children: [_a-zA-Z0-9 -\.\/]*/g, "");
+		contents = contents.replace(/:page-has\*toc: [_a-zA-Z0-9 -\.\/]*/g, "");
 
 		// remove inline-anchors
 		contents = contents.replace(/\[\[[_a-zA-Z0-9 -]*\]\]/g, "");
@@ -95,10 +97,15 @@ export class AdocToMd {
 
 		// replace the local links
 		contents = contents.replace(/xref:version-0.1.0\/pages\/intro/g, "(010_Intro");
-		contents = contents.replace(/xref:version-0.1.0\/pages\/starting/g, "(020_Starting");
+		contents = contents.replace(/xref:..\/intro/g, "(010_Intro");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/starting/g, "(020_Getting_Started");
+		contents = contents.replace(/xref:..\/starting/g, "(020_Getting_Started");
 		contents = contents.replace(/xref:version-0.1.0\/pages\/second-level/g, "(030_Second_level");
+		contents = contents.replace(/xref:..\/second-level/g, "(030_Second_level");
 		contents = contents.replace(/xref:version-0.1.0\/pages\/third-level/g, "(040_Third_level");
-		contents = contents.replace(/xref:version-0.1.0\/pages\/meta-documentation/g, "(040_Meta_documentation");
+		contents = contents.replace(/xref:..\/third-level/g, "(040_Third_level");
+		contents = contents.replace(/xref:version-0.1.0\/pages\/meta-documentation/g, "(050_Under_the_Hood");
+		contents = contents.replace(/xref:..\/meta-documentation/g, "(050_Under_the_Hood");
 		contents = contents.replace(/\.adoc/g, "");
 
 		// replace the anchor of figure by a figcaption
@@ -107,6 +114,7 @@ export class AdocToMd {
 
 		// replace links to external pages
 		contents = contents.replace(/xref:https:/g, '\<a href="https:');
+		contents = contents.replace(/link:http/g, '\<a href="http');
 		contents = contents.replace(/window=\*blank]/g, 'target="_blank">');
 
 		// create the new file-name by taking the old folder path

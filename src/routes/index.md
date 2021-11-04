@@ -1,10 +1,11 @@
 
 # ProjectIt -- A Projectional Editor for the Web
 
-ProjectIt is a Language Workbench (...in the making <img src="/images/smile.png" alt="OOPS" width="20" height="20">, so please let us know if you find anything wrong). It is a tool for creating mini-languages,
+ProjectIt is a Language Workbench (...in the making <img src="/images/smile.png" alt="OOPS" width="20" height="20">, 
+so please let us know if you find anything not yet correct). It is a tool for creating mini-languages,
 which are also known as
-<a href="https://en.wikipedia.org/wiki/Domain-specific*language" target="_blank">Domain Specific Languages (DSLs)</a>
-. ProjectIt is able to generate an integrated
+<a href="https://en.wikipedia.org/wiki/Domain-specific*language" target="_blank">Domain Specific Languages (DSLs)</a>.
+ProjectIt is able to generate an integrated
 set of editor, scoper, typer, and validator for your mini-language from a small set of definitions. Together we call this the work environment for your language.
 
 ## The Core Framework
@@ -24,7 +25,7 @@ of the work environment for your mini-language:
 * The **typer** defines what the type of an element is.
 * The **validator** defines what a correct model looks like and wil provide errors whenever a model breaks these rules.
 
-## Why is ProjectIt what it is?
+## Why Is ProjectIt As It Is?
 Currently, ProjectIt does not support the creation of debuggers, interpreters, generators, and
 such. Indeed, we have a (large) [wish list](/010_Intro/wish-list) of extra features
 that we would like to implement in the future.
@@ -37,16 +38,17 @@ If you want to know why
 we have chosen this development route, read our statement on the [philosophy](010_Intro/philosophy)
 behind the tool.
 
-## What are you: a _language engineer_ or a _user_?
+## What Are You: a _Language Engineer_ or a _User_?
 We assume that people who want to use ProjectIt know at least the basics of making mini-languages. For instance,
 the terms metamodel, abstract syntax tree, scope, etc, should be familiar. When we address the ProjectIt
-user we call him or her a **language engineer**. The people that will be using the generated work environment are simply called **users**.
+user we call him, or her a **language engineer**. The people that will be using the generated work environment are simply called **users**.
 
-## Welcome on this site
-So welcome, language engineer, to the world of ProjectIt. In this website you can find information
-on many subjects. You could ..
+## Welcome, Language Engineer
+So welcome, language engineer, to the world of ProjectIt. This website is meant for you. It explains how ProjectIt can help 
+you in creating a language and building a work environment for it. Please, browse through all the subjects. 
+As a start, you could ..
 
-* .. start by finding out what [projectional editing](010_Intro/projectional-editing) is.
+* .. find out what [projectional editing](010_Intro/projectional-editing) is.
 * .. see how you can [install and use](020_Starting/installing) ProjectIt.
 * .. find out how to define a language and its editor, etc. in the [tutorials](030_Second-level/tutorials-intro).
 * .. dive deeper into the [structure of the generated code](020_Starting/code-organisation).

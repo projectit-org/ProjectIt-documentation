@@ -13,6 +13,7 @@
 	/*--text-color: #444444;*/
 	/*--background-without-opacity: rgba(255, 255, 255, 0.7);*/
 	--column-width: 62rem;
+	--max-image-width: 58rem;
 	--column-margin-top: 1rem;
 	/* the following css properties are present in order for the text completion during development to function */
 	/* they are overwritten by the THEME values in 'themePresets.ts' */
@@ -96,6 +97,7 @@
 	--theme-colors-ripple_color: #c199f9;
 	--theme-colors-tooltip_color: white;
 	--theme-colors-tooltip_background: red;
+	--theme-colors-note-background: #C199F93C
 }
 
 html, body {
@@ -119,15 +121,13 @@ blockquote {
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-note {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: black;
-	border-radius: 3px;
-	/*box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);*/
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--theme-colors-color);
+img {
+	max-width: var(--max-image-width);
+}
+
+table {
+	background: lightgrey;
+	margin: auto;
 }
 
 /*body::before {*/
@@ -184,7 +184,7 @@ note {
 pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
+	background-color: lightgrey;
 	border-radius: 3px;
 	/*box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);*/
 	padding: 0.5em;
