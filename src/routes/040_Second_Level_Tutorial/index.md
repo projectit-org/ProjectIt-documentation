@@ -1,8 +1,5 @@
 <script>
     import Figure from "../../lib/figures/Figure.svelte";
-    let imageName = 'example-uml-diagram.png';
-    let caption = 'UML diagram of Entity Language';
-    let figureNumber = 1;
 </script>
 
 # Second Level Language Definitions
@@ -20,9 +17,9 @@ and can hold `Functions` too. Every `Function` has a list of `Parameters` and an
 The following figure shows a UML class diagram of the concepts in the language.
 
 <Figure 
-bind:imageName={imageName} 
-bind:caption={caption}
-bind:figureNumber={figureNumber}
+imageName={'example-uml-diagram.png'} 
+caption={'UML diagram of Entity Language'}
+figureNumber={1}
 />
 
 We are working on a few other examples. You can find them in the

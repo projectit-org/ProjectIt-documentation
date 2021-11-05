@@ -5,7 +5,7 @@
 </script>
 
 <figure class='figure'>
-<img class='image' src="/images/{imageName}" alt="Image {imageName} seems to be missing">
+<img class='image' src="/images/{imageName}" alt="Image '{imageName}' seems to be missing">
 <figcaption id='{imageName}'>Figure {figureNumber}. {caption}</figcaption>
 </figure>
 
@@ -18,5 +18,6 @@
 	}
 	.image {
       margin: 10px 10px 10px 10px;
+			max-width: var(--max-image-width);
 	}
 </style>

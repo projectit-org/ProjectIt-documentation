@@ -10,7 +10,7 @@
 	</p>
 
 	<p>
-		Some of the icons are made by <a href="" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+		Some of the icons are made by <a href="" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.
 	</p>
 
 	<p>

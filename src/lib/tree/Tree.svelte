@@ -8,7 +8,7 @@
 
 	export let name: string = '';
 	export let path: string = '';
-	export let expanded = true;
+	export let expanded = false;
 	export let content;
 	let active: boolean;
 	$: active = ($page.path === path);
@@ -45,7 +45,7 @@
 				{#each content as part}
 					<li>
 						{#if part.content}
-							<svelte:self {...part}/>
+							<svelte:self {...part} />
 						{:else}
 							<Leaf {...part}/>
 						{/if}

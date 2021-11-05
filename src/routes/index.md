@@ -8,13 +8,13 @@ which are also known as
 ProjectIt is able to generate an integrated
 set of editor, scoper, typer, and validator for your mini-language from a small set of definitions. Together we call this the work environment for your language.
 
-## The Core Framework
+### The Core Framework
 The core of ProjectIt is a TypeScript/JavaScript framework for building web-based, projectional
 editors. Editing expressions in a projectional editor is a well-known challenge. What makes the
 ProjectIt framework unique is the fact that it has built-in support for expressions, so you can
 easily make a projectional editor that allows for a natural manner of editing.
 
-## The Generators
+### The Generators
 On top of the core framework there are five generators, each of which generates part
 of the work environment for your mini-language:
 
@@ -25,12 +25,12 @@ of the work environment for your mini-language:
 * The **typer** defines what the type of an element is.
 * The **validator** defines what a correct model looks like and wil provide errors whenever a model breaks these rules.
 
-## Why Is ProjectIt As It Is?
+### Why Is ProjectIt As It Is?
 Currently, ProjectIt does not support the creation of debuggers, interpreters, generators, and
 such. Indeed, we have a (large) [wish list](/010_Intro/wish-list) of extra features
 that we would like to implement in the future.
 
-In some cases,like e.g code generators, we think that integration  with existing tools is the best solution.
+In some cases, like e.g code generators, we think that integration with existing tools is the best solution.
 In other cases we plan to provide ProjectIt components for specific functionality.
 Given time, we hope to realize many of these extra items. 
 
@@ -40,7 +40,7 @@ behind the tool.
 
 ## What Are You: a _Language Engineer_ or a _User_?
 We assume that people who want to use ProjectIt know at least the basics of making mini-languages. For instance,
-the terms metamodel, abstract syntax tree, scope, etc, should be familiar. When we address the ProjectIt
+the terms metamodel, abstract syntax tree, scope, concrete syntax, parsing, etc., should be familiar. When we address the ProjectIt
 user we call him, or her a **language engineer**. The people that will be using the generated work environment are simply called **users**.
 
 ## Welcome, Language Engineer
@@ -48,10 +48,10 @@ So welcome, language engineer, to the world of ProjectIt. This website is meant 
 you in creating a language and building a work environment for it. Please, browse through all the subjects. 
 As a start, you could ..
 
-* .. find out what [projectional editing](010_Intro/projectional-editing) is.
-* .. see how you can [install and use](020_Starting/installing) ProjectIt.
-* .. find out how to define a language and its editor, etc. in the [tutorials](030_Second-level/tutorials-intro).
-* .. dive deeper into the [structure of the generated code](020_Starting/code-organisation).
-* .. get to know more about the [meta-code](040_Meta-documentation/meta-documentation-intro) of ProjectIt.
+* .. find out what [projectional editing](/010_Intro/010_Projectional_Editing) is.
+* .. see how you can [install and use](/020_Getting_Started/010_Installation) ProjectIt.
+* .. find out how to define a language and its editor, etc. in the [tutorials](/030_First_Level_Tutorial).
+* .. dive deeper into the [structure of the generated code](/020_Getting_Started/020_Project_Structure).
+* .. get to know more about the [meta-code](/060_Under_the_Hood) of ProjectIt.
 
 **Have fun!** If you have questions that are not answered in this documentation, please email us at _info AT projectit.org_.

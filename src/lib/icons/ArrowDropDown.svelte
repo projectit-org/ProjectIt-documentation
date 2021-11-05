@@ -5,7 +5,6 @@
 	export let height: number = 24;
 	export let width: number = 24;
 	export let fill: string = 'var(--theme-colors-color)';
-	export let background: string = 'var(--theme-colors-bg_app_bar)';
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg"

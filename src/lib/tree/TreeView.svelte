@@ -31,11 +31,19 @@
         content: [
          { name: 'The Editor at the Third Level', path: '/050_Third_Level_Tutorial/010_The_Editor_at_the_Third_Level'},
                ]},
+      { name: 'Under the Hood', path: '/060_Under_the_Hood',
+        content: [
+         { name: 'The Core Framework', path: '/060_Under_the_Hood/010_The_Core_Framework',
+           content: [
+            { name: 'The Core Interfaces', path: '/060_Under_the_Hood/010_The_Core_Framework/010_The_Core_Interfaces'},
+                  ]},
+         { name: 'The PiTool Interfaces', path: '/060_Under_the_Hood/020_The_PiTool_Interfaces'},
+               ]},
       { name: 'About', path: '/099_about'},];
 	</script>
 	
 	<div class='navigator'>
-		<Tree content={root} expanded/>
+		<Tree content={root} expanded={true}/>
 	</div>
 	
 	<style>
