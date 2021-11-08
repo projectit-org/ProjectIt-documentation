@@ -6,15 +6,14 @@
 	<h1>About this site</h1>
 
 	<p>
-		This site is created with <a href="https://kit.svelte.dev">SvelteKit</a>.
+		This site is created with <a href="https://kit.svelte.dev" target='_blank'>SvelteKit</a>. Code blocks are included using <a href="github.com/zakhenry/embedme">EmbedMe</a>.
+		Syntax highlighting is provided through <a href="https://mdsvex.com/" target='_blank'>mdsvex</a> with styling from <a href='https://prismjs.com/' target='_blank'>Prism</a>,
+		using the Visual Studio Code themes. Some of the icons are made by <a href="" title="Vectors Market">Vectors Market</a>
+		from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.
 	</p>
 
 	<p>
-		Some of the icons are made by <a href="" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.
-	</p>
-
-	<p>
-		All the rest, including any errors, can be contributed to the creators of ProjectIt: Jos Warmer and Anneke Kleppe (<a href="https://www.openmodeling.nl/" title="Openmodeling">www.openmodeling.nl</a>).
+		All the rest, including any errors, can be contributed to the creators of ProjectIt: Jos Warmer and Anneke Kleppe (see <a href="https://www.openmodeling.nl/" title="Openmodeling">www.openmodeling.nl</a>).
 	</p>
 </div>
 

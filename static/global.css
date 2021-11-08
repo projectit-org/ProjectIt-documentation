@@ -193,6 +193,16 @@ pre {
 	color: var(--theme-colors-color);
 }
 
+code {
+	padding: 0.2em 0.15em;
+	font-weight: 400;
+	font-size: medium; /* Anneke: added font-size */
+	background-color: $code-background-color;
+	border: $border $grey-lt-100; //   was: "border: $border $border-color;" but border-color is now "projectit-blue"
+	border-radius: $border-radius;
+}
+
+
 /*input,*/
 /*button {*/
 /*	font-size: inherit;*/

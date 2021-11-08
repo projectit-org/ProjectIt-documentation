@@ -27,7 +27,6 @@ export class CustomEntityActions implements PiActions {
     keyboardActions: KeyboardShortcutBehavior[] = MANUAL_KEYBOARD;
 }
 
-// tag::ActionPlaceholders[]
 export const MANUAL_EXPRESSION_CREATORS: PiExpressionCreator[] = [
     // Add your own custom expression creators here
 ];
@@ -38,10 +37,9 @@ export const MANUAL_BINARY_EXPRESSION_CREATORS: PiBinaryExpressionCreator[] = [
 
 export const MANUAL_CUSTOM_BEHAVIORS: PiCustomBehavior[] = [
     // Add your own custom behavior here
-    // tag::CreateAttributeAction[]
     {
-        trigger: "attribute",                                                                   // <2>
         activeInBoxRoles: ["end-of-attribute-list"],                                            // <1>
+        trigger: "attribute",                                                                   // <2>
         action: (box: Box, trigger: PiTriggerType, editor: PiEditor): PiElement | null => {     // <3>
             var entity: Entity = box.element as Entity;
             const attribute: AttributeWithLimitedType = new AttributeWithLimitedType();
@@ -50,10 +48,8 @@ export const MANUAL_CUSTOM_BEHAVIORS: PiCustomBehavior[] = [
         },
         boxRoleToSelect: "Attribute-name"                                                       // <4>
     },
-    // end::CreateAttributeAction[]
 ];
 
 export const MANUAL_KEYBOARD: KeyboardShortcutBehavior[] = [
     // Add your own custom keyboard shortcuts here
 ];
-// end::ActionPlaceholders[]

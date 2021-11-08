@@ -35,7 +35,7 @@ In other cases we plan to provide ProjectIt components for specific functionalit
 Given time, we hope to realize many of these extra items. 
 
 If you want to know why
-we have chosen this development route, read our statement on the [philosophy](010_Intro/philosophy)
+we have chosen this development route, read our statement on the [philosophy](/010_Intro/philosophy)
 behind the tool.
 
 ## What Are You: a _Language Engineer_ or a _User_?
@@ -50,7 +50,7 @@ As a start, you could ..
 
 * .. find out what [projectional editing](/010_Intro/010_Projectional_Editing) is.
 * .. see how you can [install and use](/020_Getting_Started/010_Installation) ProjectIt.
-* .. find out how to define a language and its editor, etc. in the [tutorials](/030_First_Level_Tutorial).
+* .. find out how to define a language and its editor, etc. in the [tutorials](/030_Default_Level).
 * .. dive deeper into the [structure of the generated code](/020_Getting_Started/020_Project_Structure).
 * .. get to know more about the [meta-code](/060_Under_the_Hood) of ProjectIt.
 

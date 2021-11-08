@@ -1,40 +1,28 @@
 typer Entity for language Entity
 
-// tag::types[]
 // 'BaseType' is the root of the type hierarchy
 istype { BaseType, Type, Entity, AttributeType }
-// end::types[]
 
-// tag::anytype[]
 anytype {
     conformsto AttributeType:ANY;
     equalsto AttributeType:ANY;
 }
-// end::anytype[]
 
-// tag::conformance[]
 Entity {
     conformsto self.baseEntity;
 }
 StringLiteralExpression {
     infertype AttributeType:String;
 }
-// end::conformance[]
-
 AttributeWithLimitedType {
     infertype self.declaredType;
 }
-// tag::inference[]
 EntityFunction {
     infertype self.declaredType;
 }
-// end::inference[]
-// tag::abstract[]
 EntityExpression {
     abstract infertype ;
 }
-// end::abstract[]
-
 NumberLiteralExpression {
     infertype AttributeType:Integer;
 }
@@ -71,4 +59,3 @@ VariableRef   {
 AttributeRef   {
     infertype self.attribute.declaredType;
 }
-

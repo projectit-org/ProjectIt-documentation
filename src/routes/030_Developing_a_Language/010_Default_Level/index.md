@@ -3,7 +3,7 @@
 	export async function load() {
 		return {
 			status: 302,
-			redirect: "/030_First_Level_Tutorial/010_Defining_the_Language_Structure"
+			redirect: "/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure"
 		};
 	}
 </script>

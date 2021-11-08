@@ -1,5 +1,5 @@
 <script>
-    import Note from "../../lib/notes/Note.svelte";
+    import Note from "../../../lib/notes/Note.svelte";
 </script>
 
 # The Editor Definition
@@ -8,7 +8,7 @@ The editor definition is the definition of the **concrete syntax** of the langua
 well as the generation of the parser and unparser. The concrete syntax given in the editor definition is also used
 to produce better readable error messages as produced by the validator.
 
-## Three-level definition
+### <a name="editor-three-levels" /> Three-level definition
 As explained in [Three Levels of Customization](/010_Intro/050_Three_Levels_of_Customization#levels) the generated editor can be defined at three levels.
 For each *concept* in the AST the editor will
 

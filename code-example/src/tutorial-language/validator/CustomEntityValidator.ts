@@ -4,7 +4,6 @@ import { EntityDefaultWorker } from "../utils/gen/EntityDefaultWorker";
 import { EntityFunction } from "../language/gen";
 import { EntityCheckerInterface } from "./gen/EntityValidator";
 
-// tag::custom-validator[]
 export class CustomEntityValidator extends EntityDefaultWorker implements EntityCheckerInterface {
     errorList: PiError[] = [];
     public execBeforeEntityFunction(modelelement: EntityFunction): boolean {
@@ -22,4 +21,3 @@ export class CustomEntityValidator extends EntityDefaultWorker implements Entity
         return false;
     }
 }
-// end::custom-validator[]

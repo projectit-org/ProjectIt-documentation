@@ -37,25 +37,20 @@ export class CustomEntityProjection implements PiProjection {
         }
     }
 
-    // tag::getBox[]
     getBox(element: PiElement): Box {
         // Add any handmade projections of your own before next statement
         return null;
     }
-    // end::getBox[]
 
     // Most simple model box
-    // tag::ModelBox1[]
     private createModelBox(model: EntityModelUnit): Box {
         return new HorizontalListBox(model, "model", [
             new LabelBox(model, "model-label", "Model"),
             new TextBox(model, "model-name", () => model.name, (c: string) => (model.name = c))
         ]);
     }
-    // end::ModelBox1[]
 
     // Modelbox with style added
-    // tag::ModelBox2[]
     private createModelBox2(model: EntityModelUnit): Box {
         return new HorizontalListBox(model, "model", [
             new LabelBox(model, "model-label", "Model", {
@@ -66,10 +61,8 @@ export class CustomEntityProjection implements PiProjection {
             })
         ]);
     }
-    // end::ModelBox2[]
 
     // ModelBox with placeholder for the name and a list of entities
-    // tag::ModelBox3[]
     private createModelBox3(model: EntityModelUnit): Box {
         return new VerticalListBox(model, "model", [
             new HorizontalListBox(model, "model-info", [
@@ -92,10 +85,8 @@ export class CustomEntityProjection implements PiProjection {
             )
         ]);
     }
-    // end::ModelBox3[]
 
     private createEntityBox1(entity: Entity): Box {
-        // tag::EntityBox1[]
         return new VerticalListBox(entity, "entity", [
             new HorizontalListBox(entity, "entity-keyword", [
                 new LabelBox(entity, "entity-label", "entity", {
@@ -111,11 +102,9 @@ export class CustomEntityProjection implements PiProjection {
                 })
             )
         ]);
-        // end::EntityBox1[]
     }
 
     // EntityBox with attributes, but no AliasBox
-    // tag::EntityBox[]
     private createEntityBox(entity: Entity): Box {
         return new VerticalListBox(entity,"entity",
             [
@@ -136,7 +125,6 @@ export class CustomEntityProjection implements PiProjection {
             ]
         );
     }
-    // end::EntityBox[]
 
     // EntityBox with AliasBox added for adding new attributes
     private createEntityBox3(entity: Entity): Box {
@@ -150,14 +138,12 @@ export class CustomEntityProjection implements PiProjection {
                     }),
                     new TextBox(entity, "entity-name", () => entity.name, (c: string) => (entity.name = c))
                 ]),
-                // tag::CreateAttributeAction[]
                 new VerticalListBox(entity,"attributes",
                     entity.attributes.map(att => {
                         return this.getBox(att);
                     })
                 ).addChild(new AliasBox(entity, "end-of-attribute-list",
                     "add attribute"))
-                // end::CreateAttributeAction[]
             ]
         );
     }
@@ -182,8 +168,7 @@ export class CustomEntityProjection implements PiProjection {
     // }
 
     public getAttributeBox(attribute: AttributeWithLimitedType): Box {
-        // tag::AttributeBox[]
-        return new HorizontalListBox(
+        return new HorizontalListBox( // tag::AttributeBox[]
             attribute,
             "Attribute",
             [
@@ -218,8 +203,7 @@ export class CustomEntityProjection implements PiProjection {
                     }
                 )
             ]
-        );
-        // end::AttributeBox[]
+        ); // end::AttributeBox[]
     }
 
     public getReferenceBox(
