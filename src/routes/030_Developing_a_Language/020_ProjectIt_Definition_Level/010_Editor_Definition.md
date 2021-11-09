@@ -8,7 +8,7 @@ The editor definition is the definition of the **concrete syntax** of the langua
 well as the generation of the parser and unparser. The concrete syntax given in the editor definition is also used
 to produce better readable error messages as produced by the validator.
 
-### <a name="editor-three-levels" /> Three-level definition
+### <a name="editor-three-levels"></a> Three-level definition
 As explained in [Three Levels of Customization](/010_Intro/050_Three_Levels_of_Customization#levels) the generated editor can be defined at three levels.
 For each *concept* in the AST the editor will
 
@@ -24,7 +24,7 @@ The rest of this tutorial explains the second level: how to write an editor defi
 For making more adjustments to the projection by adding hand-made projections on the third level, see the
 tutorial on [using the framework](/030_Developing_a_Language/030_API_Level/010_Editor_API).
 
-## <a name='operand'/> The Editor Definition File
+## <a name="operand"></a> The Editor Definition File
 In the editor definition file (`.edit` file) you can define a ProjectIt editor by providing extra information
 for each *concept* in your language. Currently, you can define the following three items.
 
@@ -61,11 +61,11 @@ his is not the case, therefore the text "This is" will be shown at the beginning
 "that is projected in the" will be indented with 10 spaces. The text "for every concept of type Text"
 will be shown with an indentation of 8 spaces.
 
-<Note>#### Indentation is incremental
+<Note><svelte:fragment slot="header"> Indentation is incremental</svelte:fragment><svelte:fragment slot="content">
 This is not completely true. When a `Text` element is used within another projection,
 the indentation that is defined by the projection in the definition for `Text` will be preceded
 by any indentation defined for the enclosing concept.
-</Note>
+</svelte:fragment></Note>
 
 If the closing bracket would be positioned on the line after the text,
 **and** it would be indented with 8 spaces, then the text 

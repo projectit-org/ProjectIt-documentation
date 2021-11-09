@@ -73,7 +73,7 @@ new HorizontalListBox(literal, "full-string", [      // <1>
    the role of the box, the getter function for the content, and the setter function, used when the content changes.
 4. The second label box for the end quote. Except for its role, this is identical to the first label box.
 
-## <a name="defining-actions" /> Behavior is Defined by Actions
+## <a name="defining-actions"></a> Behavior is Defined by Actions
 
 The behavior coupled to a *Box* is defined by an `Action`. To identify which action should be executed,
 each behavior is specified by:

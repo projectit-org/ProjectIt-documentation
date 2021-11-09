@@ -48,15 +48,12 @@ export class LinkChecker {
 			if (line.includes("](")) {
 				// remove the chars before the link
 				line = line.replace(/[a-zA-Z0-9 \.,\*\/:()-_'"`]*\[/, '\[');
-				console.log(`INTERMEDIATE 1: ${line}`)
 				// remove the chars behind the link until end of line
 				// TODO the following line removes too much when round brackets are used within the angular brackets
 				line = line.replace(/\)[a-zA-Z0-9 \.,\*\/:()-_'"`]*$/, ')');
-				console.log(`INTERMEDIATE 2: ${line}`)
 				// remember 'line' for the error message, thus use new variable from here on
 				// remove the part between the angular brackets
 				let link: string = line.replace(/\[[a-zA-Z0-9 \.,\*\/:()-_'"`]*\]/, "");
-				console.log(`INTERMEDIATE 3: ${line}`)
 				// remove the surrounding round brackets
 				link = link.replace(/\(/, '');
 				link = link.replace(/\)/, '');

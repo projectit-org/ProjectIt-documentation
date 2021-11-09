@@ -14,7 +14,7 @@
 	$: active = ($page.path === path);
 
 	function toggle() {
-		console.log(`arrow drop down clicked`);
+		// console.log(`arrow drop down clicked`);
 		expanded = !expanded;
 	}
 

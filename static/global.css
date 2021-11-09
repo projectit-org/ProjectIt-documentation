@@ -99,6 +99,7 @@
 	--theme-colors-tooltip_background: red;
 	--theme-colors-note_background: #C199F93C;
 	--theme-colors-figure_background: cornsilk;
+	--theme-colors-table_background: cornsilk;
 }
 
 html, body {
@@ -127,10 +128,18 @@ img {
 }
 
 table {
-	background: lightgrey;
+	background: var(--theme-colors-table_background);
 	margin: auto;
+	border: 1px var(--theme-colors-divider) solid;
+	border-collapse: collapse;
+	width: 100%;
 }
 
+th, td {
+	padding: 10px;
+	text-align: left;
+	border: 1px var(--theme-colors-divider) solid;
+}
 /*body::before {*/
 /*	content: '';*/
 /*	width: 80vw;*/

@@ -3,7 +3,7 @@
     import Figure from "../../../lib/figures/Figure.svelte";
 </script>
 
-# <a name="writing-actions" /> Writing Actions in TypeScript
+# <a name="writing-actions"></a> Writing Actions in TypeScript
 
 When you have created your own custom projection, this projection is exactly that: 
 a projection. Other than the built-in default behavior (held in the file 
