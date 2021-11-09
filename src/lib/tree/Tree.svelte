@@ -12,6 +12,9 @@
 	export let content;
 	let active: boolean;
 	$: active = ($page.path === path);
+	$: if ($page.path.startsWith(path)) {
+		expanded = true;
+	}
 
 	function toggle() {
 		// console.log(`arrow drop down clicked`);
