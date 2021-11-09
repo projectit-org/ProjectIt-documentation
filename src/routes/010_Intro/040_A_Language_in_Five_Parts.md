@@ -14,4 +14,4 @@ multiple .ast files into one AST definition, and multiple .scope files into one 
 
 There is no need to write all the five definition files right from the start. The only one that is 
 mandatory is the language structure (.ast). ProjectIt will generate defaults for all the other elements. 
-This is what we call the Default Level of the [three levels of customization](010_Intro/050_Three-Levels-of-Customization).
+This is what we call the Default Level of the [three levels of customization](/010_Intro/050_Three_Levels_of_Customization).

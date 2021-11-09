@@ -6,6 +6,7 @@
   },
   "scripts": {
     "navTree": "tsc && node dist/_NavTreeFiller.js",
-    "adocToMd": "tsc && node dist/AdocToMd.js"
+    "adocToMd": "tsc && node dist/AdocToMd.js",
+    "checkLinks": "tsc && node dist/LinkChecker.js"
   }
 }

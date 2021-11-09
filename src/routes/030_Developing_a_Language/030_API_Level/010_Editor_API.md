@@ -4,7 +4,7 @@
 At the API level the editor can be changed by implementing two interfaces: 
 the `PiProjection` (TODO add links) and the `PiAction`. But
 before you dive into all this, we suggest that you become familiar with the information
-about the [ProjectIt Editor Framework](/060_Under_the_Hood/framework/editor-framework). (TODO link)
+about the [ProjectIt Editor Framework](/060_Under_the_Hood/010_The_Editor_Framework).
 
 ## Convenience Custom... Files
 As a convenience, ProjectIt generates templates for 
@@ -49,6 +49,6 @@ export const projectitConfiguration = new ProjectitConfiguration();
 
 ## Learning More
 
-You can learn how to write projections from [Writing Projections](020_Writing_Projections).
+You can learn how to write projections from [Writing Projections](/030_Developing_a_Language/030_API_Level/020_Writing_Projections).
 How to create the action to accompany the projection can be learned from 
-[Writing Actions'](030_Writing_Actions).
+[Writing Actions'](/030_Developing_a_Language/030_API_Level/030_Writing_Actions).

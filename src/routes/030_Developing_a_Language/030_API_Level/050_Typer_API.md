@@ -2,7 +2,7 @@
 # Third Level Customization of the Typer
 
 The typer can as of now be customized **per concept**. Your new typer needs 
-to implement the [PiTyperPart interface]() TODO link.
+to implement the [PiTyperPart interface](/060_Under_the_Hood/020_The_PiTool_Interfaces/050_PiTyper_Interface).
 
 As a convenience, ProjectIt generates a file `~/picode/typer/Custom<yourLanguageName>TyperPart.ts`,
 which will not be overwritten upon regeneration. It already contains a class that implements this interface.

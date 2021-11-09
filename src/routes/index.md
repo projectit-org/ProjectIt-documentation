@@ -27,7 +27,7 @@ of the work environment for your mini-language:
 
 ### Why Is ProjectIt As It Is?
 Currently, ProjectIt does not support the creation of debuggers, interpreters, generators, and
-such. Indeed, we have a (large) [wish list](/010_Intro/wish-list) of extra features
+such. Indeed, we have a (large) [wish list](/010_Intro/090_Future_Developments) of extra features
 that we would like to implement in the future.
 
 In some cases, like e.g code generators, we think that integration with existing tools is the best solution.
@@ -35,7 +35,7 @@ In other cases we plan to provide ProjectIt components for specific functionalit
 Given time, we hope to realize many of these extra items. 
 
 If you want to know why
-we have chosen this development route, read our statement on the [philosophy](/010_Intro/philosophy)
+we have chosen this development route, read our statement on the [philosophy](/010_Intro/020_Our_Philosophy)
 behind the tool.
 
 ## What Are You: a _Language Engineer_ or a _User_?
@@ -50,7 +50,7 @@ As a start, you could ..
 
 * .. find out what [projectional editing](/010_Intro/010_Projectional_Editing) is.
 * .. see how you can [install and use](/020_Getting_Started/010_Installation) ProjectIt.
-* .. find out how to define a language and its editor, etc. in the [tutorials](/030_Default_Level).
+* .. find out how to define a language and its editor, etc. in the [tutorials](/030_Developing_a_Language/010_Default_Level).
 * .. dive deeper into the [structure of the generated code](/020_Getting_Started/020_Project_Structure).
 * .. get to know more about the [meta-code](/060_Under_the_Hood) of ProjectIt.
 

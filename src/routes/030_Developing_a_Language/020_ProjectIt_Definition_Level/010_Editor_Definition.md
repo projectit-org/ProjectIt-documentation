@@ -22,7 +22,7 @@ that is incorporated in it.
 
 The rest of this tutorial explains the second level: how to write an editor definition (`.edit` file).
 For making more adjustments to the projection by adding hand-made projections on the third level, see the
-tutorial on [using the framework](/050_Third_level/010_The_Editor_at_the_Third_Level).
+tutorial on [using the framework](/030_Developing_a_Language/030_API_Level/010_Editor_API).
 
 ## <a name='operand'/> The Editor Definition File
 In the editor definition file (`.edit` file) you can define a ProjectIt editor by providing extra information

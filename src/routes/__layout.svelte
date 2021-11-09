@@ -14,11 +14,11 @@
 		{:else }
 			<div class="splitpane-container" >
 				<SplitPane type='horizontal' pos={20}>
-					<section class="splitpane-section" slot=a>
+					<section class="splitpane-tree" slot=a>
 						<TreeView />
 					</section>
 
-					<section class="splitpane-section" slot=b>
+					<section class="splitpane-content" slot=b>
 						<div class='content-box'>
 							<slot />
 						</div>
@@ -69,6 +69,7 @@
       width: 100%;
       height: calc(100% - var(--pi-header-height) - var(--pi-footer-height) - 8px);
       box-sizing: border-box;
+      background: var(--theme-colors-bg_color);
       /*border: var(--theme-colors-list_divider) 1px solid;*/
       overflow: hidden; /* no scroll bar on main window, instead it should be placed on the children */
   }
@@ -77,11 +78,18 @@
       width: 100%;
       height: 100%;
   }
-  .splitpane-section {
+  .splitpane-tree {
       position: relative;
       height: 100%;
       box-sizing: border-box;
       /*border: var(--theme-colors-list_divider) 1px solid;*/
+  }
+  .splitpane-content {
+      position: relative;
+      height: 100%;
+      box-sizing: border-box;
+      /*border: var(--theme-colors-list_divider) 1px solid;*/
+      overflow: hidden; /* no scroll bar on main window, instead it should be placed on the children */
   }
   .content-box {
       position: relative;
@@ -92,6 +100,7 @@
 			background: var(--theme-colors-bg_text_box);
       box-sizing: border-box;
       max-width: var(--column-width);
-      margin: var(--column-margin-top) auto 0 0;
+      margin: 0 auto 0 0;
+			overflow: auto;
   }
 </style>

@@ -11,7 +11,7 @@ It holds projections for **all concepts** in the language. When a projection is 
 file this is the one that will be in
 the implementation, when no projection is defined, a default projection will be generated.
 
-As you can read in the [ProjectIt Editor Framework](/060_Under_the_Hood/framework/editor-framework),
+As you can read in the [ProjectIt Editor Framework](/060_Under_the_Hood/010_The_Editor_Framework),
 all projections are based on boxes. In the next few steps we will show you how to build a hierarchy
 of boxes to project your AST nodes, and how to style these boxes according to your wishes.
 
@@ -97,7 +97,7 @@ To make the label look different from the value of the property, we need to add 
 to the `LabelBox`. To do so, we associate the `LabelBox` with the style `projectitStyles.keyword`.
 This will project it in a different color.
 
-Also, we give the `TextBox` has a `placeHolder` property. The placeholder will show
+Also, we give the `TextBox` has a `placeHolder` property. The placeholder will be shown
 whenever the contents of the `TextBox`
 is empty, giving the user a visual clue that a name could be entered.
 
@@ -117,13 +117,6 @@ private createModelBox2(model: EntityModelUnit): Box {
 }
 ```
 
-The style `projectitStyles.keyword` is defined in the file `~/picode/editor/styles/styles.ts` as follows.
-In principle all CSS styles can be used here. Learn more about styling in [TODO STYLING](/030_API_Level/090_Styling).
-
-```ts
-// tutorial-language/editor/styles/styles.ts#L37-L40
-```
-
 The result looks a lot better.
 
 <Figure
@@ -132,6 +125,16 @@ The result looks a lot better.
     figureNumber={2}
 ></Figure>
 
+
+The style `projectitStyles.keyword` is defined in the file `~/picode/editor/styles/styles.ts` as follows.
+In principle all CSS styles can be used here. Learn more about styling
+in [TODO STYLING](/030_Developing_a_Language/030_API_Level/090_Styling).
+
+
+
+```ts
+// tutorial-language/editor/styles/styles.ts#L37-L40
+```
 
 ### Step 3 - Projecting a List
 
@@ -253,4 +256,4 @@ we do have the built-in default behavior of the editor:
 - When an element is selected, it can be deleted with the DEL key.
 
 The default behavior takes care of changing simple AST nodes and deleting both simple and
-complex AST nodes. Find out more about adding behavior in [Writing Actions](030_Writing_Actions).
+complex AST nodes. Find out more about adding behavior in [Writing Actions](/030_Developing_a_Language/030_API_Level/030_Writing_Actions).

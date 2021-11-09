@@ -37,22 +37,12 @@ export const MANUAL_KEYBOARD: KeyboardShortcutBehavior[] = [
 ];
 ```
 
-## Anatomy of an Action
-
-Each action defines:
-
-- The boxes in which the action can be triggered,
-- The trigger,
-- The action itself,
-- The box where the cursor should be placed after the execution of the action (optional),
-- An id for internal use
-
 ## Creation of New Elements
 
 Now, let's start with adding an element, e.g. adding a new `property` to an
 `Entity`.
 
-From [Actions](/060_Under_the_Hood/framework/defining*actions) you will have learned that
+From [Actions](/060_Under_the_Hood/010_The_Editor_Framework#defining-actions) you will have learned that
 an `AliasBox` is a predefined box where the user can type text to trigger some action.
 (TODO link) Thus, we add an `AliasBox` to the projection of the property list.
 Note the role of the box: *end-of-property-list*.
@@ -107,10 +97,10 @@ This way, the above action is available for each attribute list in each entity.
 To Be Done
 
 ## Expressions and Binary Expressions
-Advanced expression editing is described in [TODO](TODO).
+// TODO Advanced expression editing.
 
 ## Keyboard Shortcuts
-A keyboard shortcut specifies an action that is triggered by special keys, like e.g. Ctrl-A.
+// TODO A keyboard shortcut specifies an action that is triggered by special keys, like e.g. Ctrl-A.
 
 
 
