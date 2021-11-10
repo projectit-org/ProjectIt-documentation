@@ -1,20 +1,4 @@
-/*@import '@fontsource/fira-mono';*/
-
 :root {
-	/*font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,*/
-	/*	Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
-	--font-mono: 'Fira Mono', monospace;
-	/*--pure-white: #ffffff;*/
-	/*--primary-color: #b9c6d2;*/
-	/*--secondary-color: #d0dde9;*/
-	/*--tertiary-color: #edf0f8;*/
-	/*--accent-color: #ff3e00;*/
-	/*--heading-color: rgba(0, 0, 0, 0.7);*/
-	/*--text-color: #444444;*/
-	/*--background-without-opacity: rgba(255, 255, 255, 0.7);*/
-	--column-width: 62rem;
-	--max-image-width: 54rem;
-	--column-margin-top: 1rem;
 	/* the following css properties are present in order for the text completion during development to function */
 	/* they are overwritten by the THEME values in 'themePresets.ts' */
 	--theme-colors-color: darkblue;           /* Primary text color */
@@ -74,14 +58,6 @@
 	--pi-popup-background: #fff;
 	--pi-popup-box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.5);
 	--pi-list-background-color: white;
-	/*--alternate: #fff;*/
-	/*--primary: #1976d2;*/
-
-	/*--bg-popover: #fff;*/
-	/*--border: #dfdfdf;*/
-	/*--label: rgba(0, 0, 0, 0.3755);*/
-	/*--bg-input-filled: rgba(0, 0, 0, 0.0555);*/
-	/*--focus-color: rgba(25, 118, 210, 0.5); !* primary with alpha *!*/
 
 	/* fonts, etc */
 	--font-family: Roboto, Helvetica, sans-serif;
@@ -89,7 +65,7 @@
 	--button-font-family: var(--font-family);
 	--code-font-family: 'Roboto Mono', Menlo, Consolas, monospace;
 
-	/* added */
+	/* added for documentation to theme variables from ProjectIt */
 	--theme-colors-button_color: white;
 	--theme-colors-button_bg_color: rgba(0,0,139, 1); /* darkblue with opacity 1 */
 	--theme-colors-button_active: rgba(0,0,139, .7); /* darkblue with opacity .7 */
@@ -100,6 +76,11 @@
 	--theme-colors-note_background: #C199F93C;
 	--theme-colors-figure_background: cornsilk;
 	--theme-colors-table_background: cornsilk;
+	--theme-colors-block_quote_background: cornsilk;
+	--font-mono: 'Fira Mono', monospace;
+	--column-width: 62rem;
+	--max-image-width: 54rem;
+	--column-margin-top: 1rem;
 }
 
 html, body {
@@ -109,7 +90,7 @@ html, body {
 }
 
 body {
-	color: #333;
+	color: var(--theme-colors-color);
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
@@ -119,7 +100,7 @@ body {
 blockquote {
 	margin: 0;
 	padding: 2px 8px;
-	background: cornsilk;
+	background: var(--theme-colors-block_quote_background);
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -140,90 +121,3 @@ th, td {
 	text-align: left;
 	border: 1px var(--theme-colors-divider) solid;
 }
-/*body::before {*/
-/*	content: '';*/
-/*	width: 80vw;*/
-/*	height: 100vh;*/
-/*	position: absolute;*/
-/*	top: 0;*/
-/*	left: 10vw;*/
-/*	z-index: -1;*/
-/*	background: radial-gradient(*/
-/*		50% 50% at 50% 50%,*/
-/*		var(--pure-white) 0%,*/
-/*		rgba(255, 255, 255, 0) 100%*/
-/*	);*/
-/*	opacity: 0.05;*/
-/*}*/
-
-/*#svelte {*/
-/*	min-height: 100vh;*/
-/*	display: flex;*/
-/*	flex-direction: column;*/
-/*}*/
-
-/*h1,*/
-/*h2,*/
-/*p {*/
-/*	font-weight: 400;*/
-/*	color: var(--heading-color);*/
-/*}*/
-
-/*p {*/
-/*	line-height: 1.5;*/
-/*}*/
-
-/*a {*/
-/*	color: var(--accent-color);*/
-/*	text-decoration: none;*/
-/*}*/
-
-/*a:hover {*/
-/*	text-decoration: underline;*/
-/*}*/
-
-/*h1 {*/
-/*	font-size: 2rem;*/
-/*	text-align: center;*/
-/*}*/
-
-/*h2 {*/
-/*	font-size: 1rem;*/
-/*}*/
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: lightgrey;
-	border-radius: 3px;
-	/*box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);*/
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--theme-colors-color);
-}
-
-code {
-	padding: 0.2em 0.15em;
-	font-weight: 400;
-	font-size: medium; /* Anneke: added font-size */
-	background-color: $code-background-color;
-	border: $border $grey-lt-100; //   was: "border: $border $border-color;" but border-color is now "projectit-blue"
-	border-radius: $border-radius;
-}
-
-
-/*input,*/
-/*button {*/
-/*	font-size: inherit;*/
-/*	font-family: inherit;*/
-/*}*/
-
-/*button:focus:not(:focus-visible) {*/
-/*	outline: none;*/
-/*}*/
-
-/*@media (min-width: 720px) {*/
-/*	h1 {*/
-/*		font-size: 2.4rem;*/
-/*	}*/
-/*}*/

@@ -42,9 +42,9 @@ export const MANUAL_KEYBOARD: KeyboardShortcutBehavior[] = [
 Now, let's start with adding an element, e.g. adding a new `property` to an
 `Entity`.
 
-From [Actions](/060_Under_the_Hood/010_The_Editor_Framework#defining-actions) you will have learned that
-an `AliasBox` is a predefined box where the user can type text to trigger some action.
-(TODO link) Thus, we add an `AliasBox` to the projection of the property list.
+From [Actions](/060_Under_the_Hood/010_The_Editor_Framework#defining-actions) you will have learned
+that an `AliasBox` is a predefined box where the user can type text to trigger some action.
+Thus, we add an `AliasBox` to the projection of the property list.
 Note the role of the box: *end-of-property-list*.
 
 ```ts
@@ -90,11 +90,10 @@ within the entity. This ensures that the user can immediately start typing the n
 There can be many boxes with the same role in the editor, as long as their model element is different.
 This way, the above action is available for each attribute list in each entity.
 
-//TODO: describe the optional properties
+// TODO: describe the optional properties
 
 ## Custom Actions
 // TODO document other custom actions
-To Be Done
 
 ## Expressions and Binary Expressions
 // TODO Advanced expression editing.

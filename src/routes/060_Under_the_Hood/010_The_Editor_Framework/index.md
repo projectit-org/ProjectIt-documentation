@@ -53,6 +53,7 @@ figureNumber={2}
 We can now show the full typescript code for this projection. Given that `literal` is the `StringLiteral` object:
 
 ```ts
+//
 new HorizontalListBox(literal, "full-string", [      // <1>
     new LabelBox(literal, "start-quote", '"'),          // <2>
     new TextBox(                                        // <3>

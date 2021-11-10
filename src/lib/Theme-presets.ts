@@ -56,6 +56,26 @@ export const themePresets = [
             /* Tooltips */
             tooltip_color: "white",
             tooltip_background: "red",
+            /* Syntax Highlighting */
+            code_color: "#393A34",
+            code_background: "#C1DEF1",
+            code_background_color: "white",
+            code_keyword: "#0000ff",
+            token_color_string: "#A31515",
+            /* to be done */
+            token_keyword: "#569CD6",
+            token_constant: "#9cdcfe",
+            token_number: "#b5cea8",
+            token_not_pre: "#db4c69",
+            token_operator: "#d4d4d4",
+            token_att_value: "#ce9178",
+            token_atrule: "#c586c0",
+            token_function: "#393A34",
+            token_regex: "#d16969",
+            token_boolean: "#569cd6",
+            token_class_name: "#4ec9b0",
+            /* end to be done */
+            token_comment: "#008000",
         },
         fonts: {
             size_editor: "14px",
@@ -117,6 +137,24 @@ export const themePresets = [
             /* Tooltips */
             tooltip_color: "black",
             tooltip_background: "red",
+            /* Syntax Highlighting */
+            code_color: "#d4d4d4",
+            code_background: "#264F78",
+            code_background_color: "#1e1e1e",
+            code_keyword: "#c586c0",
+            token_color_string: "#ce9178",
+            token_keyword: "#569CD6",
+            token_constant: "#9cdcfe",
+            token_number: "#b5cea8",
+            token_not_pre: "#db4c69",
+            token_operator: "#d4d4d4",
+            token_att_value: "#ce9178",
+            token_atrule: "#c586c0",
+            token_function: "#dcdcaa",
+            token_regex: "#d16969",
+            token_boolean: "#569cd6",
+            token_class_name: "#4ec9b0",
+            token_comment: "#6a9955",
         },
         fonts: {
             size_editor: "14px",
