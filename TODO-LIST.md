@@ -11,7 +11,9 @@ LATER 2. improve pictures in 'projectional-editing.adoc'
 --
 28. figures demomodelname.png and demomodelname-with-style.png need to be replaced.
 29. add search mechanism on site
-
+30. warn the lang. eng. that when the subcommands (not -all) are used to generate to
+ other folders, then the imports will not be correct.
+    
 Changes made from version 0.1.0 onwards that still need to be documented:
 
 4. pathnames can be used as references (if editor is adjusted)
