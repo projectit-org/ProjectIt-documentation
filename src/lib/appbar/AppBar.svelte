@@ -1,4 +1,5 @@
 <!-- The AppBar is always shown at the top of the viewport -->
+<!-- TODO add search mechanism -->
 
 <div class="app-bar">
 	{#if $miniWindow}

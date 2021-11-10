@@ -1,3 +1,6 @@
+<script>
+    import Note from "../../../lib/notes/Note.svelte";
+</script>
 
 # The Scoper Definition
 
@@ -25,6 +28,13 @@ isnamespace { EntityModelUnit, Entity, EntityFunction }
 Interfaces can be namespaces as well.
 Any instance of a concept that implements the namespace interface is a
 namespace, but only the properties of the interface will be visible.
+
+<Note>
+<svelte:fragment slot="header"> Each model unit is a namespace.</svelte:fragment>
+<svelte:fragment slot="content">
+On all Levels of Customizations model units are always considered to be namespaces.
+</svelte:fragment>
+</Note>
 
 ## Namespace Additions
 The standard namespaces can be added to. In that case, the visible elements from the addition are included.

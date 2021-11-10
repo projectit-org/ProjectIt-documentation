@@ -62,11 +62,14 @@ his is not the case, therefore the text "This is" will be shown at the beginning
 "that is projected in the" will be indented with 10 spaces. The text "for every concept of type Text"
 will be shown with an indentation of 8 spaces.
 
-<Note><svelte:fragment slot="header"> Indentation is incremental</svelte:fragment><svelte:fragment slot="content">
+<Note>
+<svelte:fragment slot="header"> Indentation is incremental</svelte:fragment>
+<svelte:fragment slot="content">
 This is not completely true. When a `Text` element is used within another projection,
 the indentation that is defined by the projection in the definition for `Text` will be preceded
 by any indentation defined for the enclosing concept.
-</svelte:fragment></Note>
+</svelte:fragment>
+</Note>
 
 If the closing bracket would be positioned on the line after the text,
 **and** it would be indented with 8 spaces, then the text 
@@ -173,7 +176,17 @@ EntityModelUnit {
         ]
 }
 ```
+
+<Note>
+<svelte:fragment slot="header">Newlines in terminator or separator are ignored</svelte:fragment>
+<svelte:fragment slot="content">
+A terminator or separator should not contain a newline character. Horizontal or vertical layout is
+purely determined by the keywords <code>@horizontal</code> and <code>@vertical</code>.
+</svelte:fragment>
+</Note>
+
 ### Optional Projections
+
 When a property is marked optional in the language structure definition (the .ast files), the projection
 of this property should also be optional. This is indicated by '`[?`'. 
 

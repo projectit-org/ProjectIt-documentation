@@ -135,6 +135,13 @@ limited AttributeType implements BaseType {
 
 limited MockEnumeration { EnumValue1; EnumValue2; EnumValue3; }
 ```
+<Note>
+<svelte:fragment slot="header"> No quotes around numbers and booleans.</svelte:fragment>
+<svelte:fragment slot="content">
+Quotes (double or single) are not allowed around the values of properties of
+instances of limited concepts, for number and boolean types
+</svelte:fragment>
+</Note>
 
 ### <a name="Interface"></a> Interface
 An *interface* is a concept that has no instances.
