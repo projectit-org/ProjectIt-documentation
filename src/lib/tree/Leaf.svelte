@@ -10,7 +10,7 @@
 	}
 </script>
 
-<span class:active={$page.path === path} ><a class="myText" class:active={$page.path === path} href={path} on:click={becomingActive}>{name}</a></span>
+<span class:active={$page.path === path} ><a class="leafText" class:active={$page.path === path} href={path} on:click={becomingActive}>{name}</a></span>
 
 <style>
     span {
@@ -20,11 +20,11 @@
         white-space: nowrap;
     }
     span.active a {
-        background: white;
+        background: var(--theme-colors-active);
 				padding: 0.1em 0.3em 0.1em 0.3em;
 				margin-left: -0.3em;
     }
-    .myText {
+    .leafText {
         height: 100%;
         align-items: center;
         color: var(--theme-colors-color);
@@ -32,7 +32,7 @@
         text-decoration: none;
         transition: color 0.2s linear;
     }
-    .myText:hover {
+    .leafText:hover {
         color: var(--theme-colors-accent);
     }
 </style>

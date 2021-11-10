@@ -5,7 +5,7 @@
 		<!-- this button is shown only when the viewport is small -->
 		<!-- it is used to open the left panel which shows the navigator -->
 		<!-- the title is also smaller in a small viewport		-->
-		<Tooltip tip="Hide/show content tree" right>
+		<Tooltip tip="Hide/show content tree" bottom>
 		<Button on:click={() => {$leftPanelVisible = !$leftPanelVisible;}} icon={true}>
 			<MenuIcon />
 		</Button>

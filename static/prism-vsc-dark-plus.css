@@ -18,6 +18,8 @@
     --theme-colors-token_boolean: #569cd6;
     --theme-colors-token_class_name: #4ec9b0;
     --theme-colors-token_comment: #6a9955;
+
+    --theme-colors-code_border: #dddddd;
 }
 
 pre[class*="language-"],
@@ -61,6 +63,7 @@ pre[class*="language-"] {
     margin: .5em 0;
     overflow: auto;
     background: var(--theme-colors-code_background_color);
+    border: 1px solid var(--theme-colors-code_border);
 }
 
 :not(pre) > code[class*="language-"] {
@@ -68,6 +71,7 @@ pre[class*="language-"] {
     border-radius: .3em;
     color: var(--theme-colors-token_not_pre);
     background: var(--theme-colors-code_background_color);
+    border: 1px solid var(--theme-colors-code_border);
 }
 /*********************************************************
 * Tokens

@@ -21,7 +21,7 @@
         visibility: hidden;
         width: 100px;
         background-color: var(--theme-colors-bg_color);
-        color: var(--theme-colors-color);
+        color: var(--theme-colors-tooltip_color);
         text-align: center;
         padding: 5px 0;
         border-radius: 6px;

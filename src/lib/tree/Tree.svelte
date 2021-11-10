@@ -77,7 +77,7 @@
         color: var(--pi-selected-color);
     }
     .textInTree.active a {
-        background: white;
+        background: var(--theme-colors-active);
         /*color: lavender;*/
         /*font-style: italic;*/
         padding: 0.1em 0.3em 0.1em 0.3em;

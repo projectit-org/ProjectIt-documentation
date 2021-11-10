@@ -43,4 +43,4 @@ export class PiError {
 	locationdescription: string;            // human-readable indication of 'reportedOn'
 	severity: PiErrorSeverity;              // indication of how serious the error is, default is 'ToDo'
 }
-```ts
+```

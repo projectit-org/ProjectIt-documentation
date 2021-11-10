@@ -56,26 +56,38 @@ export const themePresets = [
             /* Tooltips */
             tooltip_color: "white",
             tooltip_background: "red",
+            /* Navigation Tree */
+            active: "white",
             /* Syntax Highlighting */
             code_color: "#393A34",
             code_background: "#C1DEF1",
             code_background_color: "white",
             code_keyword: "#0000ff",
             token_color_string: "#A31515",
-            token_keyword: "#008000",
+            token_keyword: "#0000ff",
             token_constant: "#36acaa",
-            /* to be done */
-            token_number: "#36acaa",
             token_not_pre: "#db4c69",
-            token_operator: "#393A34", /* done */
+            token_number: "#36acaa",
+            token_operator: "#393A34",
+            /* to be done */
             token_att_value: "#ce9178",
             token_atrule: "#c586c0",
-            token_function: "#393A34",
+            token_function: "#a237b8",
             token_regex: "#d16969",
             token_boolean: "#569cd6",
-            token_class_name: "#4ec9b0",
+            token_class_name: "#c21016",
             /* end to be done */
             token_comment: "#008000",
+            code_border: "#dddddd",
+            /* Links */
+            link: "#a237b8",
+            link_visited: "#7381de",
+            /* Tables */
+            note_background: "#C199F93C",
+            figure_background: "cornsilk",
+            table_background: "cornsilk",
+            table_heading: "#8ed4c6",
+            block_quote_background: "cornsilk",
         },
         fonts: {
             size_editor: "14px",
@@ -137,6 +149,8 @@ export const themePresets = [
             /* Tooltips */
             tooltip_color: "black",
             tooltip_background: "red",
+            /* Navigation Tree */
+            active: "black",
             /* Syntax Highlighting */
             code_color: "#d4d4d4",
             code_background: "#264F78",
@@ -155,6 +169,16 @@ export const themePresets = [
             token_boolean: "#569cd6",
             token_class_name: "#4ec9b0",
             token_comment: "#6a9955",
+            code_border: "#1e1e1e",
+            /* Links */
+            link: "#ddb3e5",
+            link_visited: "#73dede",
+            /* Tables */
+            note_background: "#C199F93C",
+            figure_background: "cornsilk",
+            table_background: "#715d0a",
+            table_heading: "#096552",
+            block_quote_background: "cornsilk",
         },
         fonts: {
             size_editor: "14px",

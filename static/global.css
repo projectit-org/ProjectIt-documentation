@@ -76,7 +76,10 @@
 	--theme-colors-note_background: #C199F93C;
 	--theme-colors-figure_background: cornsilk;
 	--theme-colors-table_background: cornsilk;
+	--theme-colors-table_heading: #8ed4c6;
 	--theme-colors-block_quote_background: cornsilk;
+	--theme-colors-link: "#a237b8";
+	--theme-colors-active: "white"; /* active leaf/branch in nav tree */
 	--font-mono: 'Fira Mono', monospace;
 	--column-width: 62rem;
 	--max-image-width: 54rem;
@@ -113,11 +116,28 @@ table {
 	margin: auto;
 	border: 1px var(--theme-colors-divider) solid;
 	border-collapse: collapse;
-	width: 100%;
+	width: 90%;
 }
 
-th, td {
+th {
 	padding: 10px;
 	text-align: left;
 	border: 1px var(--theme-colors-divider) solid;
+	background-color: var(--theme-colors-table_heading);
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+	border: 1px var(--theme-colors-divider) solid;
+}
+
+a {
+	color: var(--theme-colors-link);
+	text-decoration: none;
+}
+
+a:visited {
+	color: var(--theme-colors-link);
+	text-decoration: none;
 }
