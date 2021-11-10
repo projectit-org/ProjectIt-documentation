@@ -1,5 +1,6 @@
 <script>
     import Note from "../../../lib/notes/Note.svelte";
+     let self;
 </script>
 
 # The Editor Definition
@@ -38,7 +39,7 @@ for each *concept* in your language. Currently, you can define the following thr
 In the `.edit` file a *projection* is defined between angular brackets.
 This is done in a style similar from markdown, what you see looks close to what you get.
 Everything within the square brackets (`[]`), except
-the parts surrounded by $&#123; &#125;, is taken literally, including any indentation.
+the parts surrounded by `${}`, is taken literally, including any indentation.
 
 ```ts
 // tutorial-language/defs/LanguageDefinition.edit#L3-L11
@@ -106,11 +107,12 @@ FunctionCallExpression {
 
 ### Including Subprojections
 
-By using <code>$&#123; &#125;</code> you tell ProjectIt to include a property. Its projection is defined 
+By using `${}` you tell ProjectIt to include a property. Its projection is defined 
 by the projection for its concept.
 
-In the following example <code>$&#123;self.condition&#125;</code> is a property of type `BooleanLiteralExpression`.
-It will be projected according to the definition for this concept, whereas <code>$&#123;self.whenTrue&#125;</code>
+In the following example `self.condition` is a property of type `BooleanLiteralExpression`.
+It will be projected according to the definition for this concept, whereas `self.whenTrue`
+
 is a property of type `EntityExpression`, which is abstract. This property
 will be projected according to the definition for subtype of `EntityExpression` that is currently found.
 

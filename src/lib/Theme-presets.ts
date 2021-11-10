@@ -62,12 +62,12 @@ export const themePresets = [
             code_background_color: "white",
             code_keyword: "#0000ff",
             token_color_string: "#A31515",
+            token_keyword: "#008000",
+            token_constant: "#36acaa",
             /* to be done */
-            token_keyword: "#569CD6",
-            token_constant: "#9cdcfe",
-            token_number: "#b5cea8",
+            token_number: "#36acaa",
             token_not_pre: "#db4c69",
-            token_operator: "#d4d4d4",
+            token_operator: "#393A34", /* done */
             token_att_value: "#ce9178",
             token_atrule: "#c586c0",
             token_function: "#393A34",
