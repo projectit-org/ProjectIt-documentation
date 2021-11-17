@@ -16,7 +16,7 @@ directly used by ProjectIt.
 * *packages/meta/src/validatordef*: source code that generates code from a validator definition (*.valid*) file.
 * *packages/playground*: source code generated from the language definition files.
 * *packages/playground/src/webapp*: a copy of *packages/webapp*, for use within the playground.
-* *packages/playground/src/demo/defs*: the language definition files for the example language called 'demo'.
+* *packages/playground/src/example/defs*: the language definition files for the example language called 'Example'.
 * *packages/server*: source code for a minimalistic model-server used for demonstration purposes.
 * *packages/webapp*: source code for the web-application used for all generated languages.
 * _/*_: the usual suspects.
