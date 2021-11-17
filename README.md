@@ -10,7 +10,7 @@ Create the website using (either npm or yarn will work) and browse through it.
 # create the content for navigation tree, check the internal links, and include the code fragments
 yarn prepare
 
-# create the website in the directory 'build'
+# create the website in the directory 'docs'
 yarn run build
 
 # preview the website
