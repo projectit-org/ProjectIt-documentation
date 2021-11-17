@@ -40,14 +40,14 @@ In the following the root of your project will be indicated with '~'.
 
 *	Open another (bash) terminal, and start the generated editor from it:
     ```bash
-    yarn start
+    yarn dev
     ```
      
 <Note>
 <svelte:fragment slot="header">Open browser at localhost</svelte:fragment>
 <svelte:fragment slot="content">
 The last command opens your preferred browser with the generated editor for the language `Entity` on
-`<a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a>`. If Chrome is not
+`<a href="http://localhost:5000/" target="_blank">http://localhost:5000/</a>`. If Chrome is not
 your preferred browser, please open the above page in Chrome, because we cannot
 ensure that the editor functions as it should in other browsers."
 </svelte:fragment></Note>
