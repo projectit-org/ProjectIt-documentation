@@ -1,0 +1,55 @@
+import{S as wt,i as bt,s as yt,e as l,t as o,k as p,j as ft,c as m,a as f,g as a,d as t,n as h,m as ct,b as $,f as c,F as n,o as dt,x as pt,u as ht,v as ut}from"../../chunks/vendor-0216fdcb.js";import{N as gt}from"../../chunks/Note-1a08578a.js";/* empty css                                                      */function Et(S){let s;return{c(){s=o("What is referable is determined by the language engineer.")},l(r){s=a(r,"What is referable is determined by the language engineer.")},m(r,u){c(r,s,u)},d(r){r&&t(s)}}}function Mt(S){let s;return{c(){s=o(`The language designer defines which elements in a model are referable.
+From the point of view of the user this is a given part of the language (s)he is using.
+This is similar to restrictions in a programming language that state that only certain 
+types of elements may be exported/imported.`)},l(r){s=a(r,`The language designer defines which elements in a model are referable.
+From the point of view of the user this is a given part of the language (s)he is using.
+This is similar to restrictions in a programming language that state that only certain 
+types of elements may be exported/imported.`)},m(r,u){c(r,s,u)},d(r){r&&t(s)}}}function kt(S){let s;return{c(){s=o("By-name References.")},l(r){s=a(r,"By-name References.")},m(r,u){c(r,s,u)},d(r){r&&t(s)}}}function $t(S){let s;return{c(){s=o(`References are by name, like they are in programming languages.
+This is unlike many other modeling environments, where references are done by id.`)},l(r){s=a(r,`References are by name, like they are in programming languages.
+This is unlike many other modeling environments, where references are done by id.`)},m(r,u){c(r,s,u)},d(r){r&&t(s)}}}function St(S){let s,r,u,L,de,X,b,pe,Y,U,he,Z,d,ue,R,ge,_e,N,ve,we,C,be,ye,H,Ee,Me,ee,T,_t=`<code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L4-L8</span>
+
+    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
+    units<span class="token operator">:</span> EntityModelUnit<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    extraUnit<span class="token operator">:</span> SomeOtherModelUnit<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+</code>`,te,D,ke,ne,_,w,$e,W,Se,Te,z,xe,Ae,Ie,x,Pe,G,Le,Ue,De,A,je,I,Fe,Oe,oe,P,q,Be,ae,y,Re,J,Ne,Ce,ie,g,He,j,We,ze,K,Ge,qe,F,Je,Ke,se,E,re,M,le;return E=new gt({props:{$$slots:{content:[Mt],header:[Et]},$$scope:{ctx:S}}}),M=new gt({props:{$$slots:{content:[$t],header:[kt]},$$scope:{ctx:S}}}),{c(){s=l("h1"),r=o("Models Often Become Too Large"),u=p(),L=l("p"),de=o("Contrary to what is common in the world of"),X=p(),b=l("a"),pe=o("Domain Specific Languages (DSLs)"),Y=o(`
+we believe that a model
+is often too large to handle. When dealing with source code, the times have long gone that a complete
+application was written in a single file. Since the 1980s every self-respecting programming language has supported some kind of modularization.
+It is our strong conviction that this approach should also be taken when dealing with models.
+`),U=l("h2"),he=o("Introducing Model Units"),Z=p(),d=l("p"),ue=o(`Similar to how the source code for a single application is split into classes and/or modules, every model in ProjectIt is split
+into `),R=l("strong"),ge=o("model units"),_e=o(`. Each model may contain units of multiple types, either an array of units, or a single unit. The next example
+shows how to define model units. Here,
+an `),N=l("em"),ve=o("EntityModel"),we=o(" consists of any number of "),C=l("em"),be=o("entityModelUnit"),ye=o("\u2019s and a single "),H=l("em"),Ee=o("SomeOtherModelUnit"),Me=o("."),ee=p(),T=l("pre"),te=p(),D=l("p"),ke=o(`The notion of model units has been around for some time. Actually, we have
+published a number of papers on the topic.`),ne=p(),_=l("ul"),w=l("li"),$e=o("At "),W=l("em"),Se=o("Eclipse Summit 2008 Modeling Symposium"),Te=o(" model units were introduced in "),z=l("em"),xe=o(`Big Models
+an Alternative Approach`),Ae=o("."),Ie=p(),x=l("li"),Pe=o(`Earlier, model units were described under the term \u2018Partial Models\u2019 at the ECMDA-FA 2007 conference
+in a paper called `),G=l("em"),Le=o("Building a Flexible Software Factory Using Partial Domain Specific Models"),Ue=o("."),De=p(),A=l("li"),je=o("More recently model units have been used within the "),I=l("a"),Fe=o("Mendix"),Oe=o(` meta-model to allow for working with large models
+in their web based modeling tools. This work was presented at Splash 2016 in _Making Mendix Meta Model Driven_.`),oe=p(),P=l("h2"),q=l("a"),Be=o(" Model Unit Interfaces"),ae=p(),y=l("p"),Re=o("Another essential idea that we borrow from programming is "),J=l("strong"),Ne=o("information hiding"),Ce=o(`.
+Every model unit in ProjectIt defines an interface.
+The interface determines which elements from the model unit are visible (i.e. can be referred to)
+in other units in the same model.`),ie=p(),g=l("p"),He=o("In a ProjectIt definition of the language structure (the "),j=l("a"),We=o(".ast file"),ze=o(`)
+concepts and properties can be defined to be `),K=l("strong"),Ge=o("public"),qe=o(`.
+Only these public parts of a model unit can be referenced from another model unit.
+The default scoper (the one from the `),F=l("a"),Je=o("default level"),Ke=o(`)
+already takes
+the difference between public and private concepts and properties into account when resolving references.`),se=p(),ft(E.$$.fragment),re=p(),ft(M.$$.fragment),this.h()},l(e){s=m(e,"H1",{});var i=f(s);r=a(i,"Models Often Become Too Large"),i.forEach(t),u=h(e),L=m(e,"P",{});var Q=f(L);de=a(Q,"Contrary to what is common in the world of"),Q.forEach(t),X=h(e),b=m(e,"A",{href:!0,target:!0});var V=f(b);pe=a(V,"Domain Specific Languages (DSLs)"),V.forEach(t),Y=a(e,`
+we believe that a model
+is often too large to handle. When dealing with source code, the times have long gone that a complete
+application was written in a single file. Since the 1980s every self-respecting programming language has supported some kind of modularization.
+It is our strong conviction that this approach should also be taken when dealing with models.
+`),U=m(e,"H2",{});var Ve=f(U);he=a(Ve,"Introducing Model Units"),Ve.forEach(t),Z=h(e),d=m(e,"P",{});var v=f(d);ue=a(v,`Similar to how the source code for a single application is split into classes and/or modules, every model in ProjectIt is split
+into `),R=m(v,"STRONG",{});var Xe=f(R);ge=a(Xe,"model units"),Xe.forEach(t),_e=a(v,`. Each model may contain units of multiple types, either an array of units, or a single unit. The next example
+shows how to define model units. Here,
+an `),N=m(v,"EM",{});var Ye=f(N);ve=a(Ye,"EntityModel"),Ye.forEach(t),we=a(v," consists of any number of "),C=m(v,"EM",{});var Ze=f(C);be=a(Ze,"entityModelUnit"),Ze.forEach(t),ye=a(v,"\u2019s and a single "),H=m(v,"EM",{});var et=f(H);Ee=a(et,"SomeOtherModelUnit"),et.forEach(t),Me=a(v,"."),v.forEach(t),ee=h(e),T=m(e,"PRE",{class:!0});var vt=f(T);vt.forEach(t),te=h(e),D=m(e,"P",{});var tt=f(D);ke=a(tt,`The notion of model units has been around for some time. Actually, we have
+published a number of papers on the topic.`),tt.forEach(t),ne=h(e),_=m(e,"UL",{});var O=f(_);w=m(O,"LI",{});var B=f(w);$e=a(B,"At "),W=m(B,"EM",{});var nt=f(W);Se=a(nt,"Eclipse Summit 2008 Modeling Symposium"),nt.forEach(t),Te=a(B," model units were introduced in "),z=m(B,"EM",{});var ot=f(z);xe=a(ot,`Big Models
+an Alternative Approach`),ot.forEach(t),Ae=a(B,"."),B.forEach(t),Ie=h(O),x=m(O,"LI",{});var me=f(x);Pe=a(me,`Earlier, model units were described under the term \u2018Partial Models\u2019 at the ECMDA-FA 2007 conference
+in a paper called `),G=m(me,"EM",{});var at=f(G);Le=a(at,"Building a Flexible Software Factory Using Partial Domain Specific Models"),at.forEach(t),Ue=a(me,"."),me.forEach(t),De=h(O),A=m(O,"LI",{});var fe=f(A);je=a(fe,"More recently model units have been used within the "),I=m(fe,"A",{href:!0,target:!0});var it=f(I);Fe=a(it,"Mendix"),it.forEach(t),Oe=a(fe,` meta-model to allow for working with large models
+in their web based modeling tools. This work was presented at Splash 2016 in _Making Mendix Meta Model Driven_.`),fe.forEach(t),O.forEach(t),oe=h(e),P=m(e,"H2",{});var Qe=f(P);q=m(Qe,"A",{name:!0}),f(q).forEach(t),Be=a(Qe," Model Unit Interfaces"),Qe.forEach(t),ae=h(e),y=m(e,"P",{});var ce=f(y);Re=a(ce,"Another essential idea that we borrow from programming is "),J=m(ce,"STRONG",{});var st=f(J);Ne=a(st,"information hiding"),st.forEach(t),Ce=a(ce,`.
+Every model unit in ProjectIt defines an interface.
+The interface determines which elements from the model unit are visible (i.e. can be referred to)
+in other units in the same model.`),ce.forEach(t),ie=h(e),g=m(e,"P",{});var k=f(g);He=a(k,"In a ProjectIt definition of the language structure (the "),j=m(k,"A",{href:!0});var rt=f(j);We=a(rt,".ast file"),rt.forEach(t),ze=a(k,`)
+concepts and properties can be defined to be `),K=m(k,"STRONG",{});var lt=f(K);Ge=a(lt,"public"),lt.forEach(t),qe=a(k,`.
+Only these public parts of a model unit can be referenced from another model unit.
+The default scoper (the one from the `),F=m(k,"A",{href:!0});var mt=f(F);Je=a(mt,"default level"),mt.forEach(t),Ke=a(k,`)
+already takes
+the difference between public and private concepts and properties into account when resolving references.`),k.forEach(t),se=h(e),ct(E.$$.fragment,e),re=h(e),ct(M.$$.fragment,e),this.h()},h(){$(b,"href","https://en.wikipedia.org/wiki/Domain-specific*language"),$(b,"target","_blank"),$(T,"class","language-ts"),$(I,"href","https://www.mendix.com/"),$(I,"target","_blank"),$(q,"name","public"),$(j,"href","/010_Intro/040_A_Language_in_Five_Parts"),$(F,"href","/010_Intro/050_Three_Levels_of_Customization#level1")},m(e,i){c(e,s,i),n(s,r),c(e,u,i),c(e,L,i),n(L,de),c(e,X,i),c(e,b,i),n(b,pe),c(e,Y,i),c(e,U,i),n(U,he),c(e,Z,i),c(e,d,i),n(d,ue),n(d,R),n(R,ge),n(d,_e),n(d,N),n(N,ve),n(d,we),n(d,C),n(C,be),n(d,ye),n(d,H),n(H,Ee),n(d,Me),c(e,ee,i),c(e,T,i),T.innerHTML=_t,c(e,te,i),c(e,D,i),n(D,ke),c(e,ne,i),c(e,_,i),n(_,w),n(w,$e),n(w,W),n(W,Se),n(w,Te),n(w,z),n(z,xe),n(w,Ae),n(_,Ie),n(_,x),n(x,Pe),n(x,G),n(G,Le),n(x,Ue),n(_,De),n(_,A),n(A,je),n(A,I),n(I,Fe),n(A,Oe),c(e,oe,i),c(e,P,i),n(P,q),n(P,Be),c(e,ae,i),c(e,y,i),n(y,Re),n(y,J),n(J,Ne),n(y,Ce),c(e,ie,i),c(e,g,i),n(g,He),n(g,j),n(j,We),n(g,ze),n(g,K),n(K,Ge),n(g,qe),n(g,F),n(F,Je),n(g,Ke),c(e,se,i),dt(E,e,i),c(e,re,i),dt(M,e,i),le=!0},p(e,[i]){const Q={};i&1&&(Q.$$scope={dirty:i,ctx:e}),E.$set(Q);const V={};i&1&&(V.$$scope={dirty:i,ctx:e}),M.$set(V)},i(e){le||(pt(E.$$.fragment,e),pt(M.$$.fragment,e),le=!0)},o(e){ht(E.$$.fragment,e),ht(M.$$.fragment,e),le=!1},d(e){e&&t(s),e&&t(u),e&&t(L),e&&t(X),e&&t(b),e&&t(Y),e&&t(U),e&&t(Z),e&&t(d),e&&t(ee),e&&t(T),e&&t(te),e&&t(D),e&&t(ne),e&&t(_),e&&t(oe),e&&t(P),e&&t(ae),e&&t(y),e&&t(ie),e&&t(g),e&&t(se),ut(E,e),e&&t(re),ut(M,e)}}}class It extends wt{constructor(s){super();bt(this,s,null,St,yt,{})}}export{It as default};
