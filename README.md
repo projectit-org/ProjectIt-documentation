@@ -7,6 +7,9 @@ This project contains the sources for all documentation on [ProjectIt](https://g
 Create the website using (either npm or yarn will work) and browse through it.
 
 ```bash
+# Install dependencies
+yarn install
+
 # create the content for navigation tree, check the internal links, and include the code fragments
 yarn prepare
 
