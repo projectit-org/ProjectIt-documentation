@@ -7,14 +7,14 @@ This project contains the sources for all documentation on [ProjectIt](https://g
 Create the website using (either npm or yarn will work) and browse through it.
 
 ```bash
-# create the content for navigation tree
-npm run navScript
+# create the content for navigation tree, check the internal links, and include the code fragments
+yarn prepare
 
 # create the website in the directory 'build'
-npm run build
+yarn run build
 
 # preview the website
-npm run preview
+yarn run preview
 ```
 > Note: preview should _not_ be used to serve your website in production.
 ## Developing
@@ -22,8 +22,8 @@ npm run preview
 During development, you can use the following commands.
 ```bash
 # create the website and serve it on localhost:3000
-npm run dev
+yarn run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+yarn run dev -- --open
 ```

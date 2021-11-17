@@ -24,22 +24,22 @@ In the following the root of your project will be indicated with '~'.
     [Project_Structure](/020_Getting_Started/020_Project_Structure)).
     
 *   Next, install all necessary packages by running: 
-    ```
+    ```bash
     yarn install
     ```
 
 *   Run the generator and see the generated files appearing in the folder ~/src/picode:
-    ```ts
+    ```bash
     yarn generate
     ```
 
 *   Start the server (note that anything that is saved in the editor will be stored in ~/modelstore):
-    ```ts
+    ```bash
     yarn model-server
     ```
 
 *	Open another (bash) terminal, and start the generated editor from it:
-    ```ts
+    ```bash
     yarn start
     ```
      
@@ -71,7 +71,7 @@ In the following the root of the project will be indicated with '~'.
     [Project_Structure](/020_Getting_Started/020_Project_Structure)).
 
 *   Next, install all necessary packages by running:
-    ```ts
+    ```bash
     yarn install
     ```
 
@@ -106,7 +106,7 @@ figureNumber={1}
 *   Run the generator and see the generated files appearing in the folder where you
 decided to store the generated code (in the screenshot we used `src/picode`):
     
-    ```ts
+    ```bash
     yarn generate
 
 *   Adjust the configuration of the web application by changing the two lines in the file
@@ -118,12 +118,12 @@ figureNumber={2}
 />
 
 *   Start the server (note that anything that is saved in the editor will be stored in `~/modelstore`): 
-    ```ts
+    ```bash
     yarn model-server
     ```
 
 *	Open another (bash) terminal, and start the generated editor from it: 
-    ```ts
+    ```bash
     yarn start
     ```
      
@@ -150,7 +150,8 @@ If you are having trouble using the editor, have a look at the key-bindings unde
 Now you are ready for a closer look at ProjectIt. You can for instance:
 
 * Have a look at how the example language is defined by browsing through the language definition
-files in the ProjectIt Example project. You can find them in `~/src/defs`,
-* Or, follow our [tutorials](/030_Developing_a_Language) to create your own language,
-* Have a look at the [structure](/020_Getting_Started/020_Project_Structure) of the generated project,
+files in the <a href="https://github.com/projectit-org/ProjectIt-example" target="_blank">ProjectIt Example project</a>.
+  You can find them in `~/src/defs`.
+* Read [Developing a language](/030_Developing_a_Language) to see how you can create your own language.
+* Have a look at the [structure](/020_Getting_Started/020_Project_Structure) of the generated project.
 * See what the different options there are for calling the [ProjectIt generator](/020_Getting_Started/030_Calling_the_Generator).
