@@ -106,8 +106,9 @@ figureNumber={1}
 *   Run the generator and see the generated files appearing in the folder where you
 decided to store the generated code (in the screenshot we used `src/picode`):
     
-    ```bash
+```bash
     yarn generate
+```
 
 *   Adjust the configuration of the web application by changing the two lines in the file
 `~/src/webapp/WebappConfiguration.ts`.
@@ -124,7 +125,7 @@ figureNumber={2}
 
 *	Open another (bash) terminal, and start the generated editor from it: 
     ```bash
-    yarn start
+    yarn dev
     ```
      
 <Note>
@@ -142,7 +143,7 @@ figureNumber={2}
 <Note>
 <svelte:fragment slot="header">Use Help Menu</svelte:fragment>
 <svelte:fragment slot="content">
-If you are having trouble using the editor, have a look at the key-bindings under the **Help* menu.
+If you are having trouble using the editor, have a look at the key-bindings under the *Help* menu.
 </svelte:fragment>
 </Note>
 
