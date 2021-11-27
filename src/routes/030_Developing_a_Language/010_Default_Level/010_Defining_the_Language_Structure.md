@@ -57,6 +57,8 @@ modelunit EntityModelUnit {
 }
 ```
 
+TODO add file-extension to example
+
 ### <a name="Concept"></a> Concept
 A *concept* is the basic element of your language definition. It defines which instances can be present in
 a model created by your users. 
@@ -117,6 +119,8 @@ in the definition then it is automatically created. Furthermore, when a predefin
 value for the name, the name of the instance is used. In this manner, you can define simple enumerations.
 
 Limited concepts may extend one other concept, and implement multiple interfaces.
+
+TODO: remove quotes around prop names in the following example
 
 ```ts
 // tutorial-language/defs/LanguageDefinition.ast#L34-L46
