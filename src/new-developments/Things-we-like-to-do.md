@@ -5,19 +5,22 @@ given to any of the following items.
 
 # Editor/Projection Items
 1. Projections for binary expressions are not allowed.
+   These projection s are handled in a special way to support editing and shopuld not be tempered with.
 2. All projections will be divided into groups:
     1. **default editor**: contains all defined default projections AND all triggers, symbols, 
        and reference shortcuts. If the language engineer does not provide a default projection, 
        the tool will create one for each concept (also for abstract concepts or interfaces???).
     2. **named editor(s)**: contains extra projections for a number of concepts 
        (does not need to be very concept) that should be projected in a special manner. There
-       may be multiple named editors.
+       may be multiple named editors. 
+    3. Each of the above projections is in a separate .edit file. The name (or default) is defined at the top of
+       the .edit file.
 3. The editors are ordered; the order can be indicated by the language engineer in the configuration. The
    projections are found based on this order. If a box/projection for a concept is not present in the top editor, 
    then the next editor is searched for a projection for the concept. So on, till the default editor is reached.
 4. Dynamically, the projections can be switched on and off. Only the default editor can not be switched off. 
    This means that in the search for a box/projection, the editors that are switched off are not searched.
-5. Projections may specially request that a property is displayed using a projection from a named editor. 
+5. Projections may specifically request that a property is displayed using a projection from a named editor. 
    E.g. when there are three named editors: aap, noot, mies, in that order, mies being the top of the stack, 
    then the following projection which is part of aap may request a projection from mies. 
    (Note that the syntax is not settled yet.)
@@ -88,9 +91,9 @@ the meaning is that when the keyword is present the value of the property is tru
    concrete NAME // the value of isAbstract is false
    ...
    ```     
-11. Sub projections for non-optional properties are not allowed.
-12. A concept may not have a (binary) expression concept as base.
-13. Next to the separator and terminator, we introduce an "initiator". Each element of a list
+10. Sub projections for non-optional properties are not allowed.
+11. A concept may not have a (binary) expression concept as base.
+12. Next to the separator and terminator, we introduce an "initiator". Each element of a list
 will be preceded by this string.
 
 # AST Items
@@ -125,8 +128,13 @@ must conform to the type of the prop in its super.
       }
    }
    ...
-   ``` 
-   The .ast files simply contain a series of concept/expression definitions.
+   ```
+   **NB**: I doubt whether modelunits should be defined in the .lang file.
+   An interesting question is whether we see model units as a concept or just as an organising structure.
+   It is quite normal e.g. to have a modelunit for a statemachine, which certainly is a concept.
+   We might therefore have bith types of model units.
+
+4. The .ast files simply contain a series of concept/expression definitions.
      ```
    // file MyLanguage.ast
    
