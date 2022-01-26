@@ -149,12 +149,14 @@ projection. The use of optionality for lists in the .ast file will result in a w
    of a limited concept.
 8. The keyword 'public' should only be used for properties. Any concept that has one or more 
    public properties in included in the model unit interface.   
-9. The name of any instance of a limited concept should be equal to the name used to reference the instance. Eg.
+9. The name of any instance of a limited concept DOES NOT NEED to be equal to the name used to 
+   reference the instance. Eg.
    ```
    IN = {name: "IN"} // correct
-   IN = {name: "in"} // incorrect
+   IN = {name: "in"} // also correct
+   IN = {name: "&&"} // also correct
    ```
-   A better solution is to include the name just once, thus not inside the {} brackets.
+   the 'name' within the brackets will be used to project/display any property of this type.
 10. There should be an error message when an indirect property is used as expression over the ast. Eg. self.type.name.
 11. When importing a model unit by parsing an external file, the name of the model unit will be the name mentioned 
     in the content of the file, if present, otherwise the filename will be used.
