@@ -74,11 +74,10 @@ Entity {
     @projection normal [
         [?${self.isCompany @keyword[COMPANY]}]
         entity ${self.name} [? base ${self.baseEntity}] {
-            ${self.attributes @vertical }
-            ${self.functions @vertical }
+            ${self.attributes @vertical }       // this list is projected as a vertical list without separator or terminator
+            ${self.functions  @table @columns } // this list is projected as a column based table
         }
     ]
-    @trigger "entity"
 }
 
 /*
@@ -111,4 +110,11 @@ EntityModelUnit {
             ${self.functions @horizontal @separator [; ] }
         }
         ]
+}
+
+EntityFunction {
+    @table [
+        Name         | parameters          | type                 | body
+        ${self.name} | ${self.parameters @table } | ${self.declaredType} | ${self.expression}
+    ]
 }

@@ -9,6 +9,14 @@ The editor definition is the definition of the **concrete syntax** of the langua
 well as the generation of the parser and unparser. The concrete syntax given in the editor definition is also used
 to produce better readable error messages as produced by the validator.
 
+<Note>
+<svelte:fragment slot="header"> Revised syntax for editor definition </svelte:fragment>
+<svelte:fragment slot="content">
+The syntax for defining editor is currently under revision. In the next release the syntax will change significantly, and we will not
+be able to provide backwards compatibility. The bright side of this, is that there will be a number of new features available.
+</svelte:fragment>
+</Note>
+
 ### <a name="editor-three-levels"></a> Three-level definition
 As explained in [Three Levels of Customization](/010_Intro/050_Three_Levels_of_Customization#levels) the generated editor can be defined at three levels.
 For each *concept* in the AST the editor will
@@ -99,13 +107,13 @@ Using ‘[+’ you can indicate that a newline should be added.
 ```ts
 // tutorial-language/defs/LanguageDefinition.edit#L94-L100
 
-FunctionCallExpression {
     @projection showAll
         [+
         CALL ${self.functionDefinition} (  )
         ]
     @trigger "function"
 }
+EntityModelUnit {
 ```
 
 ### Including Subprojections
@@ -154,14 +162,13 @@ PlusExpression {
 
 ### Lists
 If a property is a list, you can indicate whether it should be projected horizontally or vertically.
-The default is horizontal.
+The default is horizontal. You can also choose to project it as a [table](/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition#tables).
 
 Furthermore, you can add either a *separator* string, which will be shown in between all elements, 
 or a *terminator* string, which will be shown after each element. Both are optional.
 ```ts
 // tutorial-language/defs/LanguageDefinition.edit#L101-L114
 
-EntityModelUnit {
     @projection showAll
         [
         model ${self.name} {
@@ -175,7 +182,12 @@ EntityModelUnit {
         }
         ]
 }
+
 ```
+
+Both keywords are optional. If neither of `@vertical` or `@horizontal` is present, the property will be displayed as
+ a vertical list. If neither of `@separator` or `@terminator` is present, the elements of the list will be displayed separated
+by a space.
 
 <Note>
 <svelte:fragment slot="header">Newlines in terminator or separator are ignored</svelte:fragment>
@@ -185,14 +197,65 @@ purely determined by the keywords <code>@horizontal</code> and <code>@vertical</
 </svelte:fragment>
 </Note>
 
+### <a name="tables"></a>Tables
+If a property is a list, you can choose to project it as a table. Tables can be either row or column based.
+Row based means that each element of the list is displayed in a row. Column based, obviously, means that 
+each element is displayed in a single column. The default is row based. 
+
+Defining a table is a two-step process. 
+1. Add the keyword `@table` to the list property that
+you want to display as a table. Optionally, add one of the keywords `@rows` or `@columns`.
+2. Add a table-projection to the type of the property. The table-projection defines
+the headers of the table and which parts of the list elements are displayed in which row or column.
+
+Note that you only need to include one
+table projection for both column and row based tables. ProjectIt will swap the entries when needed.
+
+For example, to project the `functions` property of concept `Entity` as a column based table, you can use the following code.
+
+```ts
+// tutorial-language/defs/LanguageDefinition.edit#L73-L81
+
+Entity {
+    @projection normal [
+        [?${self.isCompany @keyword[COMPANY]}]
+        entity ${self.name} [? base ${self.baseEntity}] {
+            ${self.attributes @vertical }       // this list is projected as a vertical list without separator or terminator
+            ${self.functions  @table @columns } // this list is projected as a column based table
+        }
+    ]
+}
+```
+
+Given the above example, there should also be a projection tagged `@table` for the concept `EntityFunction`. 
+Below four columns/rows are defined, each with its own header. 
+
+```ts
+// tutorial-language/defs/LanguageDefinition.edit#L115-L121
+
+EntityFunction {
+    @table [
+        Name         | parameters          | type                 | body
+        ${self.name} | ${self.parameters @table } | ${self.declaredType} | ${self.expression}
+    ]
+}
+
+```
+
+Note that the manner in which each of the properties of a single function are displayed, will be determined
+by their own projections. In this example, `self.parameters` is a list, and will be displayed as another table.
+The inner table will, however, be row-based, as this is the default.
+
+Note also that the whitespace between the headers is not needed. However, for clarity, it is probably
+good style to align the column/row-separators.
+
 ### Optional Projections
 
 When a property is marked optional in the language structure definition (the .ast files), the projection
 of this property should also be optional. This is indicated by '`[?`'. 
 
 In the next example the property `baseEntity` is only shown if it is present. If it is not present,
-the text 'base' is omitted as well. The trigger of its concept (which is `Entity` itself) can be used 
-to start the action of creating this property.
+the text `base` is omitted as well.
 
 Because, in this case, `baseEntity` is a reference property, the element that will be created is an 
 instance of a special class that represents a reference to an `Entity`. What is shown is the name of the 
@@ -217,12 +280,12 @@ Entity {
     @projection normal [
         [?${self.isCompany @keyword[COMPANY]}]
         entity ${self.name} [? base ${self.baseEntity}] {
-            ${self.attributes @vertical }
-            ${self.functions @vertical }
+            ${self.attributes @vertical }       // this list is projected as a vertical list without separator or terminator
+            ${self.functions  @table @columns } // this list is projected as a column based table
         }
     ]
-    @trigger "entity"
 }
+
 ```
 
 ### Keyword Projections
@@ -232,6 +295,8 @@ keyword representing the property is `COMPANY`. When the value
 of the property is `true`, the keyword is shown. When the value is `false`, the keyword is not shown.
 
 The user can change the value of the property using the keyword as trigger.
+
+// TODO add limited projections
 
 ### Projection Names
 Each projection can have a name. Currently, these names are not in use, but in future we plan to 

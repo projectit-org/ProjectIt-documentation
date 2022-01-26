@@ -5,7 +5,9 @@ given to any of the following items.
 
 # Editor/Projection Items
 1. Projections for binary expressions are not allowed.
-   These projection s are handled in a special way to support editing and shopuld not be tempered with.
+   These projections are handled in a special way to support editing and should not be tempered with.
+   
+DONE in release 0.4.0
 2. All projections will be divided into groups:
     1. **default editor**: contains all defined default projections AND all triggers, symbols, 
        and reference shortcuts. If the language engineer does not provide a default projection, 
@@ -15,30 +17,36 @@ given to any of the following items.
        may be multiple named editors. 
     3. Each of the above projections is in a separate .edit file. The name (or default) is defined at the top of
        the .edit file.
-3. The editors are ordered; the order can be indicated by the language engineer in the configuration. The
-   projections are found based on this order. If a box/projection for a concept is not present in the top editor, 
-   then the next editor is searched for a projection for the concept. So on, till the default editor is reached.
-4. Dynamically, the projections can be switched on and off. Only the default editor can not be switched off. 
+       
+DONE in release 0.4.0   
+3. The editors are ordered as a stack; the order can be indicated by the language engineer in the 
+   configuration. The projections are found based on this order. The order in which the projection 
+   are dynamically searched for, is:
+   1. the current editor (i.e. the set of projections that have the same name as the current projection),
+   2. the top of the editor stack,
+   3. through the editor stack through to the default-default.
+4. Dynamically, the projections can be switched on and off. Only the default editor cannot be switched off. 
    This means that in the search for a box/projection, the editors that are switched off are not searched.
 5. Projections may specifically request that a property is displayed using a projection from a named editor. 
    E.g. when there are three named editors: aap, noot, mies, in that order, mies being the top of the stack, 
-   then the following projection which is part of aap may request a projection from mies. 
-   (Note that the syntax is not settled yet.)
+   then the following projection which is part of aap may request a projection from mies.
     ```
    editor aap
    ...
     @projection [
-       ${self.part12 @as mies}
+       ${part12:mies}
     ]
     ```
    The projection for the property will then act according to the rules in point 3, starting with mies. 
    All other projections will start their search from aap.
+   
+DONE in release 0.4.0
 6. Projections can reference projections for super-concepts or (implemented) interfaces. This is done 
    by a special sub-projection.
    ```
    @projection [
        bla bla
-       [@use NameOfSuperConceptOrInterface]
+       [=> NameOfSuperConceptOrInterface]
        bla bla bla
    ]
    ```  
@@ -48,24 +56,26 @@ given to any of the following items.
    ```
    @projection [
        bla bla
-       [@use NameOfSuperConceptOrInterface @as mies]
+       [=> NameOfSuperConceptOrInterface:mies]
        bla bla bla
    ]
    ```  
    
-8. In the default editor one may indicate how the two predefined boolean values are displayed/projected.
+8. In the default editor one may indicate how the two predefined boolean values are displayed/projected. The 
+   first value represent 'true', the second represents 'false'.
 
    ```
-   boolean [true = "RIGHT", false = "WRONG"]
+   boolean [RIGHT | WRONG]
    ```  
-   
+DONE in release 0.4.0
+
 9. In the keyword projection for boolean properties one may use either one keyword or two keywords. In the first,
 the meaning is that when the keyword is present the value of the property is true. In the second, depending on 
    the value of the property either the first or second keyword is shown. Example:
    ```
    @projection [
        bla bla
-       ${self.isAbstract @keyword[abstract]} ${self.name}
+       ${isAbstract [abstract]} ${name}
        bla bla bla
    ]
    ```   
@@ -80,7 +90,7 @@ the meaning is that when the keyword is present the value of the property is tru
    ```
    @projection [
        bla bla
-       ${self.isAbstract @keyword[abstract, concrete]} ${self.name}
+       ${isAbstract [abstract | concrete]} ${name}
        bla bla bla
    ]
    ```   
@@ -90,11 +100,30 @@ the meaning is that when the keyword is present the value of the property is tru
    ...
    concrete NAME // the value of isAbstract is false
    ...
-   ```     
-10. Sub projections for non-optional properties are not allowed.
+   ```    
+   DONE in release 0.4.0
+   
+10. Optional projections for non-optional properties are not allowed.
 11. A concept may not have a (binary) expression concept as base.
 12. Next to the separator and terminator, we introduce an "initiator". Each element of a list
 will be preceded by this string.
+13. For concepts that are used as table a default-default projection will be generated. This will be done
+    only for those concepts that have no table projection defined in the same editor or in the default one.
+14. In the default editor one may indicate how the separator between the different names in the 
+    pathname of a reference is displayed/projected.
+
+   ```
+   referenceSeparator [::] // is the string that separates the names in a path name, e.g. pack1::cls3::part
+   ```      
+    
+## Editor definition syntax
+1. The text "" will no longer be used.
+2. The keyword "@projection" will no longer be used. Everything within angular brackets is 
+   considered to be the projection. For table projections the keyword 'table' must be 
+   used in front of the angular brackets.
+3. All '@' markers in front of the keywords are removed. 
+4. Syntax for inclusion of projection of superclass/interface: [=> SUPERCLASS_NAME ].
+5. Syntax for inclusion of named projection: ${params:editorName}.
 
 # AST Items
 1. Properties may be overwritten by sub concepts. In that case the type of the prop in the sub concept
@@ -155,7 +184,7 @@ projection. The use of optionality for lists in the .ast file will result in a w
    IN = {name: "in"} // incorrect
    ```
    A better solution is to include the name just once.
-10. There should be an error message when an indirect property is used as expression over the ast. Eg. self.type.name.
+10. There should be an error message when an indirect property is used as expression over the ast. Eg. type.name.
 11. When importing a model unit by parsing an external file, the name of the model unit will be the name mentioned 
     in the content of the file, if present, otherwise the filename will be used.
 12. We will rethink imports...
