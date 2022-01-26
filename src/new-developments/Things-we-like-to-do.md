@@ -183,8 +183,8 @@ projection. The use of optionality for lists in the .ast file will result in a w
    IN = {name: "IN"} // correct
    IN = {name: "in"} // incorrect
    ```
-   A better solution is to include the name just once.
-10. There should be an error message when an indirect property is used as expression over the ast. Eg. type.name.
+   A better solution is to include the name just once, thus not inside the {} brackets.
+10. There should be an error message when an indirect property is used as expression over the ast. Eg. self.type.name.
 11. When importing a model unit by parsing an external file, the name of the model unit will be the name mentioned 
     in the content of the file, if present, otherwise the filename will be used.
 12. We will rethink imports...
