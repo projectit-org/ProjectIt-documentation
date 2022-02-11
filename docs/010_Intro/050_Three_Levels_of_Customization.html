@@ -27,10 +27,12 @@
 
 		<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-3f550184.css">
+	<link rel="stylesheet" href="/_app/assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css">
 	<link rel="modulepreload" href="/_app/start-7a6e4c65.js">
 	<link rel="modulepreload" href="/_app/chunks/vendor-492729b6.js">
 	<link rel="modulepreload" href="/_app/pages/__layout.svelte-74005861.js">
-	<link rel="modulepreload" href="/_app/pages/index.md-d043e86e.js">
+	<link rel="modulepreload" href="/_app/pages/010_Intro/050_Three_Levels_of_Customization.md-c78f84e7.js">
+	<link rel="modulepreload" href="/_app/chunks/Figure-d1c3817f.js">
 	</head>
 	<body>
 		<div style="position: relative; height: 100%; width:100%;" id="svelte">
@@ -97,10 +99,16 @@
 
 
 
-<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="var(--theme-colors-color)"><path d="M10 17l5-5-5-5v10z"></path><path d="M0 24V0h24v24H0z" fill="none"></path></svg></span>
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="var(--theme-colors-color)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M7 10l5 5 5-5z"></path></svg></span>
 				<a href="/010_Intro" class="svelte-1u9fis1">Intro</a></span>
 
-		</nav>
+		<ul class="svelte-1u9fis1 hasName"><li class="svelte-1u9fis1"><span class="svelte-mno2fe"><a class="leafText svelte-mno2fe" href="/010_Intro/010_Projectional_Editing">Projectional Editing</a></span>
+					</li><li class="svelte-1u9fis1"><span class="svelte-mno2fe"><a class="leafText svelte-mno2fe" href="/010_Intro/020_Our_Philosophy">Our Philosophy</a></span>
+					</li><li class="svelte-1u9fis1"><span class="svelte-mno2fe"><a class="leafText svelte-mno2fe" href="/010_Intro/030_Models_and_Model_Units">Models and Model Units</a></span>
+					</li><li class="svelte-1u9fis1"><span class="svelte-mno2fe"><a class="leafText svelte-mno2fe" href="/010_Intro/040_A_Language_in_Five_Parts">A Language in Five Parts</a></span>
+					</li><li class="svelte-1u9fis1"><span class="svelte-mno2fe active"><a class="leafText svelte-mno2fe active" href="/010_Intro/050_Three_Levels_of_Customization">Three Levels of Customization</a></span>
+					</li><li class="svelte-1u9fis1"><span class="svelte-mno2fe"><a class="leafText svelte-mno2fe" href="/010_Intro/090_Future_Developments">Future Developments</a></span>
+					</li></ul></nav>
 </div>
 					</li><li class="svelte-1u9fis1">
 
@@ -146,51 +154,107 @@
 </div>
 	</div></section></div>
 
-    <div class="pane svelte-m1dwbj" style="width: 80%;"><section class="splitpane-content svelte-awlnq7" slot="b"><div class="content-box svelte-awlnq7"><h1>ProjectIt — A Projectional Editor for the Web</h1>
-<p>ProjectIt is a Language Workbench (…in the making <img src="/images/smile.png" alt="OOPS" width="20" height="20">,
-so please let us know if you find anything not yet correct). It is a tool for creating mini-languages,
-which are also known as</p>
-<a href="https://en.wikipedia.org/wiki/Domain-specific*language" target="_blank">Domain Specific Languages (DSLs)</a>.
-ProjectIt is able to generate an integrated
-set of editor, scoper, typer, and validator for your mini-language from a small set of definitions. Together we call this the work environment for your language.
-<h3>The Core Framework</h3>
-<p>The core of ProjectIt is a TypeScript/JavaScript framework for building web-based, projectional
-editors. Editing expressions in a projectional editor is a well-known challenge. What makes the
-ProjectIt framework unique is the fact that it has built-in support for expressions, so you can
-easily make a projectional editor that allows for a natural manner of editing.</p>
-<h3>The Generators</h3>
-<p>On top of the core framework there are five generators, each of which generates part
-of the work environment for your mini-language:</p>
-<ul><li>The <strong>language structure</strong> defines all the concepts, properties, and relationships in the language.</li>
-<li>The <strong>editor</strong> defines how a model in the language looks like on the screen.
-It also defines what editing commands can be used to change the model.</li>
-<li>The <strong>scoper</strong> defines how names that refer to other elements are being resolved.</li>
-<li>The <strong>typer</strong> defines what the type of an element is.</li>
-<li>The <strong>validator</strong> defines what a correct model looks like and wil provide errors whenever a model breaks these rules.</li></ul>
-<h3>Why Is ProjectIt As It Is?</h3>
-<p>Currently, ProjectIt does not support the creation of debuggers, interpreters, generators, and
-such. Indeed, we have a (large) <a href="/010_Intro/090_Future_Developments">wish list</a> of extra features
-that we would like to implement in the future.</p>
-<p>In some cases, like e.g code generators, we think that integration with existing tools is the best solution.
-In other cases we plan to provide ProjectIt components for specific functionality.
-Given time, we hope to realize many of these extra items. </p>
-<p>If you want to know why
-we have chosen this development route, read our statement on the <a href="/010_Intro/020_Our_Philosophy">philosophy</a>
-behind the tool.</p>
-<h2>What Are You: a <em>Language Engineer</em> or a <em>User</em>?</h2>
-<p>We assume that people who want to use ProjectIt know at least the basics of making mini-languages. For instance,
-the terms metamodel, abstract syntax tree, scope, concrete syntax, parsing, etc., should be familiar. When we address the ProjectIt
-user we call him, or her a <strong>language engineer</strong>. The people that will be using the generated work environment are simply called <strong>users</strong>.</p>
-<h2>Welcome, Language Engineer</h2>
-<p>So welcome, language engineer, to the world of ProjectIt. This website is meant for you. It explains how ProjectIt can help
-you in creating a language and building a work environment for it. Please, browse through all the subjects.
-As a start, you could ..</p>
-<ul><li>.. find out what <a href="/010_Intro/010_Projectional_Editing">projectional editing</a> is.</li>
-<li>.. see how you can <a href="/020_Getting_Started/010_Installation">install and use</a> ProjectIt.</li>
-<li>.. find out how to define a language and its editor, etc. in the <a href="/030_Developing_a_Language/010_Default_Level">tutorials</a>.</li>
-<li>.. dive deeper into the <a href="/020_Getting_Started/020_Project_Structure">structure of the generated code</a>.</li>
-<li>.. get to know more about the <a href="/060_Under_the_Hood">meta-code</a> of ProjectIt.</li></ul>
-<p><strong>Have fun!</strong> If you have questions that are not answered in this documentation, please email us at <em>info AT projectit.org</em>.</p></div></section></div>
+    <div class="pane svelte-m1dwbj" style="width: 80%;"><section class="splitpane-content svelte-awlnq7" slot="b"><div class="content-box svelte-awlnq7"><h1>Three Levels to Customize ProjectIt</h1>
+<p>From the five parts of the language definition ProjectIt generates a work environment
+containing an editor, a scope provider or scoper, a type provider or typer, a validator,
+a standard library,
+and some utilities like a parser/deparser.
+All of these are separate components that are called <strong>pi-tools</strong>.</p>
+<p>You, the language engineer, can fine-tune the generated pi-tools at several levels.
+We call this manner of fine-tuning: working at three levels.
+This three-level approach makes it possible to create your language,
+and customize it step-by-step in an agile fashion.
+(Read our <a href="/010_Intro/020_Our_Philosophy">philosophy</a> to understand why we have chosen these levels.)</p>
+<p>Keeping in mind that <em>Simple things should be simple, complex things should be possible</em>
+(<a href="https://en.wikipedia.org/wiki/Alan_Kay" target="_blank">Alan Kay</a>),
+we use the following levels of customization.</p>
+<figure class="figure svelte-iiau5p"><img class="image svelte-iiau5p" src="/images/three-levels.png" alt="Image 'three-levels.png' seems to be missing">
+<figcaption id="three-levels.png">Figure 1. Three level customization</figcaption>
+</figure>
+<h3>Default Level</h3>
+<p>On the <em>first or default level</em> (colored lightblue in the above figure), is based solely on the
+metamodel definition in the .ast file. Defaults are
+generated for every part of the workbench. For instance, the default scoper simply finds
+that every name in a model is visible everywhere. At this level you already have a
+fully working environment for your language.<br>
+See how you can define the metamodel, or language structure in <a href="/030_Developing_a_Language/010_Default_Level">Default Level</a>.</p>
+<h3>ProjectIt Definition Level</h3>
+<p>On the <em>second or definition level</em>  (colored medium blue in the above figure), the other definitions (in the <code>.edit</code>, <code>.scope</code>, <code>.valid</code>, and <code>.type</code> files), when present,
+are taken into account. When, for instance, a definition for the editor is provided,
+it is used to generate a more suitable concrete syntax in the editor, the parser, and the unparser.
+The concrete syntax could be more concise, using certain keywords etc. More on how to
+utilize the second level can be found in <a href="/030_Developing_a_Language/020_ProjectIt_Definition_Level">ProjectIt Definition Level</a>.</p>
+<h3>The API Level</h3>
+<p>The <em>third or API level</em> (colored darkblue in the above figure), takes hand-coding in TypeScript,
+but produces a result that is extremely adjusted to your needs. More on how to make use of this
+level, e.g. how to use the core editor framework of ProjectIt,
+can be found in <a href="/030_Developing_a_Language/030_API_Level">API Level</a>.</p>
+<h2>Combining the Three Levels into One Application</h2>
+<p>ProjectIt combines definitions at each level into one application, where the third level precedes the second, and
+the second level precedes the first.
+For instance, the generated editor will per <a href="/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure#concept"><strong>concept</strong></a> in the language:</p>
+<ol><li>use the <em>hand-made projection</em> from the API level, when this is present. If not, the editor will</li>
+<li>use the <em>projection generated from the editor definition</em> from the ProjectIt definition Level, when this definition is present.
+Finally, when no definition is present, the editor will</li>
+<li>use the <em>default projection</em> from the default level, the one generated when no <code>.edit</code> definition file is present.</li></ol>
+<p>This allows the language engineer to start quickly with a working (but somewhat rough) language environment
+and piece by piece refine this on either the second or the third level.</p>
+<p>At the time of writing this approach is implemented for the editor, validator, and typer, in future this
+will also apply to the scoper, the parser, and the unparser.</p>
+<h1>Overview of the Generated Pi-tools and Their Customizability</h1>
+<p>ProjectIt generates an integrated set of tools that support the language that you are creating.
+This table gives an overview of these tools, and shows how you can adjust them to your needs.
+See <a href="/010_Intro/040_A_Language_in_Five_Parts">The Five Definition Files</a> for an explanation of the parts
+of the language definition.</p>
+<table><thead><tr><th align="left">Workbench Part</th>
+<th align="center">Has Default</th>
+<th align="center">Level 2 Definition</th>
+<th align="center">Level 3 Definition</th></tr></thead>
+<tbody><tr><td align="left">language structure</td>
+<td align="center">no</td>
+<td align="center">.ast</td>
+<td align="center">no</td></tr>
+<tr><td align="left">projectional editor</td>
+<td align="center">yes</td>
+<td align="center">.edit</td>
+<td align="center">yes</td></tr>
+<tr><td align="left">scope provider</td>
+<td align="center">yes</td>
+<td align="center">.scope</td>
+<td align="center">not yet</td></tr>
+<tr><td align="left">validator</td>
+<td align="center">yes</td>
+<td align="center">.valid</td>
+<td align="center">yes</td></tr>
+<tr><td align="left">type provider</td>
+<td align="center">yes</td>
+<td align="center">.type</td>
+<td align="center">not yet</td></tr>
+<tr><td align="left">standard library</td>
+<td align="center">yes</td>
+<td align="center">.ast</td>
+<td align="center">not yet</td></tr>
+<tr><td align="left">parser</td>
+<td align="center">yes</td>
+<td align="center">.edit</td>
+<td align="center">yes (using (<a href="https://github.com/dhakehurst/net.akehurst.language" target="_blank">AGL</a>))</td></tr>
+<tr><td align="left">unparser</td>
+<td align="center">yes</td>
+<td align="center">.edit</td>
+<td align="center">not yet</td></tr>
+<tr><td align="left">json exporter/importer</td>
+<td align="center">yes</td>
+<td align="center">.ast</td>
+<td align="center">no</td></tr>
+<tr><td align="left">visitor pattern implementation</td>
+<td align="center">yes</td>
+<td align="center">.ast</td>
+<td align="center">can be extended</td></tr>
+<tr><td align="left">web application</td>
+<td align="center">yes</td>
+<td align="center">none available</td>
+<td align="center">can be changed or replaced</td></tr></tbody></table>
+<p>If you are using ProjectIt, and are missing a specific tool or feature, please let us know through info AT projectit.org.</p></div></section></div>
 
     <div class="horizontal divider svelte-m1dwbj" style="left: calc(20% - 8px)"></div></div>
 
@@ -202,10 +266,10 @@ As a start, you could ..</p>
 </footer></main>
 
 
-		<script type="module" data-hydrate="1ppwdy2">
+		<script type="module" data-hydrate="qwcucd">
 		import { start } from "/_app/start-7a6e4c65.js";
 		start({
-			target: document.querySelector('[data-hydrate="1ppwdy2"]').parentNode,
+			target: document.querySelector('[data-hydrate="qwcucd"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -216,9 +280,9 @@ As a start, you could ..</p>
 				error: null,
 				nodes: [
 					import("/_app/pages/__layout.svelte-74005861.js"),
-						import("/_app/pages/index.md-d043e86e.js")
+						import("/_app/pages/010_Intro/050_Three_Levels_of_Customization.md-c78f84e7.js")
 				],
-				url: new URL("http://sveltekit-prerender/"),
+				url: new URL("http://sveltekit-prerender/010_Intro/050_Three_Levels_of_Customization"),
 				params: {}
 			}
 		});

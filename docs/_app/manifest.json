@@ -1,0 +1,634 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-7a6e4c65.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      "src/routes/__error.svelte",
+      "src/routes/index.md",
+      "src/routes/030_Developing_a_Language/index.md",
+      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md",
+      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md",
+      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md",
+      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md",
+      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md",
+      "src/routes/030_Developing_a_Language/010_Default_Level/index.md",
+      "src/routes/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/index.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/040_Validator_API.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/010_Editor_API.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/060_Scoper_API.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/070_Reader_API.md",
+      "src/routes/030_Developing_a_Language/030_API_Level/050_Typer_API.md",
+      "src/routes/030_Developing_a_Language/040_Styling/index.md",
+      "src/routes/030_Developing_a_Language/040_Styling/010_Editor_Styling.md",
+      "src/routes/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md",
+      "src/routes/020_Getting_Started/index.md",
+      "src/routes/020_Getting_Started/030_Calling_the_Generator.md",
+      "src/routes/020_Getting_Started/020_Project_Structure.md",
+      "src/routes/020_Getting_Started/010_Installation.md",
+      "src/routes/060_Under_the_Hood/index.md",
+      "src/routes/060_Under_the_Hood/030_Source_Code_Documentation/index.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/index.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/010_PiEnvironment_Interface.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/080_PiStandardlib_Interface.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/040_PiValidator_Interface.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/020_PiScoper_Interface.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/060_PiReader_Interface.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/070_PiWriter_Interface.md",
+      "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/050_PiTyper_Interface.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/index.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/index.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/040_PiBinary_Expression_Interface.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/060_PiNamedElement_Interface.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/010_PiProjection_Interface.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/030_PiExpression_Interface.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/050_PiElement_Interface.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md",
+      "src/routes/060_Under_the_Hood/010_The_Editor_Framework/010_Predefined_Boxes.md",
+      "src/routes/010_Intro/index.svelte",
+      "src/routes/010_Intro/050_Three_Levels_of_Customization.md",
+      "src/routes/010_Intro/040_A_Language_in_Five_Parts.md",
+      "src/routes/010_Intro/030_Models_and_Model_Units.md",
+      "src/routes/010_Intro/010_Projectional_Editing.md",
+      "src/routes/010_Intro/090_Future_Developments.md",
+      "src/routes/010_Intro/020_Our_Philosophy.md",
+      "src/routes/099_about.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-74005861.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-3f550184.css"
+    ]
+  },
+  "src/routes/__error.svelte": {
+    "file": "pages/__error.svelte-7c622487.js",
+    "src": "src/routes/__error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/index.md": {
+    "file": "pages/index.md-d043e86e.js",
+    "src": "src/routes/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/index.md": {
+    "file": "pages/030_Developing_a_Language/index.md-23fc98ac.js",
+    "src": "src/routes/030_Developing_a_Language/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md": {
+    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md-405d1e5d.js",
+    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md": {
+    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md-29b60da3.js",
+    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md": {
+    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md-49f87c9b.js",
+    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md": {
+    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md-d6b2c8d6.js",
+    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md": {
+    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md-48c36d75.js",
+    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/010_Default_Level/index.md": {
+    "file": "pages/030_Developing_a_Language/010_Default_Level/index.md-aaf57210.js",
+    "src": "src/routes/030_Developing_a_Language/010_Default_Level/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md": {
+    "file": "pages/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md-5f8ec9f2.js",
+    "src": "src/routes/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/index.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/index.md-fec00a8b.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md-c29807ae.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css",
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md-ffbfdd70.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css",
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/040_Validator_API.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/040_Validator_API.md-fa24829f.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/040_Validator_API.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/010_Editor_API.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/010_Editor_API.md-a1895c0e.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/010_Editor_API.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/060_Scoper_API.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/060_Scoper_API.md-6bdef58e.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/060_Scoper_API.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/070_Reader_API.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/070_Reader_API.md-bfe0d3a6.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/070_Reader_API.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/030_API_Level/050_Typer_API.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/050_Typer_API.md-b6cc4d98.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/050_Typer_API.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/040_Styling/index.md": {
+    "file": "pages/030_Developing_a_Language/040_Styling/index.md-ca7511a2.js",
+    "src": "src/routes/030_Developing_a_Language/040_Styling/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/040_Styling/010_Editor_Styling.md": {
+    "file": "pages/030_Developing_a_Language/040_Styling/010_Editor_Styling.md-34e4a6e2.js",
+    "src": "src/routes/030_Developing_a_Language/040_Styling/010_Editor_Styling.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md": {
+    "file": "pages/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md-a3bb6b35.js",
+    "src": "src/routes/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/020_Getting_Started/index.md": {
+    "file": "pages/020_Getting_Started/index.md-6a5c360d.js",
+    "src": "src/routes/020_Getting_Started/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/020_Getting_Started/030_Calling_the_Generator.md": {
+    "file": "pages/020_Getting_Started/030_Calling_the_Generator.md-1c6c8ebb.js",
+    "src": "src/routes/020_Getting_Started/030_Calling_the_Generator.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css",
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/020_Getting_Started/020_Project_Structure.md": {
+    "file": "pages/020_Getting_Started/020_Project_Structure.md-be93fb9b.js",
+    "src": "src/routes/020_Getting_Started/020_Project_Structure.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/020_Getting_Started/010_Installation.md": {
+    "file": "pages/020_Getting_Started/010_Installation.md-823382fd.js",
+    "src": "src/routes/020_Getting_Started/010_Installation.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css",
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/index.md": {
+    "file": "pages/060_Under_the_Hood/index.md-4c8f5244.js",
+    "src": "src/routes/060_Under_the_Hood/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/030_Source_Code_Documentation/index.md": {
+    "file": "pages/060_Under_the_Hood/030_Source_Code_Documentation/index.md-1a29295e.js",
+    "src": "src/routes/060_Under_the_Hood/030_Source_Code_Documentation/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/index.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/index.md-4ec7dd25.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/010_PiEnvironment_Interface.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/010_PiEnvironment_Interface.md-2bf1b84b.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/010_PiEnvironment_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/080_PiStandardlib_Interface.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/080_PiStandardlib_Interface.md-6121f3d2.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/080_PiStandardlib_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/040_PiValidator_Interface.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/040_PiValidator_Interface.md-323f2142.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/040_PiValidator_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/020_PiScoper_Interface.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/020_PiScoper_Interface.md-8ca1a504.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/020_PiScoper_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/060_PiReader_Interface.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/060_PiReader_Interface.md-c2368cd0.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/060_PiReader_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/070_PiWriter_Interface.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/070_PiWriter_Interface.md-4eddf260.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/070_PiWriter_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/050_PiTyper_Interface.md": {
+    "file": "pages/060_Under_the_Hood/020_The_PiTool_Interfaces/050_PiTyper_Interface.md-16b87d1c.js",
+    "src": "src/routes/060_Under_the_Hood/020_The_PiTool_Interfaces/050_PiTyper_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/index.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/index.md-20642cb2.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/index.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/index.md-3cc4e8b5.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/040_PiBinary_Expression_Interface.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/040_PiBinary_Expression_Interface.md-61695dd5.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/040_PiBinary_Expression_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/060_PiNamedElement_Interface.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/060_PiNamedElement_Interface.md-d5e1c284.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/060_PiNamedElement_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/010_PiProjection_Interface.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/010_PiProjection_Interface.md-efa989c5.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/010_PiProjection_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/030_PiExpression_Interface.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/030_PiExpression_Interface.md-d8036a18.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/030_PiExpression_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/050_PiElement_Interface.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/050_PiElement_Interface.md-440f2cd4.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/050_PiElement_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md-ebe0fbab.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/060_Under_the_Hood/010_The_Editor_Framework/010_Predefined_Boxes.md": {
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/010_Predefined_Boxes.md-3b1e58f8.js",
+    "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/010_Predefined_Boxes.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/010_Intro/index.svelte": {
+    "file": "pages/010_Intro/index.svelte-480d85f0.js",
+    "src": "src/routes/010_Intro/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/010_Intro/050_Three_Levels_of_Customization.md": {
+    "file": "pages/010_Intro/050_Three_Levels_of_Customization.md-c78f84e7.js",
+    "src": "src/routes/010_Intro/050_Three_Levels_of_Customization.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/010_Intro/040_A_Language_in_Five_Parts.md": {
+    "file": "pages/010_Intro/040_A_Language_in_Five_Parts.md-3a10e555.js",
+    "src": "src/routes/010_Intro/040_A_Language_in_Five_Parts.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/010_Intro/030_Models_and_Model_Units.md": {
+    "file": "pages/010_Intro/030_Models_and_Model_Units.md-e7f15d70.js",
+    "src": "src/routes/010_Intro/030_Models_and_Model_Units.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/010_Intro/010_Projectional_Editing.md": {
+    "file": "pages/010_Intro/010_Projectional_Editing.md-7b9cccce.js",
+    "src": "src/routes/010_Intro/010_Projectional_Editing.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "src/routes/010_Intro/090_Future_Developments.md": {
+    "file": "pages/010_Intro/090_Future_Developments.md-1964df6f.js",
+    "src": "src/routes/010_Intro/090_Future_Developments.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/010_Intro/020_Our_Philosophy.md": {
+    "file": "pages/010_Intro/020_Our_Philosophy.md-a1c6c9b2.js",
+    "src": "src/routes/010_Intro/020_Our_Philosophy.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/099_about.svelte": {
+    "file": "pages/099_about.svelte-7476444b.js",
+    "src": "src/routes/099_about.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/pages/099_about.svelte-04e63ca7.css"
+    ]
+  },
+  "_vendor-492729b6.js": {
+    "file": "chunks/vendor-492729b6.js"
+  },
+  "_Figure-d1c3817f.js": {
+    "file": "chunks/Figure-d1c3817f.js",
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
+    ]
+  },
+  "_Note-1bdf01a3.js": {
+    "file": "chunks/Note-1bdf01a3.js",
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  }
+}
