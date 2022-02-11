@@ -33,18 +33,14 @@ reverse order: A-B-C conforms to C-B-A.
 
 public conformList(typelist1: EntityEveryConcept[], typelist2: EntityEveryConcept[]): boolean | null {
     if (typelist1.length > 0 && (typelist1[0] instanceof Variable)) {
-        if (typelist1.length !== typelist2.length) {
-			return false;
-		}
-		let result: boolean = true;
-		const maxLength = typelist1.length;
-		for (let i = 0; i < maxLength; i++) {
-			result = DemoEnvironment.getInstance().typer.conformsTo(typelist1[i], typelist2[maxLength - i - 1]);
-			if (result === false) {
-				return result;
-			}
-		}
-		return result;
+        if (typelist1.length !== typelist2.length) return false;
+        let result: boolean = true;
+        const max_length = typelist1.length;
+        for (let i = 0; i < typelist1.length; i++) {
+            result = EntityEnvironment.getInstance().typer.conformsTo(typelist1[i], typelist2[max_length - i]);
+            if (result == false) return result;
+        }
+        return result;
     } else {
         return null;
     }

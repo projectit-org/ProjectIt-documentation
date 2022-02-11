@@ -40,7 +40,11 @@
             { name: 'Typer API', path: '/030_Developing_a_Language/030_API_Level/050_Typer_API'},
             { name: 'Scoper API', path: '/030_Developing_a_Language/030_API_Level/060_Scoper_API'},
             { name: 'Reader API', path: '/030_Developing_a_Language/030_API_Level/070_Reader_API'},
-            { name: 'Styling', path: '/030_Developing_a_Language/030_API_Level/090_Styling'},
+                  ]},
+         { name: 'Styling', path: '/030_Developing_a_Language/040_Styling',
+           content: [
+            { name: 'Editor Styling', path: '/030_Developing_a_Language/040_Styling/010_Editor_Styling'},
+            { name: 'Webapp Styling', path: '/030_Developing_a_Language/040_Styling/020_Webapp_Styling'},
                   ]},
                ]},
       { name: 'Under the Hood', path: '/060_Under_the_Hood',

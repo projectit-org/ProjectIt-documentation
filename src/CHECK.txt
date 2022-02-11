@@ -1,10 +1,12 @@
+Found 1 warnings in file 030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md:
+	TODO remaining on line 60
+Found 1 warnings in file 030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md:
+	TODO remaining on line 299
 Found 4 warnings in file 030_Developing_a_Language/030_API_Level/030_Writing_Actions.md:
 	TODO remaining on line 93
 	TODO remaining on line 96
 	TODO remaining on line 99
 	TODO remaining on line 102
-Found 1 warnings in file 030_Developing_a_Language/030_API_Level/090_Styling.md:
-	TODO remaining on line 37
 Found 6 warnings in file 060_Under_the_Hood/010_The_Editor_Framework/010_Predefined_Boxes.md:
 	TODO remaining on line 35
 	TODO remaining on line 67
@@ -22,4 +24,4 @@ Found 5 warnings in file 060_Under_the_Hood/010_The_Editor_Framework/index.md:
 	TODO remaining on line 148
 	TODO remaining on line 151
 	TODO remaining on line 157
-Total errors: 0, total warnings: 18.
+Total errors: 0, total warnings: 19.
