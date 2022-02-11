@@ -17,7 +17,6 @@ types of expressions.
     <a href="https://github.com/dslmeinte/mps-open-source/tree/master/mps-analyser" target="_blank">MPS Analyser</a>
     from Meinte Broersma.)
 *   Create a *diagrammatic view* of the language structure definition.
-*   Add *tables* as a second-level projection.
 *   Provide support for coordinated *projection sets*.
 *   ...
 

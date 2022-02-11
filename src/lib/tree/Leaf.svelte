@@ -10,7 +10,7 @@
 	}
 </script>
 
-<span class:active={$page.path === path} ><a class="leafText" class:active={$page.path === path} href={path} on:click={becomingActive}>{name}</a></span>
+<span class:active={$page.url.pathname === path} ><a class="leafText" class:active={$page.url.pathname === path} href={path} on:click={becomingActive}>{name}</a></span>
 
 <style>
     span {

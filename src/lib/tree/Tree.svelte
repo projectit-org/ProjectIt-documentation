@@ -11,8 +11,8 @@
 	export let expanded = false;
 	export let content;
 	let active: boolean;
-	$: active = ($page.path === path);
-	$: if ($page.path.startsWith(path)) {
+	$: active = ($page.url.pathname === path);
+	$: if ($page.url.pathname.startsWith(path)) {
 		expanded = true;
 	}
 
