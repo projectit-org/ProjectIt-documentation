@@ -1,7 +1,14 @@
 Found 1 warnings in file 030_Developing_a_Language\010_Default_Level\010_Defining_the_Language_Structure.md:
 	TODO remaining on line 60
-Found 1 warnings in file 030_Developing_a_Language\020_ProjectIt_Definition_Level\010_Editor_Definition.md:
-	TODO remaining on line 299
+Found 6 warnings in file 030_Developing_a_Language\020_Definition_Level\010_Editor_Definition\010_Edit_Files.md:
+	TODO remaining on line 39
+	TODO remaining on line 49
+	TODO remaining on line 57
+	TODO remaining on line 78
+	TODO remaining on line 86
+	TODO remaining on line 90
+Found 1 warnings in file 030_Developing_a_Language\020_Definition_Level\010_Editor_Definition\020_Projections.md:
+	TODO remaining on line 37
 Found 1 incorrect link(s) in file 030_Developing_a_Language\030_API_Level\020_Writing_Projections.md:
 	/030_Developing_a_Language/030_API_Level/090_Styling, on line 134
 Found 4 warnings in file 030_Developing_a_Language\030_API_Level\030_Writing_Actions.md:
@@ -9,8 +16,6 @@ Found 4 warnings in file 030_Developing_a_Language\030_API_Level\030_Writing_Act
 	TODO remaining on line 96
 	TODO remaining on line 99
 	TODO remaining on line 102
-Found 1 warnings in file 030_Developing_a_Language\040_Styling\020_Webapp_Styling.md:
-	TODO remaining on line 37
 Found 2 incorrect link(s) in file 030_Developing_a_Language\040_Styling\index.md:
 	/030_Developing_a_Language/030_API_Level/090_Styling/010_Editor_Styling, on line 5
 	/030_Developing_a_Language/030_API_Level/090_Styling/020_Webapp_Styling, on line 6
@@ -31,4 +36,4 @@ Found 5 warnings in file 060_Under_the_Hood\010_The_Editor_Framework\index.md:
 	TODO remaining on line 148
 	TODO remaining on line 151
 	TODO remaining on line 157
-Total errors: 3, total warnings: 20.
+Total errors: 3, total warnings: 25.
