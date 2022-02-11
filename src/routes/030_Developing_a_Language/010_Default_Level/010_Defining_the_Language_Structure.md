@@ -114,13 +114,13 @@ abstract binary expression BinaryExpression base EntityExpression {
 A *limited concept* is a concept that has a limited number of predefined instances. Actually, it is an extended
 version of an enumeration. All instances become part of the standard library of your language. 
 
-A limited concept must always have a name, but if this is not provided
+A limited concept must always have a name property (<code> name: identifier;</code>), but if this is not provided
 in the definition then it is automatically created. Furthermore, when a predefined instance does not provide a
-value for the name, the name of the instance is used. In this manner, you can define simple enumerations.
+value for the name, the name of the instance is used. In this manner, you can define simple enumerations. 
 
 Limited concepts may extend one other concept, and implement multiple interfaces.
 
-TODO: remove quotes around prop names in the following example
+
 
 ```ts
 // tutorial-language/defs/LanguageDefinition.ast#L34-L46
@@ -129,12 +129,12 @@ limited AttributeType implements BaseType {
     // if the 'name' property was not provided, it would have been generated
     name: identifier;
     extra: number;
-    String = { name: "String", "extra": 199}
+    String = { name: "String", extra: 199}
     // notations 'name:' and '"name":' are both correct
-    Integer = { "name": "Integer", "extra": 240261}
-    Boolean = { name: "Boolean", "extra": 5479}
+    Integer = { "name": "Integer", extra: 240261}
+    Boolean = { name: "Boolean", extra: 5479}
     // the following instance gets the name "ANY"
-    ANY = { "extra": 456}
+    ANY = { extra: 456}
 }
 
 limited MockEnumeration { EnumValue1; EnumValue2; EnumValue3; }
@@ -142,8 +142,8 @@ limited MockEnumeration { EnumValue1; EnumValue2; EnumValue3; }
 <Note>
 <svelte:fragment slot="header"> No quotes around numbers and booleans.</svelte:fragment>
 <svelte:fragment slot="content">
-Quotes (double or single) are not allowed around the values of properties of
-instances of limited concepts, for number and boolean types
+For number and boolean types, quotes (double or single) are not allowed around the values of properties of
+instances of limited concepts.
 </svelte:fragment>
 </Note>
 

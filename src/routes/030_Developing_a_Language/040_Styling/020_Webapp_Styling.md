@@ -31,7 +31,3 @@ export const themePresets = [
 	}
 ];
 ```
-
-## Styling the editor projections
-
-The projections in the editor can be styled using the theme presets and TODO...
