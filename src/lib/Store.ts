@@ -1,7 +1,7 @@
 import {writable} from 'svelte/store';
 
 // info about ProjectIt
-export const versionNumber = "0.3.1";
+export const versionNumber = "0.3.0";
 
 export const miniWindow = writable<boolean>(false);
 
