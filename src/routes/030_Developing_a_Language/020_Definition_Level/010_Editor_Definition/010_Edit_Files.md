@@ -40,6 +40,9 @@ then your user can switch from viewing objects as lists to viewing them as table
 Or in another example, you could have an editor (or projection set) that shows only part of the properties of some
 concepts, whereas another editor shows all properties. This makes it possible to cater for different types of users.
 
+Projections may specifically request that a property is displayed using a projection from a named editor.
+For this see TODO.
+
 ### Default Editor
 Because there has to be an editor that can be used as fallback when all other editors are switched off, an 
 editor with the name **default** is generated in case it is not provided. If the default editor is provided but incomplete,
@@ -48,21 +51,25 @@ projections will be generated for the missing concepts. So, upon generation the 
 
 TODO code example
 
-### <a name="ordering"></a> Ordering of Editors
-The named editors are ordered; the order can be indicated by the language engineer in the configuration. The
-projections are found based on this order. The 'default' editor is always the last. If a box/projection 
-for a concept is not present in the top editor,
-then the next editor is searched for a projection for the concept and o on, till the default editor is reached.
-Projections may specifically request that a property is displayed using a projection from a named editor. 
-For this see TODO.
+### <a name="ordering"></a> Precedence of Editors
+The named editors are ordered; the order can be indicated by adding a **precendence** to the editor. The
+projections are found based on this order. The `default` editor is always the last (i.e. its precedence is 0).
+If a box/projection for a concept is not present in the editor with the highest precedence,
+then the next editor is searched for a projection for the concept and so on, till the default editor is reached.
+
+When you omit the precedence, ProjectIt will assign one based on the order in which the files are read,
+which normally is alphabetically. However, we cannot guarantee any specific order.
 
 <Note>
 <svelte:fragment slot="header"> Each editor can be defined in multiple files </svelte:fragment>
 <svelte:fragment slot="content">
 Every <code>.edit</code> file that is encountered in the folder that holds your definitions, will be read during the generation.
-When the editor in multiple files has the same name all information will be combined into a single editor.  
+When the editor in multiple files has the same name all information will be combined into a single editor. 
+The precedence needs to be added only once, but in case you add it multiple times, the numbers are required to be equal.
 </svelte:fragment>
 </Note>
+
+TODO code example
 
 ## Standard Boolean Keywords
 
