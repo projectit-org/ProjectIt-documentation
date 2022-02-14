@@ -24,12 +24,18 @@
            content: [
             { name: 'Defining the Language Structure', path: '/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure'},
                   ]},
-         { name: 'ProjectIt Definition Level', path: '/030_Developing_a_Language/020_ProjectIt_Definition_Level',
+         { name: 'Definition Level', path: '/030_Developing_a_Language/020_Definition_Level',
            content: [
-            { name: 'Editor Definition', path: '/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition'},
-            { name: 'Scoper Definition', path: '/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition'},
-            { name: 'Typer Definition', path: '/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition'},
-            { name: 'Validator Definition', path: '/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition'},
+            { name: 'Editor Definition', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition',
+              content: [
+               { name: 'Edit Files', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files'},
+               { name: 'Projections', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections'},
+               { name: 'Indentation', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation'},
+               { name: 'Triggers And Symbols', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Triggers_And_Symbols'},
+                     ]},
+            { name: 'Scoper Definition', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition'},
+            { name: 'Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition'},
+            { name: 'Validator Definition', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition'},
                   ]},
          { name: 'API Level', path: '/030_Developing_a_Language/030_API_Level',
            content: [

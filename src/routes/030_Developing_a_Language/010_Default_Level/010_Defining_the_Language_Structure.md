@@ -97,17 +97,17 @@ has as left operand `4`, as operator `+`, and as right operand `5`.
 
 Any concrete binary expression concept needs to have a priority. The priority is used by ProjectIt to balance the 
 abstract syntax tree (see [Projectional Editing](/010_Intro/010_Projectional_Editing#tree-balancing)). In 
-the [second level tutorial](/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition#operand) you can 
+the [second level tutorial](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition#operand) you can 
 find more information on how to set the operand.
 
 Binary expression concepts may extend one other concept, and implement multiple interfaces.
 ```ts
 // tutorial-language/defs/LanguageDefinition.ast#L118-L121
 
+}
+
 abstract binary expression BinaryExpression base EntityExpression {
     left: EntityExpression;
-    right: EntityExpression;
-}
 ```
 
 ### <a name="Limited_Concept"></a> Limited Concept
@@ -195,13 +195,13 @@ concept EntityFunction {
 ```ts
 // tutorial-language/defs/LanguageDefinition.ast#L101-L101
 
-reference variable: Variable;
+
 ```
 ```ts
 // tutorial-language/defs/LanguageDefinition.ast#L83-L84
 
-concept Variable {
-    name: identifier;
+}
+
 ```
 
 ### Optional Properties

@@ -37,14 +37,14 @@ metamodel definition in the .ast file. Defaults are
    fully working environment for your language.  
    See how you can define the metamodel, or language structure in [Default Level](/030_Developing_a_Language/010_Default_Level).
 
-### ProjectIt Definition Level
+### Definition Level
 On the *second or definition level*  (colored medium blue in the above figure), the other definitions (in the `.edit`, `.scope`, `.valid`, and `.type` files), when present, 
    are taken into account. When, for instance, a definition for the editor is provided, 
    it is used to generate a more suitable concrete syntax in the editor, the parser, and the unparser.
    The concrete syntax could be more concise, using certain keywords etc. More on how to 
-   utilize the second level can be found in [ProjectIt Definition Level](/030_Developing_a_Language/020_ProjectIt_Definition_Level).
+   utilize the second level can be found in [Definition Level](/030_Developing_a_Language/020_Definition_Level).
 
-### The API Level
+### API Level
 The *third or API level* (colored darkblue in the above figure), takes hand-coding in TypeScript, 
 but produces a result that is extremely adjusted to your needs. More on how to make use of this 
 level, e.g. how to use the core editor framework of ProjectIt,

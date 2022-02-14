@@ -16,7 +16,7 @@ For each **concept* in the AST the validator will
 2. use to the *validation rule(s) generated from the validator definition*, when this definition is present.
 Finally, the validator will
 3. use the 
-   [*default validation rule(s)*](/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition#default-validation-rules).
+   [*default validation rule(s)*](/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition#default-validation-rules).
 
 The rest of this tutorial explains the second level: how to write a validator definition (`.valid` file).
 

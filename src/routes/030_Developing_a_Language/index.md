@@ -8,9 +8,9 @@ Developing a Language with ProjectIt is usually done taking the following steps.
 
 1. Develop the [metamodel](/030_Developing_a_Language/010_Default_Level).
 2. Add the concrete syntax by adding an 
-   [editor definition](/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition).
+   [editor definition](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition).
 3. Add scoping, typing and validation information 
-   (see [ProjectIt Definition level](/030_Developing_a_Language/020_ProjectIt_Definition_Level)).
+   (see [ProjectIt Definition level](/030_Developing_a_Language/020_Definition_Level)).
 4. Fine-tune the result on the [API level](/030_Developing_a_Language/030_API_Level).
 
 ## The Example

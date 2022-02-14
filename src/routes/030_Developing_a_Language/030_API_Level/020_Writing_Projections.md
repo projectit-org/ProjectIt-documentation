@@ -189,7 +189,7 @@ The projection of a single `Entity` is done using `this.rootProjection.getBox(en
 separate function (here called `createEntityBox`) that also returns a `Box`, thus building a hierarchy of boxes. The use of
 `this.rootProjection.getBox(ent)`, instead of directly calling `createEntityBox`,
 ensures that the proper projection for entity is used, following the rules laid down in
-[customize projections](/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition#editor-three-levels).
+[customize projections](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition#editor-three-levels).
 
 We can track the hierarchy of boxes. First, have a look at the projection for `Entity`, which is defines as follows in the .ast.
 

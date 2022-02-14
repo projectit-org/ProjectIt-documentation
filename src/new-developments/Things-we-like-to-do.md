@@ -7,6 +7,9 @@ given to any of the following items.
 Done 0.4.0 => 1. Projections for binary expressions are not allowed.
    These projections are handled in a special way to support editing and shopuld not be tempered with.
 Done 0.4.0 => 2. All projections will be divided into groups:
+1. Projections for binary expressions are not allowed.
+   These projections are handled in a special way to support editing and should not be tempered with.
+2. All projections will be divided into groups:
     1. **default editor**: contains all defined default projections AND all triggers, symbols, 
        and reference shortcuts. If the language engineer does not provide a default projection, 
        the tool will create one for each concept (also for abstract concepts or interfaces???).
