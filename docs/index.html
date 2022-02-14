@@ -25,43 +25,12 @@
 		/>
 		<!--		END INCLUSION -->
 
-		
-
-		
-
-		<link rel="modulepreload" href="/_app/start-33d4823a.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-0216fdcb.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-fd04921b.js">
-		<link rel="modulepreload" href="/_app/pages/index.md-4d418f82.js">
-		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-3f550184.css">
-
-		<script type="module">
-			import { start } from "/_app/start-33d4823a.js";
-			start({
-				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":""},
-				session: {},
-				host: location.host,
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/_app/pages/__layout.svelte-fd04921b.js"),
-						import("/_app/pages/index.md-4d418f82.js")
-					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "\u002F",
-						query: new URLSearchParams(""),
-						params: {}
-					}
-				}
-			});
-		</script>
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-3f550184.css">
+	<link rel="modulepreload" href="/_app/start-0d480ab8.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-492729b6.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-74005861.js">
+	<link rel="modulepreload" href="/_app/pages/index.md-d043e86e.js">
 	</head>
 	<body>
 		<div style="position: relative; height: 100%; width:100%;" id="svelte">
@@ -75,7 +44,7 @@
 <main class="main-window svelte-awlnq7">
 
 
-<div class="app-bar svelte-ae0shh"><div class="title svelte-ae0shh">ProjectIt Documentation (version 0.2.0)</div>
+<div class="app-bar svelte-ae0shh"><div class="title svelte-ae0shh">ProjectIt Documentation (version 0.3.0)</div>
 
 	<span class="linkLogo svelte-ae0shh"><div class="tooltip-wrapper svelte-12vmiyh"><span class="tooltip-slot svelte-12vmiyh">
 
@@ -233,8 +202,26 @@ As a start, you could ..</p>
 </footer></main>
 
 
-
-			
-		</div>
+		<script type="module" data-hydrate="1ppwdy2">
+		import { start } from "/_app/start-0d480ab8.js";
+		start({
+			target: document.querySelector('[data-hydrate="1ppwdy2"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-74005861.js"),
+						import("/_app/pages/index.md-d043e86e.js")
+				],
+				url: new URL("http://sveltekit-prerender/"),
+				params: {}
+			}
+		});
+	</script></div>
 	</body>
 </html>

@@ -4,6 +4,9 @@ This list was composed on 28 december 2021. At this moment there are no prioriti
 given to any of the following items.
 
 # Editor/Projection Items
+Done 0.4.0 => 1. Projections for binary expressions are not allowed.
+   These projections are handled in a special way to support editing and shopuld not be tempered with.
+Done 0.4.0 => 2. All projections will be divided into groups:
 1. Projections for binary expressions are not allowed.
    These projections are handled in a special way to support editing and should not be tempered with.
 2. All projections will be divided into groups:
@@ -13,14 +16,12 @@ given to any of the following items.
     2. **named editor(s)**: contains extra projections for a number of concepts 
        (does not need to be very concept) that should be projected in a special manner. There
        may be multiple named editors. 
-    3. Each of the above projections is in a separate .edit file. The name (or default) is defined at the top of
-       the .edit file.
 3. The editors are ordered; the order can be indicated by the language engineer in the configuration. The
    projections are found based on this order. If a box/projection for a concept is not present in the top editor, 
    then the next editor is searched for a projection for the concept. So on, till the default editor is reached.
-4. Dynamically, the projections can be switched on and off. Only the default editor can not be switched off. 
+Done 0.4.0 => 4. Dynamically, the projections can be switched on and off. Only the default editor can not be switched off. 
    This means that in the search for a box/projection, the editors that are switched off are not searched.
-5. Projections may specifically request that a property is displayed using a projection from a named editor. 
+Done 0.4.0 => 5. Projections may specifically request that a property is displayed using a projection from a named editor. 
    E.g. when there are three named editors: aap, noot, mies, in that order, mies being the top of the stack, 
    then the following projection which is part of aap may request a projection from mies. 
    (Note that the syntax is not settled yet.)
@@ -33,7 +34,7 @@ given to any of the following items.
     ```
    The projection for the property will then act according to the rules in point 3, starting with mies. 
    All other projections will start their search from aap.
-6. Projections can reference projections for super-concepts or (implemented) interfaces. This is done 
+Done 0.4.0 => 6. Projections can reference projections for super-concepts or (implemented) interfaces. This is done 
    by a special sub-projection.
    ```
    @projection [
@@ -42,7 +43,7 @@ given to any of the following items.
        bla bla bla
    ]
    ```  
-7. When a projection for a super-concept or (implemented) interface is used, it is also possible to 
+Done 0.4.0 => 7. When a projection for a super-concept or (implemented) interface is used, it is also possible to 
    request a special named projection. This is done in the same manner as for properties. The same order
    of search for the right projection/box is used.
    ```
@@ -52,14 +53,14 @@ given to any of the following items.
        bla bla bla
    ]
    ```  
-   
-8. In the default editor one may indicate how the two predefined boolean values are displayed/projected.
+
+Done 0.4.0 => 8. In the default editor one may indicate how the two predefined boolean values are displayed/projected.
 
    ```
    boolean [true = "RIGHT", false = "WRONG"]
    ```  
-   
-9. In the keyword projection for boolean properties one may use either one keyword or two keywords. In the first,
+
+Done 0.4.0 => 9. In the keyword projection for boolean properties one may use either one keyword or two keywords. In the first,
 the meaning is that when the keyword is present the value of the property is true. In the second, depending on 
    the value of the property either the first or second keyword is shown. Example:
    ```
@@ -91,17 +92,17 @@ the meaning is that when the keyword is present the value of the property is tru
    concrete NAME // the value of isAbstract is false
    ...
    ```     
-10. Sub projections for non-optional properties are not allowed.
-11. A concept may not have a (binary) expression concept as base.
-12. Next to the separator and terminator, we introduce an "initiator". Each element of a list
+Done 0.4.0 => 10. Sub projections for non-optional properties are not allowed.
+Done 0.4.0 => 12. Next to the separator and terminator, we introduce an "initiator". Each element of a list
 will be preceded by this string.
 
 # AST Items
-1. Properties may be overwritten by sub concepts. In that case the type of the prop in the sub concept
+11. A concept may not have a (binary) expression concept as base.
+Done 0.4.0 => 1. Properties may be overwritten by sub concepts. In that case the type of the prop in the sub concept
    must conform to the type of the prop in its super. In case two properties with the same name are 
    'inherited' from two different interfaces, or from a super concept and an interface, the types of the 
    properties must conform to each other. The sub concept will get the prop with the most restricted type.
-2. Limited concepts may inherit from other concepts or implement interfaces as long as these do not 
+Done 0.4.0 => 2. Limited concepts may inherit from other concepts or implement interfaces as long as these do not 
    have any non-primitive properties.
 3. The model and model unit will be defined in a separate file (or file part???). They may not inherit,
    or implement interfaces. They are solely present to indicate the organisation of the model. This file also
@@ -142,14 +143,14 @@ will be preceded by this string.
       operator?: string;
    }
    ``` 
-5. We will not make a distinction between optional lists and empty lists. Both can be used in an optional
+Done 0.4.0 => 5. We will not make a distinction between optional lists and empty lists. Both can be used in an optional
 projection. The use of optionality for lists in the .ast file will result in a warning.
 6. A limited concept may be abstract. In that case no instances may be defined.
 7. There should be an error or warning when the name of an instance is equal to the name of an instance in the base
    of a limited concept.
 8. The keyword 'public' should only be used for properties. Any concept that has one or more 
    public properties in included in the model unit interface.   
-9. The name of any instance of a limited concept DOES NOT NEED to be equal to the name used to 
+Done 0.4.0 => 9. The name of any instance of a limited concept DOES NOT NEED to be equal to the name used to 
    reference the instance. Eg.
    ```
    IN = {name: "IN"} // correct

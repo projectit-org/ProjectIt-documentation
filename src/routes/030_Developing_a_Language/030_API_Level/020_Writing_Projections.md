@@ -131,7 +131,7 @@ The result looks a lot better.
 
 The style `projectitStyles.keyword` is defined in the file `~/picode/editor/styles/styles.ts` as follows.
 In principle all CSS styles can be used here. Learn more about styling
-in [Styling](/030_Developing_a_Language/030_API_Level/090_Styling).
+in [Styling](/030_Developing_a_Language/040_Styling).
 
 
 
