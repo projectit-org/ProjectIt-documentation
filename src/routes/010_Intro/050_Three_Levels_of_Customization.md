@@ -30,7 +30,7 @@ bind:figureNumber={figureNumber}
 />
 
 ### Default Level
-On the *first or default level* (colored lightblue in the above figure), is based solely on the 
+The *first or default level* (colored lightblue in the above figure), is based solely on the 
 metamodel definition in the .ast file. Defaults are 
    generated for every part of the workbench. For instance, the default scoper simply finds 
    that every name in a model is visible everywhere. At this level you already have a 
@@ -38,7 +38,7 @@ metamodel definition in the .ast file. Defaults are
    See how you can define the metamodel, or language structure in [Default Level](/030_Developing_a_Language/010_Default_Level).
 
 ### Definition Level
-On the *second or definition level*  (colored medium blue in the above figure), the other definitions (in the `.edit`, `.scope`, `.valid`, and `.type` files), when present, 
+In the *second or definition level*  (colored medium blue in the above figure), the other definitions (in the `.edit`, `.scope`, `.valid`, and `.type` files), when present, 
    are taken into account. When, for instance, a definition for the editor is provided, 
    it is used to generate a more suitable concrete syntax in the editor, the parser, and the unparser.
    The concrete syntax could be more concise, using certain keywords etc. More on how to 
