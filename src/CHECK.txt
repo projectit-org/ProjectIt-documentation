@@ -10,6 +10,11 @@ Found 7 warnings in file 030_Developing_a_Language\020_Definition_Level\010_Edit
 	TODO remaining on line 97
 Found 1 warnings in file 030_Developing_a_Language\020_Definition_Level\010_Editor_Definition\020_Projections.md:
 	TODO remaining on line 37
+Found 2 warnings in file 030_Developing_a_Language\020_Definition_Level\030_Typer_Definition\010_Typer_Files.md:
+	TODO remaining on line 103
+	TODO remaining on line 117
+Found 1 warnings in file 030_Developing_a_Language\020_Definition_Level\030_Typer_Definition\020_Typer_Example.md:
+	TODO remaining on line 1
 Found 4 warnings in file 030_Developing_a_Language\030_API_Level\030_Writing_Actions.md:
 	TODO remaining on line 93
 	TODO remaining on line 96
@@ -32,4 +37,4 @@ Found 5 warnings in file 060_Under_the_Hood\010_The_Editor_Framework\index.md:
 	TODO remaining on line 148
 	TODO remaining on line 151
 	TODO remaining on line 157
-Total errors: 0, total warnings: 26.
+Total errors: 0, total warnings: 29.

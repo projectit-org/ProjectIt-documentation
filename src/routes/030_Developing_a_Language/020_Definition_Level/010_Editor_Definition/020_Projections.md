@@ -250,7 +250,7 @@ keyword representing the property is `COMPANY`. When the value
 of the property is `true`, the keyword is shown. When the value is `false`, the keyword is not shown.
 
 The user can change the value of the property using the keyword as trigger. 
-THis example would be displayed as one of ...
+This example would be displayed as one of ...
 
    ```
    COMPANY entity PhilipsEnterPrises { // the value of isCompany is true
