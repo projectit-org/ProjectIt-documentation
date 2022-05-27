@@ -10,6 +10,7 @@
          { name: 'Models and Model Units', path: '/010_Intro/030_Models_and_Model_Units'},
          { name: 'A Language in Five Parts', path: '/010_Intro/040_A_Language_in_Five_Parts'},
          { name: 'Three Levels of Customization', path: '/010_Intro/050_Three_Levels_of_Customization'},
+         { name: 'Name Change', path: '/010_Intro/060_Name_Change'},
          { name: 'Future Developments', path: '/010_Intro/090_Future_Developments'},
                ]},
       { name: 'Getting Started', path: '/020_Getting_Started',

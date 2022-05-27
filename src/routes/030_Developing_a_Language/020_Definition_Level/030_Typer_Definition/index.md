@@ -19,4 +19,4 @@ There are no default typing rules, so the typer does not have a fallback to a th
 
 ## Content
 In [Typer Files](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files) you can find an explanation of the parts of a typer definition.
-In [Typer Example](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example) you can find an example of common types and how to define them.
+In [Typer Example](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example) you can find an example of commonly used types and how to define them.
