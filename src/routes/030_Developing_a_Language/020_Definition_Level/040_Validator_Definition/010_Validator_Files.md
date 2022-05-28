@@ -1,30 +1,13 @@
 <script>
-    import Note from "../../../lib/notes/Note.svelte";
+    import Note from "../../../../lib/notes/Note.svelte";
 </script>
 
 
-# The Validator Definition
-The validator definition is the definition of the rules that hold in your language. These rules are not the rules
-of the concrete syntax, but instead they provide an extra check of the models.
-
-### Three-level definition
-As explained in [Three Levels of Customization](/010_Intro/050_Three_Levels_of_Customization#levels)
-the generated validator can be defined in three levels.
-For each **concept* in the AST the validator will
-
-1. use the *hand-made validation rule(s)*, when present. Otherwise, the validator will
-2. use to the *validation rule(s) generated from the validator definition*, when this definition is present.
-Finally, the validator will
-3. use the 
-   [*default validation rule(s)*](/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition#default-validation-rules).
-
-The rest of this tutorial explains the second level: how to write a validator definition (`.valid` file).
-
-## The Validator Definition File
+# The Validator Definition File
 The validator definition defines the constraints or rules that should be true in the models build by your users. 
 Currently, there are four types of rules.
 
-### Valid Identifier Rules
+## Valid Identifier Rules
 
 Given a simple property of type *identifier*, a **valid-identifier-rule** can be given. The property complies with the
 rule if it is a valid identifier according to the TypeScript definition.
@@ -45,7 +28,7 @@ Variable {
 }
 ```
 
-### Simple Value Rules
+## Simple Value Rules
 Given a simple property, its value can be limited to certain values.
 
 ```ts
@@ -57,7 +40,7 @@ AttributeType  {
 }
 ```
 
-### List Rules
+## List Rules
 Given a list property, a **not-empty rule** can be stated. The list complies with the rule if it is not empty.
 
 An **is-unique rule** is another rule that can be stated for a list property. The list
@@ -71,7 +54,7 @@ EntityModelUnit {
     isunique name in self.entities;
 ```
 
-### Type Check Rules
+## Type Check Rules
 Given the rules in the typer definition, rules can be stated to ensure type compliance.
 To indicate a **type checking rule** the keyword `typecheck` is used, followed by either `equalsType` or `conformsTo`.
 The first demands that the types of the two properties given are equal. The second demands that the type of the first
@@ -90,7 +73,7 @@ MultiplyExpression {
 ```
 
 <a name="default-validation-rules"></a>
-## The Default Validation Rules
+# The Default Validation Rules
 
 There are just a few default validation rules:
 

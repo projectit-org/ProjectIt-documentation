@@ -3,7 +3,7 @@
      let self;
 </script>
 
-# <a name="operand"></a> The Editor Definition Files
+# [<a name="operand"></a>]() The Editor Definition Files
 In an editor definition file (`.edit` file) you can define a ProjectIt editor by providing extra information
 for each *concept* or *interface* in your language. Currently, you can define the following three items per
 *concept* or *interface*.
@@ -17,7 +17,7 @@ for each *concept* or *interface* in your language. Currently, you can define th
 
 You cannot create a projection for either a **binary expression concept** or a **limited concept**.
 The editor provides extra [support for expressions](/010_Intro/010_Projectional_Editing#expressions), which
-cannot be done if a projection is provided. **Limited concepts** are blocked, because the user of the editor
+cannot be done if a user defined projection is provided. **Limited concepts** are blocked, because the user of the editor
 can use the instances of the limited concept solely as references.
 
 <Note>
@@ -28,20 +28,21 @@ For every concept or interface you have to define the projection before the trig
 </Note>
 
      
-## Multiple, Named Editors
+## Named Editors or Projection Sets
 Editors can be **named**, and you can define multiple editors. A **named editor**
 defines a set of projections that are coordinated to operate together.
 These sets can be switched on and off dynamically, thus changing 
 the appearance of the model in the editor. 
+the appearance of the model in the editor. 
 
 For instance, if you define all 
 table projections under the same editor name,
-then your user can switch from viewing objects as lists to viewing them as tables (TODO links).
-Or in another example, you could have an editor (or projection set) that shows only part of the properties of some
+then your user can switch from viewing objects as lists to viewing them as tables <!--- (TODO links) --->.
+Or, in another example, you could have an editor (or projection set) that shows only part of the properties of some
 concepts, whereas another editor shows all properties. This makes it possible to cater for different types of users.
 
 Projections may specifically request that a property is displayed using a projection from a named editor.
-For this see TODO.
+For this see [Including a Property Projection from Another Editor](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections#named_projection).
 
 ### Default Editor
 Because there has to be an editor that can be used as fallback when all other editors are switched off, an 
@@ -73,7 +74,7 @@ TODO code example
 
 ## Standard Boolean Keywords
 
-Next to the concrete syntax definitions for *concepts* and *interfaces*, you can define the keywords that need to be used for 
+Next to the concrete syntax definitions for *concepts* and *interfaces*, you can define the keywords to be used for 
 the boolean *true* and *false* values. Note that this can be done once in the complete set of editors. It should be 
 part of an editor called *default*. In the example below, the user will view the string `RIGHT` whenever a boolean 
 property has the value `true`, and likewise `WRONG` will be shown for the value `false`.

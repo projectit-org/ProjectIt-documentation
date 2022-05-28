@@ -34,13 +34,19 @@
                { name: 'Indentation', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation'},
                { name: 'Triggers And Symbols', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Triggers_And_Symbols'},
                      ]},
-            { name: 'Scoper Definition', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition'},
+            { name: 'Scoper Definition', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition',
+              content: [
+               { name: 'Scoper Files', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/010_Scoper_Files'},
+                     ]},
             { name: 'Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition',
               content: [
                { name: 'Typer Files', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files'},
                { name: 'Typer Example', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example'},
                      ]},
-            { name: 'Validator Definition', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition'},
+            { name: 'Validator Definition', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition',
+              content: [
+               { name: 'Validator Files', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/010_Validator_Files'},
+                     ]},
                   ]},
          { name: 'API Level', path: '/030_Developing_a_Language/030_API_Level',
            content: [

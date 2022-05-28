@@ -3,6 +3,7 @@
      let self;
 </script>
 
+<!--- TODO support for coordinated *projection sets*. --->
 # Projections
 In the `.edit` file a *projection* is defined between angular brackets.
 This is done in a style similar from markdown, what you see looks close to what you get.
@@ -25,16 +26,16 @@ This is
 
 ## Including Properties
 When you define a projection for a concept or interface, you will want to include its properties. For
-this you need to special notation `${}`. This tells ProjectIt to include a property, according to the projection
+this you need to use the special notation `${}`. This tells ProjectIt to include a property, according to the projection
 that is defined for the type of the property.
 
 In the following example `self.condition` is a property of type `BooleanLiteralExpression`.
 It will be projected according to the projection for `BooleanLiteralExpression`, whereas `self.whenTrue`
 is a property of type `EntityExpression`, which is abstract. This property
-will be projected according to the definition for (non-abstract) subtype of `EntityExpression` that is 
+will be projected according to the definition for the (non-abstract) subtype of `EntityExpression` that is 
 currently found.
 
-TODO if the type is an interface ...
+<!--- TODO if the type is an interface ... --->
 
 ```ts
 // tutorial-language/defs/LanguageDefinition.edit#L55-L66
@@ -70,7 +71,7 @@ Because you may only use direct properties, the prefix <code>self</code> may be 
 </Note>
 
 
-### Including a Property Projection from Another Editor
+### <a name="named_projection"></a> Including a Property Projection from Another Editor
 Normally, the property that you include will be displayed according to the projection of its type. This projection 
 will be found by ProjectIt using the [ordering](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files#ordering)
 as defined in the configuration. 
@@ -98,7 +99,8 @@ Both keywords are optional. If neither of `vertical` or `horizontal` is present,
 a vertical list.
 
 You can also choose to project a list property as a [table](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition#tables).
-However, its default projection will always be a list. This will be generated when not present in the `.edit` files.
+However, its default projection will always be a list. This is the one that will be generated when a 
+projection is not present in the `.edit` files.
 
 In a list, you can add one of the following.
 * A *separator* string, which will be shown in between all elements.
@@ -147,8 +149,6 @@ you want to display as a table. Optionally, add one of the keywords `rows` or `c
 2. Add a table-projection to the type of the property. The table-projection defines
 the headers of the table and which parts of the list elements are displayed in which row or column.
 
-Note that you only need to include one
-table projection for both column and row based tables. ProjectIt will swap the entries when needed.
 <Note>
 <svelte:fragment slot="content">
 Note that you only need to include one
@@ -191,7 +191,7 @@ EntityFunction {
 <svelte:fragment slot="content">
 The manner in which each of the properties of a single function are displayed, will be determined
 by their own projections. In this example, `self.parameters` is a list, and will be displayed as another table.
-The inner table will, however, be row-based, as this is the default.
+The inner table will be row-based, as this is the default.
 </svelte:fragment>
 </Note>
 

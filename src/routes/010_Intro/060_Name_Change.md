@@ -78,8 +78,8 @@ whole thing over as soon as possible.
 
 Meanwhile, on earth, people argued who was the top God. Some said Zeus, others Indra, 
 others Wodan, and things soon became nasty. Blows were exchanged, brothers and sisters 
-were no longer speaking with each, neighbours weren't neighbourly no more. In a few ages
-- this all happened while Freon was grounded in his heavenly room - the whole world got 
+were no longer speaking with each, neighbours weren't neighbourly no more. In a 
+few ages - this all happened while Freon was grounded in his heavenly room - the whole world got 
 out of control. There were so many disputes that finally the people of the town of 
 Babel decided to ask the God himself by what name they should pray to him. Unfortunately, at 
 that time the gods did not frequent the earth anymore, they had acquired a bit of a 
@@ -107,3 +107,5 @@ council that followed, Freon was officially charged with helping humans overcome
 misunderstanding that followed from the birth of the languages.
 
 And that is how Freon became the God of languages.
+
+(Author: Anneke Kleppe)

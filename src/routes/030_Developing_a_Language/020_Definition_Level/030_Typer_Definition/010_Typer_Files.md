@@ -26,7 +26,6 @@ brackets.
 ```ts
 // tutorial-language/defs/LanguageDefinition.type#L4-L4
 
-// 'BaseType' is the root of the type hierarchy
 istype { BaseType, Type, Entity, AttributeType }
 ```
 

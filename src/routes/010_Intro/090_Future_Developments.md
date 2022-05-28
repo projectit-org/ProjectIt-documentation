@@ -3,8 +3,8 @@
 
 In the future we want to extend ProjectIt with the following features. There is no order
 in this list, nor is there any guarantee that the features will be build. We take on a
-task at the moment the need for it arises (or, simply when we like doing it 
-<img src="/images/smile.png" alt="SMILE" width="20" height="20">).
+task at the moment the need for it arises (or, simply when 
+we like doing it <img src="/images/smile.png" alt="SMILE" width="20" height="20">).
 
 *	Support *libraries* for language development, like a library with definitions for different
 types of expressions.
@@ -17,7 +17,6 @@ types of expressions.
     <a href="https://github.com/dslmeinte/mps-open-source/tree/master/mps-analyser" target="_blank">MPS Analyser</a>
     from Meinte Broersma.)
 *   Create a *diagrammatic view* of the language structure definition.
-*   Provide support for coordinated *projection sets*.
 *   ...
 
 If you are using ProjectIt, and are missing a specific feature, please let us know through info AT projectit.org.

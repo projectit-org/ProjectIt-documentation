@@ -57,7 +57,7 @@ modelunit EntityModelUnit {
 }
 ```
 
-TODO add file-extension to example
+<!--- TODO add file-extension to example --->
 
 ### <a name="Concept"></a> Concept
 A *concept* is the basic element of your language definition. It defines which instances can be present in

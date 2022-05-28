@@ -29,6 +29,8 @@ bind:caption={caption}
 bind:figureNumber={figureNumber}
 />
 
+<!--- TODO change figure for the one used in the SLE paper. --->
+
 ### Default Level
 The *first or default level* (colored lightblue in the above figure), is based solely on the 
 metamodel definition in the .ast file. Defaults are 

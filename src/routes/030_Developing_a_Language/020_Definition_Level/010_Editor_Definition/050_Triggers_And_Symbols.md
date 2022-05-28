@@ -1,5 +1,6 @@
 ### Triggers and Symbols
 
+// TODO which example???
 The example above, the projection for `IfExpression`, also shows how to define a **trigger**, and
 a **symbol** for an expression. The trigger is a string of characters that is used to trigger the creation
 of an instance of concept `IfExpression`.

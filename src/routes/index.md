@@ -3,10 +3,16 @@
 
 ProjectIt is a Language Workbench (...in the making <img src="/images/smile.png" alt="OOPS" width="20" height="20">, 
 so please let us know if you find anything not yet correct). It is a tool for creating mini-languages,
-which are also known as
-<a href="https://en.wikipedia.org/wiki/Domain-specific*language" target="_blank">Domain Specific Languages (DSLs)</a>.
+which are also known as <a href="https://en.wikipedia.org/wiki/Domain-specific*language" target="_blank">Domain Specific Languages (DSLs)</a>.
 ProjectIt is able to generate an integrated
 set of editor, scoper, typer, and validator for your mini-language from a small set of definitions. Together we call this the work environment for your language.
+
+## Upcoming: <i>ProjectIt</i> will change its name to <i>Freon</i>
+
+Because the nature of this project has changed from a tool to create a projectional editor to a tool to create a DSL,
+it was decided to change the name of the project. In the future, this tool will be called <i>'Freon'</i>.
+
+If you want to know why this name was chosen, please read [Name Change](/010_Intro/060_Name_Change).
 
 ### The Core Framework
 The core of ProjectIt is a TypeScript/JavaScript framework for building web-based, projectional
@@ -30,7 +36,7 @@ Currently, ProjectIt does not support the creation of debuggers, interpreters, g
 such. Indeed, we have a (large) [wish list](/010_Intro/090_Future_Developments) of extra features
 that we would like to implement in the future.
 
-In some cases, like e.g code generators, we think that integration with existing tools is the best solution.
+In some cases, like e.g. code generators, we think that integration with existing tools is the best solution.
 In other cases we plan to provide ProjectIt components for specific functionality.
 Given time, we hope to realize many of these extra items. 
 

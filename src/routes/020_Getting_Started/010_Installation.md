@@ -5,8 +5,8 @@
 
 # Installing and Using ProjectIt
 
-Be sure to have <a href="https://nodejs.org/" target="_blank">node.js</a> and 
-<a href="https://yarnpkg.com/" target="_blank">yarn</a>
+Be sure to have <a href="https://nodejs.org/" target="_blank">node.js</a> 
+and <a href="https://yarnpkg.com/" target="_blank">yarn</a>
 running. We are typically using the latest versions of all,
 although older versions likely work just as well.
 You could also try and use <a href="https://www.npmjs.com/" target="_blank">npm</a> instead of yarn.
