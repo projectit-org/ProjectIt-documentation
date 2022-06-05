@@ -11,7 +11,7 @@ Everything within the square brackets (`[]`), except
 the parts surrounded by `${}`, is taken literally.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L3-L11
+// docu-project/defs/editor-indentation.edit#L6-L14
 
 Text {
 [
@@ -29,29 +29,22 @@ When you define a projection for a concept or interface, you will want to includ
 this you need to use the special notation `${}`. This tells ProjectIt to include a property, according to the projection
 that is defined for the type of the property.
 
-In the following example `self.condition` is a property of type `BooleanLiteralExpression`.
-It will be projected according to the projection for `BooleanLiteralExpression`, whereas `self.whenTrue`
-is a property of type `EntityExpression`, which is abstract. This property
-will be projected according to the definition for the (non-abstract) subtype of `EntityExpression` that is 
+In the following example `self.body` is a property of type `DocuExpression`.
+It will be projected according to the projection for `DocuExpression`, whereas `self.declaredType`
+is a property of type `DocuType`, which is abstract. This property
+will be projected according to the definition for the (non-abstract) subtype of `DocuType` that is 
 currently found.
 
-<!--- TODO if the type is an interface ... --->
-
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L55-L66
+// docu-project/defs/editor-main-default.edit#L40-L46
 
-IfExpression {
+CalcFunction {
     [
-    if ${self.condition} then
-        ${self.whenTrue}
-    else
-        ${self.whenFalse}
-    endif
+        ${name} ( ${parameters horizontal separator[,]} ): ${declaredType} {
+            ${body}
+        }
     ]
-    trigger "if"
 }
-PlusExpression {
-    symbol "+"
 ```
 
 <Note>
@@ -79,21 +72,22 @@ as defined in the configuration.
 When you specifically want to use another projection, you can use a **named property projection**. In that case, 
 ProjectIt will use the projection defined for the concept in the editor with the specified name.
 
-In this example, the projection for `functionDefinition` will first be searched in the editor named `specials`.
+In this example, the projection for `self.parts` will first be searched in the editor named `comments`.
 If it cannot be found, the normal ordering of projections will proceed.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L100-L105
+// docu-project/defs/editor-specials.edit#L3-L9
 
-FunctionCallExpression {
-        [+
-        CALL ${self.functionDefinition:specials} (  )
-        ]
-    trigger "function"
-}
+BaseProduct {[
+    /* In this projection 'self.parts' is always shown according to the projection
+     * defined for concept InsurancePart in the editor 'comments'.
+     */
+    Base Products ${self.name} for ${self.theme}
+        ${self.parts:comments}
+]}
 ```
 
-### Lists
+## Lists
 If a property is a list, you can indicate whether it should be projected horizontally or vertically.
 Both keywords are optional. If neither of `vertical` or `horizontal` is present, the property will be displayed as
 a vertical list.
@@ -109,25 +103,26 @@ In a list, you can add one of the following.
 
 Each is optional. The default is a single space used as separator.
 
-In the following example the list `entities` is displayed vertically with the string `'&&'` as terminator.
-Whereas, the list `model wide functions` is displayed horizontally with the string `';'` as separator.
+In the following example the list `parts` is displayed vertically with the string `';'` as terminator.
+Whereas, the list `themes` is displayed horizontally with the string `', '` as separator. Finally, the
+list `helpers` is shown as a vertical list without any separator, terminator or initiator. Actually, we 
+could omit the keyword `vertical`, because this is the default projection for lists.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L106-L118
+// docu-project/defs/editor-main-default.edit#L27-L38
 
-EntityModelUnit {
-        [
-        model ${self.name} {
-        entities:
-            ${self.entities
-                vertical
-                terminator [ && ]
-            }
-        model wide functions:
-            ${self.functions horizontal separator [; ] }
-        }
-        ]
-}
+InsuranceProduct {[
+    Insurance Product ${name} ( public name: ${productName} ) USES ${basedOn horizontal separator[, ]}
+        Themes: ${themes horizontal separator[, ]}
+        Premium: ${advertisedPremium} per ${nrPremiumDays}
+        Insured risks:
+            ${parts vertical terminator [;]}
+        Calculation
+            [? Risk adjusted by = ${riskAdjustment} ]
+            calculated premium: ${calculation}
+        [?Helper functions:
+            ${helpers vertical}]
+]}
 ```
 
 <Note>
@@ -138,7 +133,7 @@ purely determined by the keywords <code>horizontal</code> and <code>vertical</co
 </svelte:fragment>
 </Note>
 
-### <a name="tables"></a>Tables
+## <a name="tables"></a>Tables
 If a property is a list, you can choose to project it as a table. Tables can be either row or column based.
 Row based means that each element of the list is displayed in a row. Column based, obviously, means that 
 each element is displayed in a single column. The default is row based. 
@@ -156,33 +151,28 @@ table projection for both column and row based tables. ProjectIt will swap the e
 </svelte:fragment>
 </Note>
 
-For example, to project the `functions` property of concept `Entity` as a column based table, you can use the following code.
+For example, to project the `parts` property of concept `BaseProduct` as a row based table, you can use the following code.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L83-L91
+// docu-project/defs/editor-tables.edit#L13-L16
 
-Entity {
-    [
-        ${self.isCompany keyword[COMPANY]}
-        entity ${self.name} [? base ${self.baseEntity}] {
-            ${self.attributes vertical }      // this list is projected as a vertical list without separator or terminator
-            ${self.functions  table columns } // this list is projected as a column based table
-        }
-    ]
-}
+BaseProduct {[
+    Base Products ${name} for ${theme}
+        ${parts table rows}
+]}
 ```
 
-Given the above example, there should also be a projection tagged `table` for the concept `EntityFunction`. 
+Given the above example, there should also be a projection tagged `table` for the concept `InsurancePart`. 
 Below four columns/rows are defined, each with its own header. 
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L119-L124
+// docu-project/defs/editor-tables.edit#L6-L11
 
-EntityFunction {
-    table [
-        Name         | parameters                | type                 | body
-        ${self.name} | ${self.parameters table } | ${self.declaredType} | ${self.expression}
-    ]
+InsurancePart{
+table [
+    Name    | risk               | pay out          | is approved
+    ${name} | ${statisticalRisk} | ${maximumPayOut} | ${isApproved}
+]
 }
 ```
 
@@ -208,48 +198,59 @@ good style to align the column/row-separators.
 When a property is marked optional in the language structure definition (the `.ast` files), the projection
 of this property should also be optional. This is indicated by `[?`. 
 
-In the next example the property `baseEntity` is only shown if it is present. If it is not present,
-the text `base` is omitted as well.
-
-Because, in this case, `baseEntity` is a reference property, the element that will be created is an 
-instance of a special class that represents a reference to an `Entity`. What is shown is the name of the 
-referred `Entity`.
+In the next example both the property `riskAdjustment` and `helpers` are only shown if they are present. 
+If they are not present, respectively the text `Risk adjusted by =` or `Helper functions:` is omitted as well.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.ast#L26-L32
+// docu-project/defs/editor-main-default.edit#L27-L38
 
-concept Entity implements Type {
-    isCompany: boolean;
-    attributes: AttributeWithLimitedType[];
-    entAttributes: AttributeWithEntityType[];
-    functions: EntityFunction[];
-    reference baseEntity?: Entity;
-}
-```
-
-```ts
-// tutorial-language/defs/LanguageDefinition.edit#L83-L91
-
-Entity {
-    [
-        ${self.isCompany keyword[COMPANY]}
-        entity ${self.name} [? base ${self.baseEntity}] {
-            ${self.attributes vertical }      // this list is projected as a vertical list without separator or terminator
-            ${self.functions  table columns } // this list is projected as a column based table
-        }
-    ]
-}
+InsuranceProduct {[
+    Insurance Product ${name} ( public name: ${productName} ) USES ${basedOn horizontal separator[, ]}
+        Themes: ${themes horizontal separator[, ]}
+        Premium: ${advertisedPremium} per ${nrPremiumDays}
+        Insured risks:
+            ${parts vertical terminator [;]}
+        Calculation
+            [? Risk adjusted by = ${riskAdjustment} ]
+            calculated premium: ${calculation}
+        [?Helper functions:
+            ${helpers vertical}]
+]}
 ```
 
 Note that optional projections for non-optional properties are not allowed.
 
 ## Boolean Keyword Projections
-The previous example also shows the special manner in which properties of type **boolean** can be 
-projected. The property is represented by a **keyword**. In this case the property is `isCompany` and the 
-keyword representing the property is `COMPANY`. When the value 
+The next example shows the special manner in which properties of type **boolean** can be 
+projected. The concept `Entity` has a simple property of type boolean called `isCompany`. Normally,
+its value would be displayed according to the boolean keyword projection in the default editor.
+
+```ts
+// docu-project/defs/language-extras.ast#L34-L37
+
+concept Entity {
+    isCompany: boolean;
+    name: identifier;
+}
+```
+```ts
+// docu-project/defs/editor-main-default.edit#L5-L5
+
+boolean [YES | NO] // the strings used to display a boolean value
+```
+
+By defining that the property must be represented by a **keyword**, we can change the default. 
+In the next example, the property `isCompany` will be shown as the keyword `COMPANY`. When the value
 of the property is `true`, the keyword is shown. When the value is `false`, the keyword is not shown.
 
-The user can change the value of the property using the keyword as trigger. 
+```ts
+// docu-project/defs/editor-main-default.edit#L57-L59
+
+Entity {[
+    ${self.isCompany [COMPANY]} ${self.name}
+]}
+```
+
 This example would be displayed as one of ...
 
    ```
@@ -262,15 +263,16 @@ This example would be displayed as one of ...
    ```     
 
 Another way to display boolean properties is to use **two** keywords. Depending on
-the value of the property either the first or second keyword is shown. An example:
+the value of the property either the first or second keyword is shown.
 
-   ```
-   [
-       ...
-       ${self.isCompany keyword[COMPANY, PERSON]} ${self.name}
-       ...
-   ]
-   ```   
+```ts
+// docu-project/defs/editor-specials.edit#L11-L13
+
+Entity {[
+    ${self.isCompany [COMPANY | PERSON]} ${self.name}
+]}
+```
+ 
 This would be displayed as one of ...
    ```
    COMPANY entity PhilipsEnterPrises { // the value of isCompany is true

@@ -44,13 +44,33 @@ concepts, whereas another editor shows all properties. This makes it possible to
 Projections may specifically request that a property is displayed using a projection from a named editor.
 For this see [Including a Property Projection from Another Editor](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections#named_projection).
 
-### Default Editor
+### The Default Editor and Defaults for Every Concept
 Because there has to be an editor that can be used as fallback when all other editors are switched off, an 
 editor with the name **default** is generated in case it is not provided. If the default editor is provided but incomplete,
 i.e. it does not define a projection for all concepts, 
 projections will be generated for the missing concepts. So, upon generation the default editor is always complete.
 
-TODO code example
+For instance when no projection is provided for the concept `BaseProduct`, the concrete syntax for instances of this concept
+will be using the name of the concepts and its properties as keywords, and any list property will be shown as a vertical list, 
+which is shown more or less by the following grammar rule.
+
+```ts
+// docu-project/defs/language-main.ast#L24-L28
+
+concept BaseProduct {
+    name: identifier;           // internal name
+    theme: InsuranceTheme;      // the 'kind' of insurance
+    parts: InsurancePart[];     // all parts of this product
+}
+```
+
+```ts
+BaseProduct = 'BaseProduct' identifier '{'
+'parts'
+InsurancePart*
+'theme' InsuranceTheme
+'}' ;
+```
 
 ### <a name="ordering"></a> Precedence of Editors
 The named editors are ordered; the order can be indicated by adding a **precendence** to the editor. The
@@ -70,17 +90,27 @@ The precedence needs to be added only once, but in case you add it multiple time
 </svelte:fragment>
 </Note>
 
-TODO code example
+```ts
+// docu-project/defs/editor-tables.edit#L1-L5
+
+/* This file contains the table definition in a separate editor / projection group.
+This enables the user to switch tables on and off. */
+
+editor tables precedence 4
+
+```  
 
 ## Standard Boolean Keywords
 
 Next to the concrete syntax definitions for *concepts* and *interfaces*, you can define the keywords to be used for 
 the boolean *true* and *false* values. Note that this can be done once in the complete set of editors. It should be 
-part of an editor called *default*. In the example below, the user will view the string `RIGHT` whenever a boolean 
-property has the value `true`, and likewise `WRONG` will be shown for the value `false`.
+part of an editor called *default*. In the example below, the user will view the string `YES` whenever a boolean 
+property has the value `true`, and likewise `NO` will be shown for the value `false`.
 
-```
-   boolean [true = "RIGHT", false = "WRONG"]
+```ts
+// docu-project/defs/editor-main-default.edit#L5-L5
+
+boolean [YES | NO] // the strings used to display a boolean value
 ```  
 
 The standard keywords can be overwritten per property. See TODO.
@@ -88,11 +118,72 @@ The standard keywords can be overwritten per property. See TODO.
 ## Reference Separator
 
 References to other objects may consist of a series of names, like *country.city.street.house*. The string used to separate 
-these names (in the example ".") can be set, but, like the boolean values, only once for the complete set of editors, 
+these names (in the example ":") can be set, but, like the boolean values, only once for the complete set of editors, 
 in the editor called *default*.
 
-TODO example
+```ts
+// docu-project/defs/editor-main-default.edit#L7-L7
+
+referenceSeparator [:] // the string that separates the names in a path name, e.g. pack1:cls3:part
+```  
 
 ## Example `.edit` File
 
-TODO include a complete .edit file
+A complete .edit file could look like this.
+
+```ts
+// docu-project/defs/editor-main-default.edit#L1-L52
+
+/* This file contains the default editor definition. */
+
+editor default
+
+boolean [YES | NO] // the strings used to display a boolean value
+
+referenceSeparator [:] // the string that separates the names in a path name, e.g. pack1:cls3:part
+
+// both modelunits show a single concept
+Part {[ ${self.part} ]}
+Product {[ ${self.product} ]}
+
+BaseProduct {[
+    Base Products ${name} for ${theme}
+        ${parts}
+]}
+
+InsurancePart{
+[
+    Insurance Part ${self.name}
+        risk assessment: ${self.statisticalRisk}
+        maximum payout: ${self.maximumPayOut}
+        is approved: ${self.isApproved}
+]
+}
+
+InsuranceProduct {[
+    Insurance Product ${name} ( public name: ${productName} ) USES ${basedOn horizontal separator[, ]}
+        Themes: ${themes horizontal separator[, ]}
+        Premium: ${advertisedPremium} per ${nrPremiumDays}
+        Insured risks:
+            ${parts vertical terminator [;]}
+        Calculation
+            [? Risk adjusted by = ${riskAdjustment} ]
+            calculated premium: ${calculation}
+        [?Helper functions:
+            ${helpers vertical}]
+]}
+
+CalcFunction {
+    [
+        ${name} ( ${parameters horizontal separator[,]} ): ${declaredType} {
+            ${body}
+        }
+    ]
+}
+Description {
+    [${content}]
+}
+Parameter {
+     [${name} : ${declaredType}]
+}
+``` 

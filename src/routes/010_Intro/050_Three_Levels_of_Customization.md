@@ -1,20 +1,22 @@
 <script>
     import Figure from "../../lib/figures/Figure.svelte";
-    let imageName = 'three-levels.png';
-    let caption = 'Three level customization';
+    let imageName = 'layered-architecture2.png';
+    let caption = 'The Stacked Architecture';
     let figureNumber = 1;
+    let imageName2 = 'fall-through.png';
+    let caption2 = 'Projection Lookup for an AST Node';
+    let figureNumber2 = 2;
 </script>
 
 # Three Levels to Customize ProjectIt
 
-From the five parts of the language definition ProjectIt generates a work environment
+From the five parts of the language definition, ProjectIt generates a work environment
 containing an editor, a scope provider or scoper, a type provider or typer, a validator, 
-a standard library,
-and some utilities like a parser/deparser.
+a standard library, and some utilities like a parser/deparser.
 All of these are separate components that are called **pi-tools**.
 
 You, the language engineer, can fine-tune the generated pi-tools at several levels.
-We call this manner of fine-tuning: working at three levels.
+We call this manner of fine-tuning: a **stacked architecture**.
 This three-level approach makes it possible to create your language,
 and customize it step-by-step in an agile fashion.
 (Read our [philosophy](/010_Intro/020_Our_Philosophy) to understand why we have chosen these levels.)
@@ -29,10 +31,8 @@ bind:caption={caption}
 bind:figureNumber={figureNumber}
 />
 
-<!--- TODO change figure for the one used in the SLE paper. --->
-
 ### Default Level
-The *first or default level* (colored lightblue in the above figure), is based solely on the 
+The *first or default level* (colored light-grey in the above figure), is based solely on the 
 metamodel definition in the .ast file. Defaults are 
    generated for every part of the workbench. For instance, the default scoper simply finds 
    that every name in a model is visible everywhere. At this level you already have a 
@@ -40,14 +40,14 @@ metamodel definition in the .ast file. Defaults are
    See how you can define the metamodel, or language structure in [Default Level](/030_Developing_a_Language/010_Default_Level).
 
 ### Definition Level
-In the *second or definition level*  (colored medium blue in the above figure), the other definitions (in the `.edit`, `.scope`, `.valid`, and `.type` files), when present, 
+In the *second or definition level*  (colored medium grey in the above figure), the other definitions (in the `.edit`, `.scope`, `.valid`, and `.type` files), when present, 
    are taken into account. When, for instance, a definition for the editor is provided, 
    it is used to generate a more suitable concrete syntax in the editor, the parser, and the unparser.
    The concrete syntax could be more concise, using certain keywords etc. More on how to 
    utilize the second level can be found in [Definition Level](/030_Developing_a_Language/020_Definition_Level).
 
 ### API Level
-The *third or API level* (colored darkblue in the above figure), takes hand-coding in TypeScript, 
+The *third or API level* (colored black in the above figure), takes hand-coding in TypeScript, 
 but produces a result that is extremely adjusted to your needs. More on how to make use of this 
 level, e.g. how to use the core editor framework of ProjectIt,
 can be found in [API Level](/030_Developing_a_Language/030_API_Level).
@@ -66,6 +66,12 @@ For instance, the generated editor will per [**concept**](/030_Developing_a_Lang
 
 This allows the language engineer to start quickly with a working (but somewhat rough) language environment
 and piece by piece refine this on either the second or the third level.
+
+<Figure
+bind:imageName={imageName2}
+bind:caption={caption2}
+bind:figureNumber={figureNumber2}
+/>
 
 At the time of writing this approach is implemented for the editor, validator, and typer, in future this 
 will also apply to the scoper, the parser, and the unparser.

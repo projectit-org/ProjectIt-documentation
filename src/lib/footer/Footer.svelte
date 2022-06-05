@@ -1,7 +1,7 @@
 <footer>
 <!--    <div class="copyright">Copyright 2021 Anneke</div>-->
     <span class="copyright">
-        Created by ProjectIt - &copy; 2021 -
+        Created by ProjectIt - &copy; 2022 -
         <a href="http://www.projectit.org/" target="_blank" class="link">
             www.projectit.org
         </a>

@@ -1,3 +1,12 @@
+<script>
+    import Figure from "../../lib/figures/Figure.svelte";
+    let imageName = 'writing-child.png';
+    let caption = 'Is this Freon?';
+    let figureNumber = 1;
+    let imageName2 = 'tower-of-babel.png';
+    let caption2 = 'Tower of Babel';
+    let figureNumber2 = 2;
+</script>
 # Upcoming: <i>ProjectIt</i> will change its name to <i>Freon</i>
 
 Because the nature of this project has changed from a tool to create a projectional editor to a tool to create a DSL,
@@ -29,6 +38,11 @@ when one was surprised, were "ah" was used in case of fatigue, and a longer "aaa
 pain. In his childlike playful way Freon started to invent sounds for certain expressions, and 
 he and his friends used these instead of the psychic communication as their special, secret way 
 of communicating.
+
+<Figure
+bind:imageName={imageName}
+bind:caption={caption}
+/>
 
 After a few ages, in which Freon grew up just a little but his human friends came and went, 
 generation after generation, Freon had created many sounds. He even came up with a sound for 
@@ -91,6 +105,12 @@ them, ending in a huge misunderstanding between the builders. The foundation of 
 was not strong enough to take the weight of the building, and the whole thing collapsed. 
 Many human lives were lost.
 
+<Figure
+bind:imageName={imageName2}
+bind:caption={caption2}
+bind:figureNumber={figureNumber2}
+/>
+
 This disaster naturally was brought to the attention of Freon's father. He sent out his 
 ministers to investigate and when all of them in their reports mentioned Freon in one 
 way or another, he called his son to his office. Freon knew that this was serious. 
@@ -107,5 +127,7 @@ council that followed, Freon was officially charged with helping humans overcome
 misunderstanding that followed from the birth of the languages.
 
 And that is how Freon became the God of languages.
+
+<hr>
 
 (Author: Anneke Kleppe)

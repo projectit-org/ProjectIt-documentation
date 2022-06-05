@@ -1,7 +1,7 @@
 # How to Style the Generated Work Environment
 
 ## Styling the web application
-
+<!--- TODO change this section --->
 The web application can be styled using the theme presets in the file `~webapp/Theme-presets.ts`. There are two sets of 
 CSS variables that determine the look of the web application, one for the light theme, and one for the dark theme.
 The comments should indicate where the variable is being used.

@@ -8,7 +8,7 @@ The indentation you use in a projection is taken into account. Thus, in the foll
 appear indented 8 spaces from `This is`.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L3-L11
+// docu-project/defs/editor-indentation.edit#L6-L14
 
 Text {
 [
@@ -26,7 +26,7 @@ Thus, you can indent the projection as a whole, without it having any influence 
 The next example produces the exact same result as the previous.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L12-L21
+// docu-project/defs/editor-indentation.edit#L16-L25
 
 Text2 {
             [
@@ -45,7 +45,7 @@ not be indented. However,
 the text `This is` will be indented 10 spaces, `literal text` will be indented 8 spaces, etc.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L22-L30
+// docu-project/defs/editor-indentation.edit#L27-L35
 
 Text3 {
     [
@@ -63,7 +63,7 @@ the following example will take the closing bracket as margin, and even the line
 will be indented with 3 spaces.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.edit#L31-L39
+// docu-project/defs/editor-indentation.edit#L37-L45
 
 Text4 {
     [

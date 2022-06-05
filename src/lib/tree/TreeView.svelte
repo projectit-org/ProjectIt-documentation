@@ -24,6 +24,7 @@
          { name: 'Default Level', path: '/030_Developing_a_Language/010_Default_Level',
            content: [
             { name: 'Defining the Language Structure', path: '/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure'},
+            { name: 'Defining Concept Properties', path: '/030_Developing_a_Language/010_Default_Level/020_Defining_Concept_Properties'},
                   ]},
          { name: 'Definition Level', path: '/030_Developing_a_Language/020_Definition_Level',
            content: [
@@ -32,7 +33,7 @@
                { name: 'Edit Files', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files'},
                { name: 'Projections', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections'},
                { name: 'Indentation', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation'},
-               { name: 'Triggers And Symbols', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Triggers_And_Symbols'},
+               { name: 'Other Options', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options'},
                      ]},
             { name: 'Scoper Definition', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition',
               content: [

@@ -15,16 +15,25 @@ It is our strong conviction that this approach should also be taken when dealing
 Similar to how the source code for a single application is split into classes and/or modules, every model in ProjectIt is split
 into **model units**. Each model may contain units of multiple types, either an array of units, or a single unit. The next example
 shows how to define model units. Here, 
-an *EntityModel* consists of any number of *entityModelUnit*'s and a single *SomeOtherModelUnit*.
+an *InsuranceModel* consists of a list of *Parts* and a list of *Products*.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.ast#L4-L8
+// docu-project/defs/language-main.ast#L7-L20
 
-    name: identifier;
-    units: EntityModelUnit[];
-    extraUnit: SomeOtherModelUnit;
+model InsuranceModel {
+    parts: Part[];              // units that hold partial definitions of insurance products
+    products: Product[];        // units that hold sellable insurance products
 }
 
+modelunit Part {
+    part: BaseProduct;          // one collection of partial insurance products
+    file-extension = "base";    // the file extension used by the parser
+}
+
+modelunit Product {
+    product: InsuranceProduct;  // one collection of sellable insurance products
+    file-extension = "prod";    // the file extension used by the parser
+}
 ```
 
 The notion of model units has been around for some time. Actually, we have 
@@ -44,8 +53,9 @@ The interface determines which elements from the model unit are visible (i.e. ca
 in other units in the same model.
 
 In a ProjectIt definition of the language structure (the [.ast file](/010_Intro/040_A_Language_in_Five_Parts)) 
-concepts and properties can be defined to be **public**.
-Only these public parts of a model unit can be referenced from another model unit.
+concepts and properties can be defined to be **private**.
+Whereas other parts of a model unit can be referenced from another model unit,i.e. the **public** parts, private parts can only be referenced from
+the same model unit.
 The default scoper (the one from the [default level](/010_Intro/050_Three_Levels_of_Customization#level1))
 already takes
 the difference between public and private concepts and properties into account when resolving references.
