@@ -62,13 +62,11 @@ Efficiency of Projectional Editing: A Controlled Experiment</a> as follows.
 > quick fixes to create reference targets), there should be a better way to support references
 > by the IDE itself.
 >
-> The approach to references in ProjectIt is to used only name-based references which are resolve
-> on a need-to basis.
-> 
 > [Markus Voelter a.o., Efficiency of Projectional Editing]
 ****
 
-This is the reason that in ProjectIt we allow only name-based references. Every reference is 
+This is the reason that in ProjectIt we allow only name-based references, which are resolved
+on a need-to basis. Every reference is 
 an instance of the class `PiElementReference`, which holds:
 
 * the name or path (i.e. a list of names) of the referred element

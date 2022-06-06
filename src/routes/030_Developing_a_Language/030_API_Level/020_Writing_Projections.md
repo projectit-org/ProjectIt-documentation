@@ -40,7 +40,7 @@ getBox(element: PiElement): Box {
 <Note><svelte:fragment slot="header">Use another filename and/or location</svelte:fragment>
 <svelte:fragment slot="content">
 You can rename the file `~/picode/editor/Custom<yourLanguageName>Projection.ts` and/or put it in another location.
-In that case, you need to adjust the file `projectit/ProjectItConfiguration`.
+In that case, you need to adjust the file `config/ProjectItConfiguration`.
 </svelte:fragment>
 </Note>
 

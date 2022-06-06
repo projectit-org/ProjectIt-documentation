@@ -1,5 +1,5 @@
-const PI_DARKBLUE = "#00008b";
-const PI_LIGHTBLUE = "#d3e3fd";
+const PI_DARKBLUE = "#004d40";
+const PI_LIGHTBLUE = "#e0f2f1";
 
 export const themePresets = [
     {

@@ -10,6 +10,7 @@
          { name: 'Models and Model Units', path: '/010_Intro/030_Models_and_Model_Units'},
          { name: 'A Language in Five Parts', path: '/010_Intro/040_A_Language_in_Five_Parts'},
          { name: 'Three Levels of Customization', path: '/010_Intro/050_Three_Levels_of_Customization'},
+         { name: 'Name Change', path: '/010_Intro/060_Name_Change'},
          { name: 'Future Developments', path: '/010_Intro/090_Future_Developments'},
                ]},
       { name: 'Getting Started', path: '/020_Getting_Started',
@@ -23,6 +24,7 @@
          { name: 'Default Level', path: '/030_Developing_a_Language/010_Default_Level',
            content: [
             { name: 'Defining the Language Structure', path: '/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure'},
+            { name: 'Defining Concept Properties', path: '/030_Developing_a_Language/010_Default_Level/020_Defining_Concept_Properties'},
                   ]},
          { name: 'Definition Level', path: '/030_Developing_a_Language/020_Definition_Level',
            content: [
@@ -31,11 +33,22 @@
                { name: 'Edit Files', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files'},
                { name: 'Projections', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections'},
                { name: 'Indentation', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation'},
-               { name: 'Triggers And Symbols', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Triggers_And_Symbols'},
+               { name: 'Other Options', path: '/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options'},
                      ]},
-            { name: 'Scoper Definition', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition'},
-            { name: 'Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition'},
-            { name: 'Validator Definition', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition'},
+            { name: 'Scoper Definition', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition',
+              content: [
+               { name: 'Scoper Files', path: '/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/010_Scoper_Files'},
+                     ]},
+            { name: 'Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition',
+              content: [
+               { name: 'Typer Files', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files'},
+               { name: 'Example Structure', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Structure'},
+               { name: 'Example Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Typer_Definition'},
+                     ]},
+            { name: 'Validator Definition', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition',
+              content: [
+               { name: 'Validator Files', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/010_Validator_Files'},
+                     ]},
                   ]},
          { name: 'API Level', path: '/030_Developing_a_Language/030_API_Level',
            content: [
@@ -49,8 +62,7 @@
                   ]},
          { name: 'Styling', path: '/030_Developing_a_Language/040_Styling',
            content: [
-            { name: 'Editor Styling', path: '/030_Developing_a_Language/040_Styling/010_Editor_Styling'},
-            { name: 'Webapp Styling', path: '/030_Developing_a_Language/040_Styling/020_Webapp_Styling'},
+            { name: 'SCCS Styling', path: '/030_Developing_a_Language/040_Styling/010_SCCS_Styling'},
                   ]},
                ]},
       { name: 'Under the Hood', path: '/060_Under_the_Hood',
