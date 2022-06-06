@@ -7,11 +7,12 @@ Found 2 warnings in file 030_Developing_a_Language\020_Definition_Level\010_Edit
 	TODO remaining on line 116
 Found 1 warnings in file 030_Developing_a_Language\020_Definition_Level\010_Editor_Definition\020_Projections.md:
 	TODO remaining on line 6
-Found 4 warnings in file 030_Developing_a_Language\020_Definition_Level\030_Typer_Definition\010_Typer_Files.md:
-	TODO remaining on line 35
-	TODO remaining on line 91
-	TODO remaining on line 151
-	TODO remaining on line 182
+Found 1 warnings in file 030_Developing_a_Language\020_Definition_Level\020_Scoper_Definition\010_Scoper_Files.md:
+	TODO remaining on line 29
+Found 1 incorrect link(s) in file 030_Developing_a_Language\020_Definition_Level\030_Typer_Definition\010_Typer_Files.md:
+	/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example, on line 125
+Found 1 incorrect link(s) in file 030_Developing_a_Language\020_Definition_Level\030_Typer_Definition\index.md:
+	/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example, on line 23
 Found 4 warnings in file 030_Developing_a_Language\030_API_Level\030_Writing_Actions.md:
 	TODO remaining on line 93
 	TODO remaining on line 96
@@ -21,8 +22,6 @@ Found 1 incorrect link(s) in file 030_Developing_a_Language\030_API_Level\040_Va
 	/060_Under_the_Hood/020_The_PiTool_Interfaces/040_PiValidator_Interface <!--- (TODO link), on line 45
 Found 1 warnings in file 030_Developing_a_Language\030_API_Level\040_Validator_API.md:
 	TODO remaining on line 45
-Found 1 warnings in file 030_Developing_a_Language\040_Styling\020_Webapp_Styling.md:
-	TODO remaining on line 4
 Found 6 warnings in file 060_Under_the_Hood\010_The_Editor_Framework\010_Predefined_Boxes.md:
 	TODO remaining on line 35
 	TODO remaining on line 67
@@ -40,4 +39,4 @@ Found 5 warnings in file 060_Under_the_Hood\010_The_Editor_Framework\index.md:
 	TODO remaining on line 148
 	TODO remaining on line 151
 	TODO remaining on line 157
-Total errors: 2, total warnings: 27.
+Total errors: 4, total warnings: 23.

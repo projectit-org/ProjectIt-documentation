@@ -79,12 +79,12 @@ If it cannot be found, the normal ordering of projections will proceed.
 // docu-project/defs/editor-specials.edit#L3-L9
 
 BaseProduct {[
-    /* In this projection 'self.parts' is always shown according to the projection
-     * defined for concept InsurancePart in the editor 'comments'.
-     */
+    /* In this projection 'self.parts' is always shown according to the projection */
+    /* defined for concept InsurancePart in the editor 'comments'.                 */
     Base Products ${self.name} for ${self.theme}
         ${self.parts:comments}
 ]}
+
 ```
 
 ## Lists
@@ -231,7 +231,7 @@ its value would be displayed according to the boolean keyword projection in the 
 concept Entity {
     isCompany: boolean;
     name: identifier;
-}
+    reference baseEntity?: Entity;
 ```
 ```ts
 // docu-project/defs/editor-main-default.edit#L5-L5
@@ -268,9 +268,9 @@ the value of the property either the first or second keyword is shown.
 ```ts
 // docu-project/defs/editor-specials.edit#L11-L13
 
-Entity {[
     ${self.isCompany [COMPANY | PERSON]} ${self.name}
 ]}
+
 ```
  
 This would be displayed as one of ...

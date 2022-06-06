@@ -18,25 +18,25 @@ concept has a simple property named ‘`name`’ of type ‘`identifier`’, and
 
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.valid#L21-L26
+// docu-project/defs/validator-docu.valid#L27-L32
 
-AttributeWithLimitedType {
-    validIdentifier self.name;
 }
-Variable {
-    validIdentifier; // default is 'name'
-}
+CalcFunction {
+    // typecheck conformsTo (self.body, self.declaredType);
+    isunique name in self.parameters;
+    validIdentifier
+    {
 ```
 
 ## Simple Value Rules
 Given a simple property, its value can be limited to certain values.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.valid#L3-L6
+// docu-project/defs/validator-extras.valid#L3-L6
 
-AttributeType  {
-	self.extra >= 12;
-	self.extra <= 30;
+EntityAttribute {
+    self.numVal >= 12;       // in .ast file: "numVal: number;"
+    self.numVal <= 30;
 }
 ```
 
@@ -47,11 +47,13 @@ An **is-unique rule** is another rule that can be stated for a list property. Th
 complies when the value of the property is unique within the list.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.valid#L7-L9
+// docu-project/defs/validator-docu.valid#L3-L7
 
-EntityModelUnit {
-    notEmpty self.entities;
-    isunique name in self.entities;
+InsuranceProduct {
+    notEmpty self.parts;
+    isunique name in self.parts;
+    isunique name in self.helpers;
+}
 ```
 
 ## Type Check Rules
@@ -63,20 +65,39 @@ conforms to the type of the second.
 In type checking rules it is possible to use predefined instances of a limited concept.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.valid#L35-L39
+// docu-project/defs/validator-docu.valid#L10-L12
 
-MultiplyExpression {
-    typecheck equalsType( self.left, AttributeType:Integer );
-    typecheck equalsType( self.right, AttributeType:Integer );
-    typecheck conformsTo( self.left, self.right );
+MinusExpression  {
+    typecheck equalsType( self.left, self.right );
 }
 ```
 
-<a name="default-validation-rules"></a>
-# The Default Validation Rules
+## Custom Messages
+
+The generated error messages can be changed into custom ones. Similar to the editor definition,
+properties can be used in the error message using the syntax `${propName}`.
+
+```ts
+// docu-project/defs/validator-docu.valid#L28-L36
+
+CalcFunction {
+    // typecheck conformsTo (self.body, self.declaredType);
+    isunique name in self.parameters;
+    validIdentifier
+    {
+        message: "El nombre '${self.name}' no es un identificador correcto.",
+        severity: error
+    };
+}
+```
+
+
+
+# <a name="default-validation-rules"></a>The Default Validation Rules
 
 There are just a few default validation rules:
 
-. Non optional properties must be set.
-. Non optional lists must include one element.
-. Names of model units should be valid identifiers.
+* Non optional properties must be set.
+* Non optional lists must include one element.
+* Names of model units should be valid identifiers.
+* Any reference must be present.

@@ -42,7 +42,8 @@
             { name: 'Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition',
               content: [
                { name: 'Typer Files', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files'},
-               { name: 'Typer Example', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example'},
+               { name: 'Example Structure', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Structure'},
+               { name: 'Example Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Typer_Definition'},
                      ]},
             { name: 'Validator Definition', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition',
               content: [
@@ -61,8 +62,7 @@
                   ]},
          { name: 'Styling', path: '/030_Developing_a_Language/040_Styling',
            content: [
-            { name: 'Editor Styling', path: '/030_Developing_a_Language/040_Styling/010_Editor_Styling'},
-            { name: 'Webapp Styling', path: '/030_Developing_a_Language/040_Styling/020_Webapp_Styling'},
+            { name: 'SCCS Styling', path: '/030_Developing_a_Language/040_Styling/010_SCCS_Styling'},
                   ]},
                ]},
       { name: 'Under the Hood', path: '/060_Under_the_Hood',

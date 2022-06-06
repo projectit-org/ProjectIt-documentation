@@ -13,9 +13,9 @@ set of visible names. Any namespace shadows the visible names from its surroundi
 The default scoper simply regards the model of your user as the only namespace.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.scope#L3-L3
+// docu-project/defs/scoper-docu.scope#L3-L3
 
-isnamespace { EntityModelUnit, Entity, EntityFunction }
+isnamespace { InsuranceProduct, BaseProduct, CalcFunction, Entity }
 ```
 
 Interfaces can be namespaces as well.
@@ -26,6 +26,7 @@ namespace, but only the properties of the interface will be visible.
 <svelte:fragment slot="header"> Each model unit is a namespace.</svelte:fragment>
 <svelte:fragment slot="content">
 On all Levels of Customizations model units are always considered to be namespaces.
+TODO: check whether this is still correct.
 </svelte:fragment>
 </Note>
 
@@ -37,7 +38,17 @@ super type of the `Entity` concept. The names visible in the `baseEntity`
 are included in the namespace by defining the namespace-addition.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.scope#L5-L7
+// docu-project/defs/language-extras.ast#L34-L38
+
+concept Entity {
+    isCompany: boolean;
+    name: identifier;
+    reference baseEntity?: Entity;
+}
+```
+
+```ts
+// docu-project/defs/scoper-docu.scope#L13-L15
 
 Entity {
     namespace_addition = self.baseEntity;
@@ -47,12 +58,12 @@ Entity {
 ## Alternative Scopes
 You can also indicate that a different namespace altogether should be used. In the following example,
 the elements visible in
-an `AppliedFeature` are determined based on the type of its container, i.e. the type of its parent in the AST.
+an `AttributeRef` are determined based on the type of its container, i.e. the type of its parent in the AST.
 
 ```ts
-// tutorial-language/defs/LanguageDefinition.scope#L15-L17
+// docu-project/defs/scoper-docu.scope#L9-L11
 
-AppliedFeature {
+AttributeRef {
 	scope = typeof( container );
 }
 ```
