@@ -66,7 +66,9 @@ modelunit Part {
 }
 ```
 
-<!--- TODO add file-extension to example --->
+Model units have one special entry `file-extension`, as shown in the example above. This is an optional
+indication of the file type that the generated parser will associate with this model unit, i.e. an
+instance of the above model unit will be exported/imported to/from a file with this extension. 
 
 ### <a name="Concept"></a> Concept
 A *concept* is the basic element of your language definition. It defines which instances can be present in
@@ -123,7 +125,7 @@ has as left operand `4`, as operator `+`, and as right operand `5`.
 
 Any concrete binary expression concept needs to have a priority. The priority is used by ProjectIt to balance the 
 abstract syntax tree (see [Projectional Editing](/010_Intro/010_Projectional_Editing#tree-balancing)). In 
-the [second level tutorial](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition#operand) you can 
+the [second level tutorial](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options) you can 
 find more information on how to set the operand.
 
 Binary expression concepts may extend one other concept, and implement multiple interfaces.

@@ -3,7 +3,6 @@
      let self;
 </script>
 
-<!--- TODO support for coordinated *projection sets*. --->
 # Projections
 In the `.edit` file a *projection* is defined between angular brackets.
 This is done in a style similar from markdown, what you see looks close to what you get.
@@ -92,7 +91,7 @@ If a property is a list, you can indicate whether it should be projected horizon
 Both keywords are optional. If neither of `vertical` or `horizontal` is present, the property will be displayed as
 a vertical list.
 
-You can also choose to project a list property as a [table](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition#tables).
+You can also choose to project a list property as a [table](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections#tables).
 However, its default projection will always be a list. This is the one that will be generated when a 
 projection is not present in the `.edit` files.
 
@@ -133,7 +132,9 @@ purely determined by the keywords <code>horizontal</code> and <code>vertical</co
 </svelte:fragment>
 </Note>
 
-## <a name="tables"></a>Tables
+<a name="tables"></a>
+
+## Tables  
 If a property is a list, you can choose to project it as a table. Tables can be either row or column based.
 Row based means that each element of the list is displayed in a row. Column based, obviously, means that 
 each element is displayed in a single column. The default is row based. 
@@ -219,6 +220,8 @@ InsuranceProduct {[
 ```
 
 Note that optional projections for non-optional properties are not allowed.
+
+<a name="booleans"></a>
 
 ## Boolean Keyword Projections
 The next example shows the special manner in which properties of type **boolean** can be 

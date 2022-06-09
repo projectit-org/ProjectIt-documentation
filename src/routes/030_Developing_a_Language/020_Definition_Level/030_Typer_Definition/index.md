@@ -20,4 +20,5 @@ when ask for the type of an AST node thetyper will simply return a null value.
 
 ## Content
 In [Typer Files](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files) you can find an explanation of the parts of a typer definition.
-In [Typer Example](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example) you can find an example of commonly used types and how to define them.
+In [Typer Example](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/030_Example_Typer_Definition) you can find an example of 
+commonly used types and how to define them.

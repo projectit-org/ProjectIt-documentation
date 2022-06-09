@@ -15,19 +15,23 @@ Developing a Language with ProjectIt is usually done taking the following steps.
 
 ## The Example
 
-In this section we will be using the *Entity* language as example. The gist of the *Entity* language is
-that it defines
-several `EntityModelUnits`, each of which holds `Entities` and `Functions`. `Entities` can hold `Properties`
-and can hold `Functions` too. Every `Function` has a list of `Parameters` and an `Expression`.
+In this section we will be using the *Insurance* language as example. The gist of the *Insurance* language is
+that it defines two types of units. One unit holds  set of parts of insurance products for a single theme, 
+like 'Home', or 'Health'. This set is called a `BaseProduct`. The second contains a complete insurance 
+product that consists of a number of insurance parts from one or more `BaseProducts`. This is called an 
+`InsuranceProduct`.
+
+An `InsuranceProduct` has an expression called `calculation` that describes the expected cost of this product.
+To simplify this expression helpers function may be defined. Each of these is called a `CalcFunction`.
 
 The following figure shows a UML class diagram of the concepts in the language.
 
 <Figure 
-imageName={'example-uml-diagram.png'} 
-caption={'UML diagram of Entity Language'}
+imageName={'docu-project-uml.png'} 
+caption={'UML diagram of Insurance Project'}
 figureNumber={1}
 />
 
-We are working on a few other examples. You can find them in the
+We are working on a few other examples. You can find them in the `samples` folder in the
 development branch of <a href="https://github.com/projectit-org/ProjectIt" target="_blank">ProjectIt</a>.
 

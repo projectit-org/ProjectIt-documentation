@@ -43,7 +43,7 @@
               content: [
                { name: 'Typer Files', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files'},
                { name: 'Example Structure', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Structure'},
-               { name: 'Example Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Typer_Definition'},
+               { name: 'Example Typer Definition', path: '/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/030_Example_Typer_Definition'},
                      ]},
             { name: 'Validator Definition', path: '/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition',
               content: [

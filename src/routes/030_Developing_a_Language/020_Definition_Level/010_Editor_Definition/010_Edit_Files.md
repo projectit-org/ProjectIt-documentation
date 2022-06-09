@@ -3,7 +3,7 @@
      let self;
 </script>
 
-# [<a name="operand"></a>]() The Editor Definition Files
+# The Editor Definition Files
 In an editor definition file (`.edit` file) you can define a ProjectIt editor by providing extra information
 for each *concept* or *interface* in your language. Currently, you can define the following three items per
 *concept* or *interface*.
@@ -35,9 +35,9 @@ These sets can be switched on and off dynamically, thus changing
 the appearance of the model in the editor. 
 the appearance of the model in the editor. 
 
-For instance, if you define all 
-table projections under the same editor name,
-then your user can switch from viewing objects as lists to viewing them as tables <!--- (TODO links) --->.
+For instance, if you define all table projections under the same editor name,
+then your user can switch from viewing objects as lists to viewing them 
+as [tables](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections#tables).
 Or, in another example, you could have an editor (or projection set) that shows only part of the properties of some
 concepts, whereas another editor shows all properties. This makes it possible to cater for different types of users.
 
@@ -113,7 +113,8 @@ property has the value `true`, and likewise `NO` will be shown for the value `fa
 boolean [YES | NO] // the strings used to display a boolean value
 ```  
 
-The standard keywords can be overwritten per property. See TODO.
+The standard keywords can be overwritten per property. 
+See [Boolean Keyword Projections](/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections#booleans).
 
 ## Reference Separator
 

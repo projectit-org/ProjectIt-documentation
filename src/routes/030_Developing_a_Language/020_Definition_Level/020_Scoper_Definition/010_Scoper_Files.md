@@ -26,7 +26,7 @@ namespace, but only the properties of the interface will be visible.
 <svelte:fragment slot="header"> Each model unit is a namespace.</svelte:fragment>
 <svelte:fragment slot="content">
 On all Levels of Customizations model units are always considered to be namespaces.
-TODO: check whether this is still correct.
+<!--- TODO: check whether this is still correct. --->
 </svelte:fragment>
 </Note>
 

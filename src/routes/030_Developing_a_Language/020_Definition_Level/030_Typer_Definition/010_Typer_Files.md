@@ -122,7 +122,7 @@ in the type concept a condition is given. If all conditions evaluate to true the
 
 In a condition of a `where-clause` you may use `conformsto`. In that case, invocation of the rule will produce the cartesian product of
 all super concepts of the properties in the conditions. For an 
-example, see [Typer Example](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Typer_Example).
+example, see [Typer Example](/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/030_Example_Typer_Definition).
 
 <Note>
 <svelte:fragment slot="content">
