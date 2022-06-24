@@ -1,0 +1,5 @@
+import{S as j,i as y,s as L,e as u,t as h,k as q,c as d,a as v,h as c,d as o,m as z,b as D,g as P,H as n,J as x}from"../../../chunks/vendor-492729b6.js";function E(b){let t,f,l,s,_,a,m,p;return{c(){t=u("h1"),f=h("ProjectIt Definition Level"),l=q(),s=u("p"),_=h("Please, become acquainted with the "),a=u("a"),m=h("three levels of customization"),p=h(`
+used by ProjectIt.
+This section explains the second of these three levels.`),this.h()},l(e){t=d(e,"H1",{});var i=v(t);f=c(i,"ProjectIt Definition Level"),i.forEach(o),l=z(e),s=d(e,"P",{});var r=v(s);_=c(r,"Please, become acquainted with the "),a=d(r,"A",{href:!0});var I=v(a);m=c(I,"three levels of customization"),I.forEach(o),p=c(r,`
+used by ProjectIt.
+This section explains the second of these three levels.`),r.forEach(o),this.h()},h(){D(a,"href","/010_Intro/050_Three_Levels_of_Customization")},m(e,i){P(e,t,i),n(t,f),P(e,l,i),P(e,s,i),n(s,_),n(s,a),n(a,m),n(s,p)},p:x,i:x,o:x,d(e){e&&o(t),e&&o(l),e&&o(s)}}}class w extends j{constructor(t){super();y(this,t,null,E,L,{})}}export{w as default};
