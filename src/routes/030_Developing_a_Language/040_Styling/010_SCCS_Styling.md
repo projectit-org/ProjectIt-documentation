@@ -65,8 +65,8 @@ for CSS variables, see https://www.sass-lang.com/documentation/breaking-changes/
 .editor-part {
   box-sizing: border-box;
   /* Selectable */
-  --freon-colors-bg_selected: rgba(211, 227, 253, 255);
-  --freon-colors-border_selected: #{theme.$blue-900};
+  --freon-selected-background-color: transparant;
+  --freon-selected-outline-color: #{theme.$blue-900};
   /* Normal text colors */
   //--freon-colors-inverse_color: #{theme.$on-secondary};     /* Text color on non_normal background */
   --freon-editor-component-background-color: #{theme.$surface};              /* The background color of the editor */
@@ -76,13 +76,20 @@ for CSS variables, see https://www.sass-lang.com/documentation/breaking-changes/
   /* Fonts */
   --freon-editor-component-font-family: "Roboto";    /* The font family of the text, unless set otherwise by the projection */
   --freon-editor-component-font-size: 14px;          /* The font size of the text, unless set otherwise by the projection */
-  --freon-editor-component-font-style: normal;       /* The font style of the text, unless set otherwise by the projection */
-  --freon-editor-component-font-weight: normal;      /* The font weight of the text, unless set otherwise by the projection */
+  --freon-editor-component-font-style: bold;       /* The font style of the text, unless set otherwise by the projection */
+  --freon-editor-component-font-weight: bold;      /* The font weight of the text, unless set otherwise by the projection */
   /* Dropdown colors */
   --freon-dropdown-component-border-color: #{theme.$blue-900};
   --freon-dropdown-component-background-color: #{theme.$surface};
+  --freon-dropdown-component-color: inherit;
+
   --freon-dropdownitem-component-color: #{theme.$blue-900};
+  --freon-dropdownitem-component-background-color: inherit;
   --freon-dropdownitem-component-border-color: #{theme.$blue-900};
+  --freon-dropdownitem-component-selected-color: inherit;
+  --freon-dropdownitem-component-selected-background-color: inherit;
+  --freon-dropdownitem-component-hover-color: inherit;
+  --freon-dropdownitem-component-hover-background-color: #{theme.$blue-100};
 
   --freon-text-component-color: #{theme.$blue-900};
   --freon-text-component-font-size: 14px;		/* The font size of the text, unless set otherwise by the projection */
@@ -104,50 +111,48 @@ for CSS variables, see https://www.sass-lang.com/documentation/breaking-changes/
   /* Popup */
   --freon-popup-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
 
-  --freon-horizontallist-component-padding: 0px;
-  --freon-horizontallist-component-margin: 0px;
+  --freon-horizontallist-component-padding: 1px;
+  --freon-horizontallist-component-margin: 1px;
 
-  --freon-verticallist-component-padding: 0px;
-  --freon-verticallist-component-margin: 0px;
+  --freon-verticallist-component-padding: 1px;
+  --freon-verticallist-component-margin: 1px;
 
 
-}
-
-.Rules-name-textbox, .CheckingRule-name-textbox {
-  --freon-colors-backgroundcolor_text_box: lightgreen;
-}
-.Entity-name-textbox {
-  --freon-colors-backgroundcolor_text_box: lightgreen;
 }
 
-.\/\*, .\*\/ {
-  //--freon-label-component-font-weight: lighter;
-  --freon-label-component-font-style: italic;
-  --freon-label-component-color: #{theme.$grey-500};
+// Table styling
+.gridcellOdd {
+  --freon-gridcell-component-background-color: #{theme.$grey-300};
 }
-.\{ {
-  --freon-label-component-font-weight: bold;
+.gridcellEven {
+  --freon-gridcell-component-background-color: transparent;
 }
-.using.entity\: , .Validation {
-  --freon-label-component-font-weight: bold;
-  --freon-label-component-color: red;
-}
-.alias-SetValue-attribute-referencebox-textbox {
-  --freon-colors-backgroundcolor_text_box: orange;
+.gridcell-header {
+  --freon-gridcell-component-background-color: #{theme.$grey-400};
 }
 
-.\,, .\%, .\. {
-  --freon-label-component-margin: 0px 0px 0px 0px;
-  --freon-label-component-padding: 0px 0px 0px 0px;
-}
-//.EuroLiteral-cents-numberbox {
-//  --freon-label-component-margin: 0px;
-//  --freon-label-component-padding: 0px 1px 0px 1px;
+// Uncomment this to get a green background on the name of an Entity
+//.Entity-name-textbox {
+//  --freon-text-component-background-color: lightgreen;
 //}
+
+// Text in string literal is green
+.StringLiteralExpression-value-textbox {
+  --freon-text-component-color: green;
+}
+
+// All labels (fixed text) containing the word Unit get the following style
+.Unit {
+  --freon-label-component-font-weight: bold;
+  --freon-label-component-color: darkmagenta;
+}
+
+// Expressions and binary expressions styling
 .alias-binary-pre-textbox, .alias-binary-post-textbox, .alias-exp-left-textbox, .alias-exp-right-textbox {
   --freon-text-component-margin: 0px;
   --freon-text-component-padding: -1px 1px 0px 1px;
 }
+
 html,
 body {
   background-color: theme.$surface;
