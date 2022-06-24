@@ -74,7 +74,9 @@ concept AttributeWithLimitedType {
 }
 
 concept Text {} // only defined to show that literal text can be part of a projection
-
+concept Text2 {} // only defined to show that literal text can be part of a projection
+concept Text3 {} // only defined to show that literal text can be part of a projection
+concept Text4 {} // only defined to show that literal text can be part of a projection
 concept AttributeWithEntityType {
     reference declaredType: Entity;
     name: identifier;

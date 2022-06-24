@@ -50,8 +50,7 @@ check out our [wish list](/010_Intro/090_Future_Developments) of features to be 
 
 In [Support for Expressions](/010_Intro/010_Projectional_Editing#expressions) we explain 
 that editing expressions is a known challenge for projectional editors. A second challenge 
-is posed by *references*, which is stated in 
-<a href="https://www.voelter.de/data/pub/fse2016-projEditing.pdf" target="_blank">
+is posed by *references*, which is stated in <a href="https://www.voelter.de/data/pub/fse2016-projEditing.pdf" target="_blank">
 Efficiency of Projectional Editing: A Controlled Experiment</a> as follows.
 
 ****
@@ -63,20 +62,17 @@ Efficiency of Projectional Editing: A Controlled Experiment</a> as follows.
 > quick fixes to create reference targets), there should be a better way to support references
 > by the IDE itself.
 >
-> The approach to references in ProjectIt is to used only name-based references which are resolve
-> on a need-to basis.
-> 
 > [Markus Voelter a.o., Efficiency of Projectional Editing]
 ****
 
-This is the reason that in ProjectIt we allow only name-based references. Every reference is 
+This is the reason that in ProjectIt we allow only name-based references, which are resolved
+on a need-to basis. Every reference is 
 an instance of the class `PiElementReference`, which holds:
 
 * the name or path (i.e. a list of names) of the referred element
 * the meta-type of the referred element
 * a cache of the element itself
 
-This means that the AST is truly a tree, not a graph.
-
-The advantage is that we are not obliged to have the complete model in memory. Our use of
+This means that the AST is truly a tree, not a graph. One advantage is that we are not obliged 
+to have the complete model in memory. Our use of
 multi-file models is explained in [Models and Model Units](/010_Intro/030_Models_and_Model_Units).

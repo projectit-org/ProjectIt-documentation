@@ -90,7 +90,7 @@ within the entity. This ensures that the user can immediately start typing the n
 There can be many boxes with the same role in the editor, as long as their model element is different.
 This way, the above action is available for each attribute list in each entity.
 
-// TODO: describe the optional properties
+<!--- // TODO: describe the optional properties --->
 
 ## Custom Actions
 // TODO document other custom actions

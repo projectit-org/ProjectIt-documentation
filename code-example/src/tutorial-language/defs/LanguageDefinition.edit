@@ -1,120 +1,124 @@
 editor StartEditor for language Entity
 
 Text {
-    @projection
-        [This is
-                literal text
-          that is projected in the
-
+[
+This is
+        literal text
+      that is projected in the
                 editor
-        for every concept of type Text.]
+  for every concept of type Text.
+]
+}
+Text2 {
+            [
+            This is
+                    literal text
+                  that is projected in the
+
+                            editor
+              for every concept of type Text.
+            ]
+}
+Text3 {
+    [
+                 This is
+               literal text
+          that is projected in the
+                  editor
+       for every concept of type Text.
+            ]
+}
+Text4 {
+    [
+                 This is
+               literal text
+          that is projected in the
+                  editor
+       for every concept of type Text.
+    ]
 }
 NumberLiteralExpression {
-    @projection normal
         [${self.value}]
 }
 StringLiteralExpression {
-// in this projection the indentation is not taken into account
-    @projection normal
         [
         '${self.value}'
         ]
-    @trigger "'"
 }
 AttributeWithLimitedType {
 // in this projection the indentation is taken into account
-    @projection showAll
+// the property 'name' will be indented by 4 spaces
         [
     ${self.name} : ${self.declaredType}
- ]
+]
 }
 IfExpression {
-    @projection normal
-        [
-        if (${self.condition}) then
-                  ${self.whenTrue}
-        else
-           ${self.whenFalse}
-        endif
-        ]
-
-    @trigger "if"
-    @symbol "if"
+    [
+    if ${self.condition} then
+        ${self.whenTrue}
+    else
+        ${self.whenFalse}
+    endif
+    ]
+    trigger "if"
 }
-/*
-IfExpression {
-    @projection normal
-        [
-        (${ self.condition } ? ${ self.whenTrue } : ${self.whenFalse} )
-        ]
-
-    @trigger "if"
-    @symbol "if"
-}
-*/
 PlusExpression {
-    @symbol "+"
+    symbol "+"
 }
 
 MultiplyExpression {
-    @symbol "*"
+    symbol "*"
 }
 
 DivideExpression {
-    @symbol "/"
+    symbol "/"
 }
 LessThenExpression {
-    @symbol "<"
+    symbol "<"
 }
 OrExpression {
-    @symbol "or"
+    symbol "or"
 }
 
 Entity {
-    @projection normal [
-        [?${self.isCompany @keyword[COMPANY]}]
+    [
+        ${self.isCompany keyword[COMPANY]}
         entity ${self.name} [? base ${self.baseEntity}] {
-            ${self.attributes @vertical }       // this list is projected as a vertical list without separator or terminator
-            ${self.functions  @table @columns } // this list is projected as a column based table
+            ${self.attributes vertical }      // this list is projected as a vertical list without separator or terminator
+            ${self.functions  table columns } // this list is projected as a column based table
         }
     ]
 }
-
 /*
 FunctionCallExpression {
-    @projection normal
         [
         ${self.name} (  )
         ]
-    @trigger "function2"
+    trigger "function2"
 }
 */
-
 FunctionCallExpression {
-    @projection showAll
         [+
-        CALL ${self.functionDefinition} (  )
+        CALL ${self.functionDefinition:specials} (  )
         ]
-    @trigger "function"
+    trigger "function"
 }
 EntityModelUnit {
-    @projection showAll
         [
         model ${self.name} {
         entities:
             ${self.entities
-                @vertical
-                @terminator [ && ]
+                vertical
+                terminator [ && ]
             }
         model wide functions:
-            ${self.functions @horizontal @separator [; ] }
+            ${self.functions horizontal separator [; ] }
         }
         ]
 }
-
 EntityFunction {
-    @table [
-        Name         | parameters          | type                 | body
-        ${self.name} | ${self.parameters @table } | ${self.declaredType} | ${self.expression}
+    table [
+        Name         | parameters                | type                 | body
+        ${self.name} | ${self.parameters table } | ${self.declaredType} | ${self.expression}
     ]
 }

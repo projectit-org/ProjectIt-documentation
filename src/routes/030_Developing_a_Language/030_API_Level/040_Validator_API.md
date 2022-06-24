@@ -42,7 +42,8 @@ Obviously, `<yourLanguageName>` needs to be replaced by the name of your languag
 3. Now implement any of the methods of the default worker by putting in your validation in
 the corresponding model element method. This method will override the (empty) default implementation.
 The validation error should be pushed onto the `errorList` attribute. Therefore, each error must implement the
-[PiError](/060_Under_the_Hood/020_The_PiTool_Interfaces/040_PiValidator_Interface#PiError) (TODO link) interface.
+[PiError](/060_Under_the_Hood/020_The_PiTool_Interfaces/040_PiValidator_Interface#PiError) interface.
+<!--- (TODO link) --->
 
 The result of the above should look something like this:
 
