@@ -30,3 +30,9 @@ yarn run dev
 # or start the server and open the app in a new browser tab
 yarn run dev -- --open
 ```
+## Publishing
+
+In de docs folder:
+
+- Check whether the .nojekyll file is there, to avoid github from doing stuff that breaks the site.
+- Check whether the CNAME file with www.projectit.org is there
