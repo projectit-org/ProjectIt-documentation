@@ -28,10 +28,10 @@
 		<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-3f550184.css">
 	<link rel="stylesheet" href="/_app/assets/Note.svelte_svelte_type_style_lang-a108c8ba.css">
-	<link rel="modulepreload" href="/_app/start-7a6e4c65.js">
+	<link rel="modulepreload" href="/_app/start-5bb7b705.js">
 	<link rel="modulepreload" href="/_app/chunks/vendor-492729b6.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-74005861.js">
-	<link rel="modulepreload" href="/_app/pages/020_Getting_Started/020_Project_Structure.md-be93fb9b.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-d8a2ae7f.js">
+	<link rel="modulepreload" href="/_app/pages/020_Getting_Started/020_Project_Structure.md-151dbd6f.js">
 	<link rel="modulepreload" href="/_app/chunks/Note-1bdf01a3.js">
 	</head>
 	<body>
@@ -46,7 +46,7 @@
 <main class="main-window svelte-awlnq7">
 
 
-<div class="app-bar svelte-ae0shh"><div class="title svelte-ae0shh">ProjectIt Documentation (version 0.3.0)</div>
+<div class="app-bar svelte-ae0shh"><div class="title svelte-ae0shh">ProjectIt Documentation (version 0.4.0)</div>
 
 	<span class="linkLogo svelte-ae0shh"><div class="tooltip-wrapper svelte-12vmiyh"><span class="tooltip-slot svelte-12vmiyh">
 
@@ -169,29 +169,32 @@ you can clone from github.</p>
   the web application in the file <code>~/src/webapp/WebappConfiguration.ts</code>, are adjusted.
 </div>
 </div></li>
+<li><p><em>picode/config</em>: code that provides the coupling between all parts of the generated workbench.
+This folder contains one file that will not be overwritten at regeneration: <code>ProjectitConfiguration.ts</code>.
+Here you can configure any <a href="/030_Developing_a_Language/030_API_Level">third-level customization</a> that you want the
+generated code to take into account.</p></li>
 <li><p><em>picode/editor</em>: code for the editor. This folder contains two files that will not be overwritten
 at regeneration: <code>Custom&lt;yourLanguageName&gt;Actions.ts</code>and <code>Custom&lt;yourLanguageName&gt;Projection.ts</code>.
 (<code>&lt;yourLanguageName&gt;</code> will be replaced by the name you have given your language in the .ast files.)
 These two files are the placeholders for any <a href="/030_Developing_a_Language/030_API_Level">third-level customization</a> that you
 would like to do.</p></li>
-<li><p><em>picode/environment</em>: code that provides the coupling between all parts of the generated workbench.</p></li>
 <li><p><em>picode/language</em>: code that implements the language structure.</p></li>
-<li><p><em>picode/projectit</em>: code that enables the language engineer to configure the workbench.
-This folder contains one file that will not be overwritten at regeneration: <code>ProjectitConfiguration.ts</code>.
-Here you can configure any <a href="/030_Developing_a_Language/030_API_Level">third-level customization</a> that you want the
-generated code to take into account.</p></li>
 <li><p><em>picode/reader</em>: a parser that is able to read <a href="/010_Intro/030_Models_and_Model_Units">model units</a>
 from a text string or file.</p></li>
 <li><p><em>picode/scoper</em>: code for that determines which elements are visible for a certain element in the user’s model.</p></li>
 <li><p><em>picode/stdlib</em>: code that implements some standard elements of your language, for instance
 <a href="/030_Developing_a_Language/010_Default_Level">limited concepts</a>.</p></li>
-<li><p><em>picode/typer</em>: code that that determines which type is associated with a certain element in the user’s model.</p></li>
+<li><p><em>picode/typer</em>: code that that determines which type is associated with a certain element in the
+user’s model. The file <code>Custom&lt;yourLanguageName&gt;TyperPart.ts</code> is the placeholder for any <a href="/030_Developing_a_Language/030_API_Level">third-level customization</a> that you
+would like to do.</p></li>
 <li><p><em>picode/utils</em>: a default implementation of a visitor for your user’s model.</p></li>
-<li><p><em>picode/validator</em>: code that determines whether or not certain parts of your user’s model contain errors.</p></li>
+<li><p><em>picode/validator</em>: code that determines whether or not certain parts of your user’s model contain
+errors. The file <code>Custom&lt;yourLanguageName&gt;Validator.ts</code> is the placeholder for any <a href="/030_Developing_a_Language/030_API_Level">third-level customization</a> that you
+would like to do.</p></li>
 <li><p><em>picode/writer</em>: code that is able to write your user’s <a href="/010_Intro/030_Models_and_Model_Units">model units</a>
 in string format to a file.</p></li>
 <li><p><em>webapp</em>: source code for the web-application used for all generated languages.</p></li>
-<li><p>Note worthy is the file <code>picode/webapp/WebappConfiguration.ts</code>. This file holds the references to the generated language
+<li><p>Note worthy is the file <code>picode/webapp/config/WebappConfiguration.ts</code>. This file holds the references to the generated language
 workbench and the web address of the server which stores your user’s models.</p></li></ul>
 <p>Another folder that can be found in the project is <code>~/modelstore</code>. This is the folder where
 the server stores all models, and it is created at the moment that the server is started.
@@ -217,10 +220,12 @@ there is a need for a server which can hold and provide stored users models, and
 is able to show the editor, errors message, models that are available form the server, and so on.</p>
 <p>Therefore, we provide a minimal <em>server</em> that stores your user models in a json format.
 You can start it through the commandline:</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts">    yarn model<span class="token operator">-</span>server</code><!-- HTML_TAG_END --></pre>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">    <span class="token function">yarn</span> model-server</code><!-- HTML_TAG_END --></pre>
 <p>A simple <em>web application</em> where you can see your language in action is also provided.
 The code can be found in <code>~/webapp</code>. It was created
-using <a href="https://svelte.dev/" target="_blank">Svelte</a>.</p>
+using <a href="https://svelte.dev/" target="_blank">Svelte</a>.
+You can start it through the commandline:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">    <span class="token function">yarn</span> dev</code><!-- HTML_TAG_END --></pre>
 <p>Note that both the server, and the web application are provided for your convenience. We assume
 that when ProjectIt is used in a larger context, these two parts will be interchanged with
 suitable choices made by the language engineer and team.</p></div></section></div>
@@ -229,16 +234,16 @@ suitable choices made by the language engineer and team.</p></div></section></di
 
 </div>
 		<footer class="svelte-1hxqcuo">
-    <span class="copyright svelte-1hxqcuo">Created by ProjectIt - © 2021 -
+    <span class="copyright svelte-1hxqcuo">Created by ProjectIt - © 2022 -
         <a href="http://www.projectit.org/" target="_blank" class="link svelte-1hxqcuo">www.projectit.org
         </a></span>
 </footer></main>
 
 
-		<script type="module" data-hydrate="f3atj6">
-		import { start } from "/_app/start-7a6e4c65.js";
+		<script type="module" data-hydrate="1qw1408">
+		import { start } from "/_app/start-5bb7b705.js";
 		start({
-			target: document.querySelector('[data-hydrate="f3atj6"]').parentNode,
+			target: document.querySelector('[data-hydrate="1qw1408"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -248,8 +253,8 @@ suitable choices made by the language engineer and team.</p></div></section></di
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-74005861.js"),
-						import("/_app/pages/020_Getting_Started/020_Project_Structure.md-be93fb9b.js")
+					import("/_app/pages/__layout.svelte-d8a2ae7f.js"),
+						import("/_app/pages/020_Getting_Started/020_Project_Structure.md-151dbd6f.js")
 				],
 				url: new URL("http://sveltekit-prerender/020_Getting_Started/020_Project_Structure"),
 				params: {}

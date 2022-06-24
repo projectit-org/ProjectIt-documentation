@@ -28,10 +28,10 @@
 		<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-3f550184.css">
 	<link rel="stylesheet" href="/_app/assets/Note.svelte_svelte_type_style_lang-a108c8ba.css">
-	<link rel="modulepreload" href="/_app/start-7a6e4c65.js">
+	<link rel="modulepreload" href="/_app/start-5bb7b705.js">
 	<link rel="modulepreload" href="/_app/chunks/vendor-492729b6.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-74005861.js">
-	<link rel="modulepreload" href="/_app/pages/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md-5f8ec9f2.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-d8a2ae7f.js">
+	<link rel="modulepreload" href="/_app/pages/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md-287d66d0.js">
 	<link rel="modulepreload" href="/_app/chunks/Note-1bdf01a3.js">
 	</head>
 	<body>
@@ -46,7 +46,7 @@
 <main class="main-window svelte-awlnq7">
 
 
-<div class="app-bar svelte-ae0shh"><div class="title svelte-ae0shh">ProjectIt Documentation (version 0.3.0)</div>
+<div class="app-bar svelte-ae0shh"><div class="title svelte-ae0shh">ProjectIt Documentation (version 0.4.0)</div>
 
 	<span class="linkLogo svelte-ae0shh"><div class="tooltip-wrapper svelte-12vmiyh"><span class="tooltip-slot svelte-12vmiyh">
 
@@ -140,6 +140,7 @@
 				<a href="/030_Developing_a_Language/010_Default_Level" class="svelte-1u9fis1">Default Level</a></span>
 
 		<ul class="svelte-1u9fis1 hasName"><li class="svelte-1u9fis1"><span class="svelte-mno2fe active"><a class="leafText svelte-mno2fe active" href="/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure">Defining the Language Structure</a></span>
+					</li><li class="svelte-1u9fis1"><span class="svelte-mno2fe"><a class="leafText svelte-mno2fe" href="/030_Developing_a_Language/010_Default_Level/020_Defining_Concept_Properties">Defining Concept Properties</a></span>
 					</li></ul></nav>
 </div>
 					</li><li class="svelte-1u9fis1">
@@ -151,7 +152,7 @@
 
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="var(--theme-colors-color)"><path d="M10 17l5-5-5-5v10z"></path><path d="M0 24V0h24v24H0z" fill="none"></path></svg></span>
-				<a href="/030_Developing_a_Language/020_ProjectIt_Definition_Level" class="svelte-1u9fis1">ProjectIt Definition Level</a></span>
+				<a href="/030_Developing_a_Language/020_Definition_Level" class="svelte-1u9fis1">Definition Level</a></span>
 
 		</nav>
 </div>
@@ -205,6 +206,13 @@
 <p>The abstract syntax tree (AST) of the language is described in files with the extension <code>.ast</code>.
 All files with this extension in the <em>defs</em> folder (i.e. the folder were you keep your definition files)
 are combined into one AST definition.</p>
+<h2>Name of the language</h2>
+<p>Every AST file must start with the declaration of the name of your language. This name is used
+to create the name of a number of generated classes.</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-main.ast#L1-L2</span>
+
+language DocuProject
+</code><!-- HTML_TAG_END --></pre>
 <h2>Concepts</h2>
 <p>The ProjectIt language structure, which describes the abstract syntax tree (AST), consists of a
 list of a <a href="/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure#Model">Models</a>,
@@ -230,47 +238,61 @@ It is always shown in parts: the model units. However, the webapp does &#39;show
 part of it, in its left panel.
 </div>
 </div>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L3-L7</span>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-main.ast#L7-L10</span>
 
-model EntityModel <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
-    units<span class="token operator">:</span> EntityModelUnit<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    extraUnit<span class="token operator">:</span> SomeOtherModelUnit<span class="token punctuation">;</span>
+model InsuranceModel <span class="token punctuation">&#123;</span>
+    parts<span class="token operator">:</span> Part<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>              <span class="token comment">// units that hold partial definitions of insurance products</span>
+    products<span class="token operator">:</span> Product<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment">// units that hold sellable insurance products</span>
 <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
 <h3><a name="Model_Unit"></a> Model unit</h3>
 <p>A <em>model unit</em> is a part of the model that can be edited independently of the rest of the model. A model unit is
-always a direct child of a model. The name of a model unit must always be <a href="/010_Intro/030_Models_and_Model_Units#public">public</a>.</p>
-<p>Model units may not extend other units or implement interfaces.</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L56-L61</span>
+always a direct child of a model. The name of a model unit never be <a href="/010_Intro/030_Models_and_Model_Units#public">private</a>
+(see <a href="/010_Intro/030_Models_and_Model_Units#public">Models and Model Units</a>).</p>
+<p>Model units may not extend other units or implement interfaces. </p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-main.ast#L12-L15</span>
 
-modelunit EntityModelUnit <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
-
-    functions<span class="token operator">:</span> EntityFunction<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    entities<span class="token operator">:</span> Entity<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+modelunit Part <span class="token punctuation">&#123;</span>
+    part<span class="token operator">:</span> BaseProduct<span class="token punctuation">;</span>          <span class="token comment">// one collection of partial insurance products</span>
+    file<span class="token operator">-</span>extension <span class="token operator">=</span> <span class="token string">"base"</span><span class="token punctuation">;</span>    <span class="token comment">// the file extension used by the parser</span>
 <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
-<p>TODO add file-extension to example</p>
+<p>Model units have one special entry <code>file-extension</code>, as shown in the example above. This is an optional
+indication of the file type that the generated parser will associate with this model unit, i.e. an
+instance of the above model unit will be exported/imported to/from a file with this extension. </p>
 <h3><a name="Concept"></a> Concept</h3>
 <p>A <em>concept</em> is the basic element of your language definition. It defines which instances can be present in
 a model created by your users. </p>
-<p>Concepts may extend one other concept, and implement multiple interfaces.</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L26-L32</span>
+<p>Concepts may extend one other concept using the keyword <code>base</code>, and implement multiple interfaces.
+Furthermore, they may be <em>abstract</em>.</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-main.ast#L24-L28</span>
 
-concept Entity <span class="token keyword">implements</span> <span class="token class-name">Type</span> <span class="token punctuation">&#123;</span>
-    isCompany<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
-    attributes<span class="token operator">:</span> AttributeWithLimitedType<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    entAttributes<span class="token operator">:</span> AttributeWithEntityType<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    functions<span class="token operator">:</span> EntityFunction<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    reference baseEntity<span class="token operator">?</span><span class="token operator">:</span> Entity<span class="token punctuation">;</span>
+concept BaseProduct <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>           <span class="token comment">// internal name</span>
+    theme<span class="token operator">:</span> InsuranceTheme<span class="token punctuation">;</span>      <span class="token comment">// the 'kind' of insurance</span>
+    parts<span class="token operator">:</span> InsurancePart<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">// all parts of this product</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-main.ast#L106-L112</span>
+
+<span class="token comment">/* The concept TypeRef represents a reference to a known type.
+ * In the 'language-extras.ast' file there is an example of a
+ * concept representing a type declaration.
+ */</span>
+concept TypeRef base DocuType  <span class="token punctuation">&#123;</span>
+    reference type<span class="token operator">:</span> NamedType<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
 <h3><a name="Expression_Concept"></a> Expression Concept</h3>
-<p>An <em>expression concept</em> is a concept that is an expression. The editor will deal with these differently in
+<p>An <em>expression concept</em> is a concept that is an expression. The editor deals with these differently in
 order to give your user a more natural editing experience. </p>
 <p>Expression concepts may extend one other concept, and implement multiple interfaces.</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L48-L50</span>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-expressions.ast#L10-L18</span>
 
-expression AbsExpression base EntityExpression <span class="token punctuation">&#123;</span>
-    expr<span class="token operator">:</span> EntityExpression<span class="token punctuation">;</span>
+<span class="token keyword">abstract</span> expression Literal base DocuExpression <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span>
+expression EuroLiteral base Literal <span class="token punctuation">&#123;</span>
+    euros<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    cents<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+expression NumberLiteral base Literal <span class="token punctuation">&#123;</span>
+    value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
 <h3><a name="Binary_Expression_Concept"></a> Binary Expression Concept</h3>
 <p>A <em>binary expression concept</em> is an expression concept that has two sub expressions, left and right operands,
@@ -278,14 +300,31 @@ and an operator, which in the concrete syntax usually goes in the middle. For ex
 has as left operand <code>4</code>, as operator <code>+</code>, and as right operand <code>5</code>. </p>
 <p>Any concrete binary expression concept needs to have a priority. The priority is used by ProjectIt to balance the
 abstract syntax tree (see <a href="/010_Intro/010_Projectional_Editing#tree-balancing">Projectional Editing</a>). In
-the <a href="/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition#operand">second level tutorial</a> you can
+the <a href="/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options">second level tutorial</a> you can
 find more information on how to set the operand.</p>
 <p>Binary expression concepts may extend one other concept, and implement multiple interfaces.</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L118-L121</span>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-expressions.ast#L23-L43</span>
 
-<span class="token keyword">abstract</span> binary expression BinaryExpression base EntityExpression <span class="token punctuation">&#123;</span>
-    left<span class="token operator">:</span> EntityExpression<span class="token punctuation">;</span>
-    right<span class="token operator">:</span> EntityExpression<span class="token punctuation">;</span>
+<span class="token comment">// Basic binary expressions: plus, minus, multiply, divide</span>
+<span class="token keyword">abstract</span> binary expression BinaryExpression base DocuExpression <span class="token punctuation">&#123;</span>
+    left<span class="token operator">:</span> DocuExpression<span class="token punctuation">;</span>
+    right<span class="token operator">:</span> DocuExpression<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+binary expression PlusExpression base BinaryExpression <span class="token punctuation">&#123;</span>
+    priority <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+binary expression MinusExpression base BinaryExpression <span class="token punctuation">&#123;</span>
+    priority <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+binary expression MultiplyExpression base BinaryExpression <span class="token punctuation">&#123;</span>
+    priority <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+binary expression DivideExpression base BinaryExpression <span class="token punctuation">&#123;</span>
+    priority <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
 <h3><a name="Limited_Concept"></a> Limited Concept</h3>
 <p>A <em>limited concept</em> is a concept that has a limited number of predefined instances. Actually, it is an extended
@@ -293,22 +332,27 @@ version of an enumeration. All instances become part of the standard library of 
 <p>A limited concept must always have a name property (<code>name: identifier;</code>), but if this is not provided
 in the definition then it is automatically created. Furthermore, when a predefined instance does not provide a
 value for the name, the name of the instance is used. In this manner, you can define simple enumerations. </p>
-<p>Limited concepts may extend one other concept, and implement multiple interfaces.</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L34-L46</span>
+<p>Limited concepts may extend another concept, and implement multiple interfaces.</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-main.ast#L114-L131</span>
 
-limited AttributeType <span class="token keyword">implements</span> <span class="token class-name">BaseType</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// if the 'name' property was not provided, it would have been generated</span>
-    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
-    extra<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-    String <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"String"</span><span class="token punctuation">,</span> extra<span class="token operator">:</span> <span class="token number">199</span><span class="token punctuation">&#125;</span>
-    <span class="token comment">// notations 'name:' and '"name":' are both correct</span>
-    Integer <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Integer"</span><span class="token punctuation">,</span> extra<span class="token operator">:</span> <span class="token number">240261</span><span class="token punctuation">&#125;</span>
-    Boolean <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"Boolean"</span><span class="token punctuation">,</span> extra<span class="token operator">:</span> <span class="token number">5479</span><span class="token punctuation">&#125;</span>
-    <span class="token comment">// the following instance gets the name "ANY"</span>
-    <span class="token constant">ANY</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span> extra<span class="token operator">:</span> <span class="token number">456</span><span class="token punctuation">&#125;</span>
+limited InsuranceTheme <span class="token punctuation">&#123;</span>        <span class="token comment">// limited defined as a simple enumeration</span>
+    HomeTheme<span class="token punctuation">;</span> HealthTheme<span class="token punctuation">;</span> LegalTheme<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 
-limited MockEnumeration <span class="token punctuation">&#123;</span> EnumValue1<span class="token punctuation">;</span> EnumValue2<span class="token punctuation">;</span> EnumValue3<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+limited PremiumDays <span class="token punctuation">&#123;</span>           <span class="token comment">// limited with various options</span>
+    <span class="token comment">// if the 'name' property was not provided, it would have been generated</span>
+    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
+    nrOfDays<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    <span class="token comment">// notations 'name:' and '"name":' are both correct</span>
+    Week <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"Week"</span><span class="token punctuation">,</span> nrOfDays<span class="token operator">:</span> <span class="token number">7</span> <span class="token punctuation">&#125;</span>
+    Month <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Month"</span><span class="token punctuation">,</span> nrOfDays<span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">&#125;</span>
+    <span class="token comment">// the following instance gets the name "Quarter"</span>
+    Quarter <span class="token operator">=</span> <span class="token punctuation">&#123;</span> nrOfDays<span class="token operator">:</span> <span class="token number">91</span> <span class="token punctuation">&#125;</span>
+    <span class="token comment">// the following instance gets the name "Semester"</span>
+    Semester <span class="token operator">=</span> <span class="token punctuation">&#123;</span> nrOfDays<span class="token operator">:</span> <span class="token number">182</span> <span class="token punctuation">&#125;</span>
+    <span class="token comment">// the following instance gets the name "Year"</span>
+    Year <span class="token operator">=</span> <span class="token punctuation">&#123;</span> nrOfDays<span class="token operator">:</span> <span class="token number">365</span> <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
 <div class="note svelte-1sq0zwq"><span class="icon svelte-1sq0zwq">
 
 
@@ -320,67 +364,27 @@ instances of limited concepts.
 </div>
 </div>
 <h3><a name="Interface"></a> Interface</h3>
-<p>An <em>interface</em> is a concept that has no instances.</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L14-L17</span>
+<p>An <em>interface</em> is a concept that has no instances. It may extend multiple other interfaces.</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// docu-project/defs/language-main.ast#L86-L88</span>
 
-<span class="token keyword">interface</span> <span class="token class-name">BaseType</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">interface</span> <span class="token class-name">NamedType</span> <span class="token punctuation">&#123;</span>
     name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
-    baseInterface_attr<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
-<h2>Properties</h2>
-<p>Each of the language structure elements have <strong>Properties</strong>, of which there are the
-following three types.</p>
-<ul><li><em>Simple properties</em> have as type <code>identifier</code>, <code>string</code>, <code>number</code>, or <code>boolean</code>, and are
-always contained in the <em>concept</em>. Simple properties may also be lists
-of <code>identifier</code>, <code>string</code>, <code>number</code>, or <code>boolean</code>.</li></ul>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L63-L65</span>
-
-concept EntityFunction <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
-    aliases<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
-<ul><li><em>Parts</em> have as type one of the <em>concepts</em> (including <em>expression concepts</em> and <em>limited concepts</em>)
-in the language, and are <em>contained in the concept</em> that holds the property (as in
-the UML composition relationship). Note that simple properties are always considered to be parts.</li></ul>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L63-L67</span>
-
-concept EntityFunction <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
-    aliases<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    expression<span class="token operator">:</span> EntityExpression<span class="token punctuation">;</span>
-    parameters<span class="token operator">:</span> Variable<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
-<ul><li><em>References</em> also have as type one of the <em>concepts</em> in the language, but a reference is not contained
-in its <em>concept</em> (as in the UML association relationship). References are indicated by the keyword
-<em>reference</em> in front of the definition.References are always by name, therefore the referred concept must have a <code>name</code> property of type <code>identifier</code>.</li></ul>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L101-L101</span>
-
-reference variable<span class="token operator">:</span> Variable<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L83-L84</span>
-
-concept Variable <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
-<h3>Optional Properties</h3>
-<p>Properties may be optional. This is indicated using a question mark after the property name.</p>
-<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">// tutorial-language/defs/LanguageDefinition.ast#L14-L17</span>
-
-<span class="token keyword">interface</span> <span class="token class-name">BaseType</span> <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> identifier<span class="token punctuation">;</span>
-    baseInterface_attr<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre></div></section></div>
 
     <div class="horizontal divider svelte-m1dwbj" style="left: calc(20% - 8px)"></div></div>
 
 </div>
 		<footer class="svelte-1hxqcuo">
-    <span class="copyright svelte-1hxqcuo">Created by ProjectIt - © 2021 -
+    <span class="copyright svelte-1hxqcuo">Created by ProjectIt - © 2022 -
         <a href="http://www.projectit.org/" target="_blank" class="link svelte-1hxqcuo">www.projectit.org
         </a></span>
 </footer></main>
 
 
-		<script type="module" data-hydrate="11t6d4q">
-		import { start } from "/_app/start-7a6e4c65.js";
+		<script type="module" data-hydrate="181ugva">
+		import { start } from "/_app/start-5bb7b705.js";
 		start({
-			target: document.querySelector('[data-hydrate="11t6d4q"]').parentNode,
+			target: document.querySelector('[data-hydrate="181ugva"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -390,8 +394,8 @@ concept Variable <span class="token punctuation">&#123;</span>
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-74005861.js"),
-						import("/_app/pages/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md-5f8ec9f2.js")
+					import("/_app/pages/__layout.svelte-d8a2ae7f.js"),
+						import("/_app/pages/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md-287d66d0.js")
 				],
 				url: new URL("http://sveltekit-prerender/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure"),
 				params: {}

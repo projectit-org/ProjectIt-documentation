@@ -1,0 +1,1 @@
+import{S as n,i as e,s}from"../../../chunks/vendor-492729b6.js";async function i(){return{status:302,redirect:"/030_Developing_a_Language/040_Styling/010_SCCS_Styling"}}class o extends n{constructor(t){super();e(this,t,null,null,s,{})}}export{o as default,i as load};

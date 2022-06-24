@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-7a6e4c65.js",
+    "file": "start-5bb7b705.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -11,13 +11,23 @@
       "src/routes/__error.svelte",
       "src/routes/index.md",
       "src/routes/030_Developing_a_Language/index.md",
-      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md",
-      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md",
-      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md",
-      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md",
-      "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/index.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/index.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/010_Validator_Files.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/index.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/index.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/010_Scoper_Files.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/index.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/030_Example_Typer_Definition.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Structure.md",
+      "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files.md",
       "src/routes/030_Developing_a_Language/010_Default_Level/index.md",
       "src/routes/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md",
+      "src/routes/030_Developing_a_Language/010_Default_Level/020_Defining_Concept_Properties.md",
       "src/routes/030_Developing_a_Language/030_API_Level/index.md",
       "src/routes/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md",
       "src/routes/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md",
@@ -27,8 +37,7 @@
       "src/routes/030_Developing_a_Language/030_API_Level/070_Reader_API.md",
       "src/routes/030_Developing_a_Language/030_API_Level/050_Typer_API.md",
       "src/routes/030_Developing_a_Language/040_Styling/index.md",
-      "src/routes/030_Developing_a_Language/040_Styling/010_Editor_Styling.md",
-      "src/routes/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md",
+      "src/routes/030_Developing_a_Language/040_Styling/010_SCCS_Styling.md",
       "src/routes/020_Getting_Started/index.md",
       "src/routes/020_Getting_Started/030_Calling_the_Generator.md",
       "src/routes/020_Getting_Started/020_Project_Structure.md",
@@ -59,11 +68,12 @@
       "src/routes/010_Intro/010_Projectional_Editing.md",
       "src/routes/010_Intro/090_Future_Developments.md",
       "src/routes/010_Intro/020_Our_Philosophy.md",
+      "src/routes/010_Intro/060_Name_Change.md",
       "src/routes/099_about.svelte"
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-74005861.js",
+    "file": "pages/__layout.svelte-d8a2ae7f.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -84,7 +94,7 @@
     ]
   },
   "src/routes/index.md": {
-    "file": "pages/index.md-d043e86e.js",
+    "file": "pages/index.md-8d511b4f.js",
     "src": "src/routes/index.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -93,7 +103,7 @@
     ]
   },
   "src/routes/030_Developing_a_Language/index.md": {
-    "file": "pages/030_Developing_a_Language/index.md-23fc98ac.js",
+    "file": "pages/030_Developing_a_Language/index.md-4fc8fec5.js",
     "src": "src/routes/030_Developing_a_Language/index.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -105,18 +115,27 @@
       "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
     ]
   },
-  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md": {
-    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md-405d1e5d.js",
-    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/index.md",
+  "src/routes/030_Developing_a_Language/020_Definition_Level/index.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/index.md-128c1e63.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/index.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-492729b6.js"
     ]
   },
-  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md": {
-    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md-29b60da3.js",
-    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/040_Validator_Definition.md",
+  "src/routes/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/index.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/index.md-def3072a.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/010_Validator_Files.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/010_Validator_Files.md-617060a7.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/040_Validator_Definition/010_Validator_Files.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -126,9 +145,30 @@
       "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
     ]
   },
-  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md": {
-    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md-49f87c9b.js",
-    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/010_Editor_Definition.md",
+  "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/index.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/index.md-e8a06a60.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options.md-3884b555.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/050_Other_Options.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections.md-e7d207ae.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/020_Projections.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -139,9 +179,9 @@
       "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
     ]
   },
-  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md": {
-    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md-d6b2c8d6.js",
-    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/020_Scoper_Definition.md",
+  "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation.md-72aa19b9.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/030_Indentation.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -152,9 +192,77 @@
       "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
     ]
   },
-  "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md": {
-    "file": "pages/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md-48c36d75.js",
-    "src": "src/routes/030_Developing_a_Language/020_ProjectIt_Definition_Level/030_Typer_Definition.md",
+  "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files.md-5359f754.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/010_Editor_Definition/010_Edit_Files.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/index.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/index.md-15d0b26f.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/010_Scoper_Files.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/010_Scoper_Files.md-89567475.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/020_Scoper_Definition/010_Scoper_Files.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/index.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/index.md-441602fe.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/030_Example_Typer_Definition.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/030_Example_Typer_Definition.md-ab379b07.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/030_Example_Typer_Definition.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Structure.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Structure.md-d63c6eab.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/020_Example_Structure.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files.md": {
+    "file": "pages/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files.md-9e9e0c4b.js",
+    "src": "src/routes/030_Developing_a_Language/020_Definition_Level/030_Typer_Definition/010_Typer_Files.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -175,7 +283,7 @@
     ]
   },
   "src/routes/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md": {
-    "file": "pages/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md-5f8ec9f2.js",
+    "file": "pages/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md-287d66d0.js",
     "src": "src/routes/030_Developing_a_Language/010_Default_Level/010_Defining_the_Language_Structure.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -187,17 +295,30 @@
       "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
     ]
   },
-  "src/routes/030_Developing_a_Language/030_API_Level/index.md": {
-    "file": "pages/030_Developing_a_Language/030_API_Level/index.md-fec00a8b.js",
-    "src": "src/routes/030_Developing_a_Language/030_API_Level/index.md",
+  "src/routes/030_Developing_a_Language/010_Default_Level/020_Defining_Concept_Properties.md": {
+    "file": "pages/030_Developing_a_Language/010_Default_Level/020_Defining_Concept_Properties.md-55307922.js",
+    "src": "src/routes/030_Developing_a_Language/010_Default_Level/020_Defining_Concept_Properties.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-492729b6.js"
     ]
   },
+  "src/routes/030_Developing_a_Language/030_API_Level/index.md": {
+    "file": "pages/030_Developing_a_Language/030_API_Level/index.md-8a3a5b18.js",
+    "src": "src/routes/030_Developing_a_Language/030_API_Level/index.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Note-1bdf01a3.js"
+    ],
+    "css": [
+      "assets/Note.svelte_svelte_type_style_lang-a108c8ba.css"
+    ]
+  },
   "src/routes/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md": {
-    "file": "pages/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md-c29807ae.js",
+    "file": "pages/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md-4f47d801.js",
     "src": "src/routes/030_Developing_a_Language/030_API_Level/020_Writing_Projections.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -212,7 +333,7 @@
     ]
   },
   "src/routes/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md": {
-    "file": "pages/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md-ffbfdd70.js",
+    "file": "pages/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md-6fb01790.js",
     "src": "src/routes/030_Developing_a_Language/030_API_Level/030_Writing_Actions.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -225,7 +346,7 @@
     ]
   },
   "src/routes/030_Developing_a_Language/030_API_Level/040_Validator_API.md": {
-    "file": "pages/030_Developing_a_Language/030_API_Level/040_Validator_API.md-fa24829f.js",
+    "file": "pages/030_Developing_a_Language/030_API_Level/040_Validator_API.md-a234fc0b.js",
     "src": "src/routes/030_Developing_a_Language/030_API_Level/040_Validator_API.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -234,7 +355,7 @@
     ]
   },
   "src/routes/030_Developing_a_Language/030_API_Level/010_Editor_API.md": {
-    "file": "pages/030_Developing_a_Language/030_API_Level/010_Editor_API.md-a1895c0e.js",
+    "file": "pages/030_Developing_a_Language/030_API_Level/010_Editor_API.md-2d9fcfc5.js",
     "src": "src/routes/030_Developing_a_Language/030_API_Level/010_Editor_API.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -270,7 +391,7 @@
     ]
   },
   "src/routes/030_Developing_a_Language/040_Styling/index.md": {
-    "file": "pages/030_Developing_a_Language/040_Styling/index.md-ca7511a2.js",
+    "file": "pages/030_Developing_a_Language/040_Styling/index.md-72347246.js",
     "src": "src/routes/030_Developing_a_Language/040_Styling/index.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -278,18 +399,9 @@
       "_vendor-492729b6.js"
     ]
   },
-  "src/routes/030_Developing_a_Language/040_Styling/010_Editor_Styling.md": {
-    "file": "pages/030_Developing_a_Language/040_Styling/010_Editor_Styling.md-34e4a6e2.js",
-    "src": "src/routes/030_Developing_a_Language/040_Styling/010_Editor_Styling.md",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor-492729b6.js"
-    ]
-  },
-  "src/routes/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md": {
-    "file": "pages/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md-a3bb6b35.js",
-    "src": "src/routes/030_Developing_a_Language/040_Styling/020_Webapp_Styling.md",
+  "src/routes/030_Developing_a_Language/040_Styling/010_SCCS_Styling.md": {
+    "file": "pages/030_Developing_a_Language/040_Styling/010_SCCS_Styling.md-9e953510.js",
+    "src": "src/routes/030_Developing_a_Language/040_Styling/010_SCCS_Styling.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -321,7 +433,7 @@
     ]
   },
   "src/routes/020_Getting_Started/020_Project_Structure.md": {
-    "file": "pages/020_Getting_Started/020_Project_Structure.md-be93fb9b.js",
+    "file": "pages/020_Getting_Started/020_Project_Structure.md-151dbd6f.js",
     "src": "src/routes/020_Getting_Started/020_Project_Structure.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -334,7 +446,7 @@
     ]
   },
   "src/routes/020_Getting_Started/010_Installation.md": {
-    "file": "pages/020_Getting_Started/010_Installation.md-823382fd.js",
+    "file": "pages/020_Getting_Started/010_Installation.md-66fb6284.js",
     "src": "src/routes/020_Getting_Started/010_Installation.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -506,7 +618,7 @@
     ]
   },
   "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md": {
-    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md-ebe0fbab.js",
+    "file": "pages/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md-fc9848e0.js",
     "src": "src/routes/060_Under_the_Hood/010_The_Editor_Framework/020_The_Editor_Interfaces/020_PiAction_Interface.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -533,7 +645,7 @@
     ]
   },
   "src/routes/010_Intro/050_Three_Levels_of_Customization.md": {
-    "file": "pages/010_Intro/050_Three_Levels_of_Customization.md-c78f84e7.js",
+    "file": "pages/010_Intro/050_Three_Levels_of_Customization.md-0be93b25.js",
     "src": "src/routes/010_Intro/050_Three_Levels_of_Customization.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -546,7 +658,7 @@
     ]
   },
   "src/routes/010_Intro/040_A_Language_in_Five_Parts.md": {
-    "file": "pages/010_Intro/040_A_Language_in_Five_Parts.md-3a10e555.js",
+    "file": "pages/010_Intro/040_A_Language_in_Five_Parts.md-3179203f.js",
     "src": "src/routes/010_Intro/040_A_Language_in_Five_Parts.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -555,7 +667,7 @@
     ]
   },
   "src/routes/010_Intro/030_Models_and_Model_Units.md": {
-    "file": "pages/010_Intro/030_Models_and_Model_Units.md-e7f15d70.js",
+    "file": "pages/010_Intro/030_Models_and_Model_Units.md-23b112c0.js",
     "src": "src/routes/010_Intro/030_Models_and_Model_Units.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -581,7 +693,7 @@
     ]
   },
   "src/routes/010_Intro/090_Future_Developments.md": {
-    "file": "pages/010_Intro/090_Future_Developments.md-1964df6f.js",
+    "file": "pages/010_Intro/090_Future_Developments.md-0599d9c1.js",
     "src": "src/routes/010_Intro/090_Future_Developments.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -590,12 +702,25 @@
     ]
   },
   "src/routes/010_Intro/020_Our_Philosophy.md": {
-    "file": "pages/010_Intro/020_Our_Philosophy.md-a1c6c9b2.js",
+    "file": "pages/010_Intro/020_Our_Philosophy.md-d99f45c9.js",
     "src": "src/routes/010_Intro/020_Our_Philosophy.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-492729b6.js"
+    ]
+  },
+  "src/routes/010_Intro/060_Name_Change.md": {
+    "file": "pages/010_Intro/060_Name_Change.md-97ba2505.js",
+    "src": "src/routes/010_Intro/060_Name_Change.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-492729b6.js",
+      "_Figure-d1c3817f.js"
+    ],
+    "css": [
+      "assets/Figure.svelte_svelte_type_style_lang-d2c04b30.css"
     ]
   },
   "src/routes/099_about.svelte": {
