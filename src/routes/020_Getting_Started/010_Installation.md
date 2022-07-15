@@ -40,6 +40,7 @@ In the following the root of your project will be indicated with '~'.
 
 *	Open another (bash) terminal, and start the generated editor from it:
     ```bash
+    yarn prepare-app   # Needed to generate the runtime CSS files.
     yarn dev
     ```
      
