@@ -56,7 +56,7 @@ ensure that the editor functions as it should in other browsers."
 *   Try out the editor
 
 <Note><svelte:fragment slot="header"> Use Help Menu</svelte:fragment><svelte:fragment slot="content">
-If you are having trouble using the editor, have a look at the key-bindings under the **Help* menu.
+If you are having trouble using the editor, have a look at the key-bindings under the <em>Help</em> menu.
 </svelte:fragment></Note>
 
 ## Start with the Template project
