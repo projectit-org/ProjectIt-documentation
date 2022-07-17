@@ -15,7 +15,7 @@ There are two ways to start with ProjectIt, either use our
 Example project or use our Template project.
 
 ## Start with the Example Project
-The simplest manner to start working with ProjectIt is to clone the example project from github.
+The simplest manner to start working with ProjectIt is to clone the example project from GitHub.
 In the following the root of your project will be indicated with '~'.
 
 *   Clone branch `master` from <a href="https://github.com/projectit-org/ProjectIt-example" target="_blank">
@@ -61,7 +61,7 @@ If you are having trouble using the editor, have a look at the key-bindings unde
 
 ## Start with the Template project
 
-Another way to start working with ProjectIt is to clone our template project from github. The template 
+Another way to start working with ProjectIt is to clone our template project from GitHub. The template 
 project provides a shell for the generated editor that enables the user to work with multiple models and
 [model units](/010_Intro/030_Models_and_Model_Units).
 In the following the root of the project will be indicated with '~'.
