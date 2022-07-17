@@ -10,6 +10,7 @@
     --theme-colors-code_background_color: white; /* to be changed in dark mode */
     --theme-colors-code_keyword: #0000ff;
     --theme-colors-token_color_string: #A31515; /* to be changed in dark mode */
+    --theme-colors-block_quote_background: cornsilk;
 
     --theme-colors-code_border: #dddddd;
     --theme-colors-inline_code_color: #f8f8f8;

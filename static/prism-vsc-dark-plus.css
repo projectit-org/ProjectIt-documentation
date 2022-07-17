@@ -20,6 +20,7 @@
     --theme-colors-token_comment: #6a9955;
 
     --theme-colors-code_border: #dddddd;
+    --theme-colors-block_quote_background: #ab8a06;
 }
 
 pre[class*="language-"],

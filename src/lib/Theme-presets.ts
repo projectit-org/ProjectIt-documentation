@@ -178,7 +178,7 @@ export const themePresets = [
             figure_background: "cornsilk",
             table_background: "#715d0a",
             table_heading: "#096552",
-            block_quote_background: "cornsilk",
+            block_quote_background: "#ab8a06",
         },
         fonts: {
             size_editor: "14px",
