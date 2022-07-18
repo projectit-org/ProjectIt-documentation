@@ -14,22 +14,26 @@ yarn install
 yarn prepare
 
 # create the website in the directory 'docs'
-yarn run build
+yarn build
 
 # preview the website
-yarn run preview
+yarn preview
 ```
 > Note: preview should _not_ be used to serve your website in production.
 ## Developing
 
 During development, you can use the following commands.
 ```bash
+# create the content for navigation tree, check the internal links, and include the code fragments
+yarn prepare
+
 # create the website and serve it on localhost:3000
-yarn run dev
+yarn dev
 
 # or start the server and open the app in a new browser tab
-yarn run dev -- --open
+yarn dev -- --open
 ```
+
 ## Publishing
 
 In de docs folder:
